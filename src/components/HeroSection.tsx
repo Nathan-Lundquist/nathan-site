@@ -71,7 +71,7 @@ export default function HeroSection() {
             {/* Heading */}
             <h1
               className="font-black leading-tight tracking-tight mb-6"
-              style={{ fontSize: 'clamp(2rem, 4vw, 3.75rem)', color: '#274C77' }}
+              style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', color: '#274C77' }}
             >
               Hey, I&apos;m Nathan —<br />
               <span style={{ color: '#6096BA' }}>CMMC &amp; NIST 800-171</span><br />
