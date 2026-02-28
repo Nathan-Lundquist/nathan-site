@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 
@@ -33,6 +33,17 @@ const tabs = [
 
 export default function ApproachSection() {
   const [active, setActive] = useState(0)
+  const reducedMotion = useReducedMotion()
+
+  function handleKeyDown(e: React.KeyboardEvent) {
+    if (e.key === 'ArrowDown') {
+      e.preventDefault()
+      setActive((prev) => (prev + 1) % tabs.length)
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault()
+      setActive((prev) => (prev - 1 + tabs.length) % tabs.length)
+    }
+  }
 
   return (
     <section className="py-24 px-6" style={{ backgroundColor: '#FFFFFF' }}>
@@ -65,10 +76,19 @@ export default function ApproachSection() {
             </div>
 
             {/* Tab list */}
-            <div className="space-y-1">
+            <div
+              className="space-y-1"
+              role="tablist"
+              aria-label="Approach steps"
+              onKeyDown={handleKeyDown}
+            >
               {tabs.map((tab, i) => (
                 <button
                   key={tab.number}
+                  role="tab"
+                  aria-selected={active === i}
+                  aria-controls={`approach-panel-${tab.number}`}
+                  id={`approach-tab-${tab.number}`}
                   onClick={() => setActive(i)}
                   className="w-full text-left px-4 py-4 rounded-lg transition-all"
                   style={{
@@ -96,7 +116,11 @@ export default function ApproachSection() {
           </div>
 
           {/* Right column: content panel */}
+          {/* minHeight prevents layout shift during AnimatePresence exit */}
           <div
+            role="tabpanel"
+            id={`approach-panel-${tabs[active].number}`}
+            aria-labelledby={`approach-tab-${tabs[active].number}`}
             className="rounded-2xl p-8"
             style={{ backgroundColor: '#F0F5FA', minHeight: 320 }}
           >
@@ -106,7 +130,7 @@ export default function ApproachSection() {
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: 0.25 }}
+                transition={{ duration: reducedMotion ? 0 : 0.25 }}
               >
                 <p className="font-mono text-xs mb-3" style={{ color: '#6096BA' }}>
                   {tabs[active].number}
