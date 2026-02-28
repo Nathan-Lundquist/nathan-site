@@ -2,16 +2,17 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --color-bg: #0A0A0A;
-  --color-surface: #111111;
-  --color-accent: #8C7A6B;
-  --color-accent-hover: #6B5A50;
-  --color-foreground: #F5F5F5;
-  --color-muted: #888888;
-  --color-border: #222222;
+  --color-bg: #E7ECEF;
+  --color-surface: #FFFFFF;
+  --color-accent: #6096BA;
+  --color-accent-hover: #4A7FA8;
+  --color-foreground: #274C77;
+  --color-muted: #8B8C89;
+  --color-border: #D4DCE2;
 
   --font-sans: var(--font-inter), system-ui, sans-serif;
   --font-mono: var(--font-mono-var), monospace;
+  --font-serif: var(--font-serif), Georgia, serif;
 
   --animate-grid-fade: gridFade 8s ease-in-out infinite;
   --animate-bounce-slow: bounceSlow 1.5s ease-in-out infinite;
@@ -33,14 +34,14 @@
   }
 
   body {
-    background-color: #EFEFEF;
-    color: #0A0A0A;
+    background-color: #E7ECEF;
+    color: #274C77;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   ::selection {
-    background-color: #0A0A0A;
+    background-color: #274C77;
     color: #FFFFFF;
   }
 
@@ -48,14 +49,14 @@
     width: 6px;
   }
   ::-webkit-scrollbar-track {
-    background-color: #EFEFEF;
+    background-color: #E7ECEF;
   }
   ::-webkit-scrollbar-thumb {
-    background-color: #CCCCCC;
+    background-color: #A3CEF1;
     border-radius: 9999px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background-color: #8C7A6B;
+    background-color: #6096BA;
   }
 }
 
@@ -64,7 +65,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background-color: #0A0A0A;
+    background-color: #274C77;
     color: #FFFFFF;
     font-weight: 700;
     padding: 0.75rem 1.5rem;
@@ -72,7 +73,7 @@
     cursor: pointer;
   }
   .btn-primary:hover {
-    background-color: #333333;
+    background-color: #1A3A5C;
     transform: scale(1.05);
   }
   .btn-primary:active {
@@ -83,27 +84,27 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    border: 1px solid #0A0A0A;
-    color: #0A0A0A;
+    border: 1px solid #274C77;
+    color: #274C77;
     font-weight: 700;
     padding: 0.75rem 1.5rem;
     transition: all 0.2s;
     cursor: pointer;
   }
   .btn-outline:hover {
-    background-color: #0A0A0A;
+    background-color: #274C77;
     color: #FFFFFF;
   }
 
   .card {
     background: #FFFFFF;
-    border: 1px solid #E5E5E5;
+    border: 1px solid #D4DCE2;
     border-radius: 1.5rem;
     transition: border-color 0.2s, box-shadow 0.2s;
   }
   .card:hover {
-    border-color: rgba(255, 107, 0, 0.4);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    border-color: #6096BA;
+    box-shadow: 0 4px 20px rgba(39,76,119,0.08);
   }
 
   .tag {
@@ -112,8 +113,8 @@
     font-family: var(--font-mono-var), monospace;
     font-weight: 700;
     padding: 0.25rem 0.75rem;
-    background-color: #F0F0F0;
-    color: #555555;
+    background-color: #DCEEFB;
+    color: #274C77;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     border-radius: 9999px;
@@ -125,7 +126,7 @@
     font-family: var(--font-mono-var), monospace;
     font-weight: 700;
     padding: 0.25rem 0.5rem;
-    background-color: #0A0A0A;
+    background-color: #274C77;
     color: #FFFFFF;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -144,7 +145,7 @@
   .section-heading {
     font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 900;
-    color: #0A0A0A;
+    color: #274C77;
     margin-bottom: 1rem;
     letter-spacing: -0.025em;
     line-height: 1.1;
@@ -154,11 +155,34 @@
     display: block;
     width: 3rem;
     height: 0.25rem;
-    background-color: #8C7A6B;
+    background-color: #6096BA;
     margin-bottom: 2rem;
   }
 
   .section-light {
-    border-top: 1px solid #E5E5E5;
+    border-top: 1px solid #D4DCE2;
+  }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes marquee-reverse {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+.marquee-row {
+  animation: marquee 28s linear infinite;
+}
+.marquee-row-reverse {
+  animation: marquee-reverse 28s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-row,
+  .marquee-row-reverse {
+    animation: none;
   }
 }

@@ -1,5 +1,5 @@
 import HeroSection from '@/components/HeroSection'
-import TrustStrip from '@/components/TrustStrip'
+import MarqueeStrip from '@/components/MarqueeStrip'
 import AboutSnapshot from '@/components/AboutSnapshot'
 import ServicesSnapshot from '@/components/ServicesSnapshot'
 import BlogPreview from '@/components/BlogPreview'
@@ -11,7 +11,7 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <TrustStrip />
+      <MarqueeStrip />
       <AboutSnapshot />
       <ServicesSnapshot />
       <BlogPreview />
