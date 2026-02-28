@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
@@ -28,11 +28,16 @@ const steps = [
 export default function ProcessSection() {
   const [active, setActive] = useState(0)
 
+  // Restart interval when active changes (handles both auto and manual navigation)
   useEffect(() => {
     const interval = setInterval(() => {
       setActive((prev) => (prev + 1) % steps.length)
     }, 4000)
     return () => clearInterval(interval)
+  }, [active])
+
+  const handleDotClick = useCallback((i: number) => {
+    setActive(i)
   }, [])
 
   return (
@@ -76,38 +81,43 @@ export default function ProcessSection() {
           className="rounded-2xl p-10 relative overflow-hidden"
           style={{ backgroundColor: '#F0F5FA', minHeight: 280 }}
         >
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={active}
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              transition={{ duration: 0.35 }}
-            >
-              <p className="font-mono text-xs mb-3" style={{ color: '#6096BA' }}>
-                {steps[active].label}
-              </p>
-              <h3 className="font-black text-2xl mb-4" style={{ color: '#0A0B0D' }}>
-                {steps[active].title}
-              </h3>
-              <p className="text-base leading-relaxed max-w-xl" style={{ color: '#6B7280' }}>
-                {steps[active].description}
-              </p>
-            </motion.div>
-          </AnimatePresence>
+          {/* aria-live announces step changes to screen readers */}
+          <div aria-live="polite" aria-atomic="true">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={active}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.35 }}
+              >
+                <p className="font-mono text-xs mb-3" style={{ color: '#6096BA' }}>
+                  {steps[active].label}
+                </p>
+                <h3 className="font-black text-2xl mb-4" style={{ color: '#0A0B0D' }}>
+                  {steps[active].title}
+                </h3>
+                <p className="text-base leading-relaxed max-w-xl" style={{ color: '#6B7280' }}>
+                  {steps[active].description}
+                </p>
+              </motion.div>
+            </AnimatePresence>
+          </div>
 
           {/* Dot indicators */}
-          <div className="flex gap-2 mt-8">
-            {steps.map((_, i) => (
+          <div className="flex gap-2 mt-8" role="tablist" aria-label="Process steps">
+            {steps.map((step, i) => (
               <button
-                key={i}
-                onClick={() => setActive(i)}
+                key={step.label}
+                role="tab"
+                aria-selected={active === i}
+                aria-label={`Step ${i + 1}`}
+                onClick={() => handleDotClick(i)}
                 className="w-2 h-2 rounded-full transition-all"
                 style={{
                   backgroundColor: active === i ? '#274C77' : '#D4DCE2',
                   transform: active === i ? 'scale(1.25)' : 'scale(1)',
                 }}
-                aria-label={`Step ${i + 1}`}
               />
             ))}
           </div>
