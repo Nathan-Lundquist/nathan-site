@@ -23,7 +23,7 @@ function Row({ reverse = false }: { reverse?: boolean }) {
           <span
             key={`${item}-${i}`}
             className="px-4 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap"
-            style={{ backgroundColor: '#274C77', color: '#FFFFFF' }}
+            style={{ backgroundColor: '#EEF2F8', color: '#274C77', border: '1px solid #D4DCE2' }}
           >
             {item}
           </span>
@@ -36,9 +36,17 @@ function Row({ reverse = false }: { reverse?: boolean }) {
 export default function MarqueeStrip() {
   return (
     <section
-      className="py-8 px-0 border-b"
-      style={{ backgroundColor: '#FFFFFF', borderColor: '#D4DCE2', overflow: 'hidden' }}
+      className="py-8 px-0"
+      style={{
+        backgroundColor: '#FFFFFF',
+        borderTop: '1px solid #D4DCE2',
+        borderBottom: '1px solid #D4DCE2',
+        overflow: 'hidden',
+      }}
     >
+      <p className="text-center text-xs uppercase tracking-widest font-medium text-gray-400 mb-6 px-6">
+        Trusted by Defense Contractors
+      </p>
       <Row />
       <Row reverse />
     </section>
