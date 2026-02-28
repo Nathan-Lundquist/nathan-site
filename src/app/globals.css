@@ -173,16 +173,18 @@
   to   { transform: translateX(0); }
 }
 
-.marquee-row {
-  animation: marquee 28s linear infinite;
-}
-.marquee-row-reverse {
-  animation: marquee-reverse 28s linear infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .marquee-row,
+@layer components {
+  .marquee-row {
+    animation: marquee 28s linear infinite;
+  }
   .marquee-row-reverse {
-    animation: none;
+    animation: marquee-reverse 28s linear infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-row,
+    .marquee-row-reverse {
+      animation: none;
+    }
   }
 }

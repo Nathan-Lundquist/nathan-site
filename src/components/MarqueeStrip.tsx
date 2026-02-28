@@ -21,7 +21,7 @@ function Row({ reverse = false }: { reverse?: boolean }) {
       >
         {doubled.map((item, i) => (
           <span
-            key={i}
+            key={`${item}-${i}`}
             className="px-4 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap"
             style={{ backgroundColor: '#274C77', color: '#FFFFFF' }}
           >
