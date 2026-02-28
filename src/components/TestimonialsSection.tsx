@@ -1,112 +1,115 @@
 'use client'
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { ArrowLeft, ArrowRight } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 const testimonials = [
   {
     quote: "Nathan identified gaps we had no idea existed and gave us a clear roadmap to fix them. We passed our CMMC assessment on the first try.",
     name: "Mike D.",
     title: "CEO, Defense Manufacturer",
-    photo: null,
+    initial: "M",
+    large: true,
   },
   {
     quote: "Working with Nathan saved us months of guesswork. His NIST 800-171 gap analysis was thorough, practical, and exactly what we needed.",
     name: "Sarah K.",
     title: "CTO, DoD Subcontractor",
-    photo: null,
+    initial: "S",
+    large: false,
   },
   {
     quote: "The SSP and POAM templates alone were worth every penny. Nathan's hands-on guidance made compliance feel achievable.",
     name: "James R.",
     title: "IT Director, Aerospace Firm",
-    photo: null,
+    initial: "J",
+    large: false,
   },
 ]
 
-export default function TestimonialsSection() {
-  const [index, setIndex] = useState(0)
-  const t = testimonials[index]
+function QuoteCard({
+  quote, name, title, initial, delay = 0
+}: {
+  quote: string; name: string; title: string; initial: string; delay?: number
+}) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay }}
+      className="flex flex-col rounded-2xl p-7"
+      style={{ backgroundColor: '#FFFFFF', border: '1px solid #D4DCE2', height: '100%' }}
+    >
+      <div className="flex items-center gap-3 mb-5">
+        <div
+          className="w-10 h-10 rounded-full flex items-center justify-center font-black text-sm text-white shrink-0"
+          style={{ backgroundColor: '#274C77' }}
+        >
+          {initial}
+        </div>
+        <div>
+          <p className="font-bold text-sm" style={{ color: '#0A0B0D' }}>{name}</p>
+          <p className="text-xs" style={{ color: '#8B8C89' }}>{title}</p>
+        </div>
+        <span className="text-xs px-2 py-0.5 rounded-full ml-auto shrink-0" style={{ backgroundColor: '#EEF2F8', color: '#6096BA' }}>
+          Customer story
+        </span>
+      </div>
+      <blockquote className="text-sm leading-relaxed flex-1" style={{ color: '#374151' }}>
+        &ldquo;{quote}&rdquo;
+      </blockquote>
+    </motion.div>
+  )
+}
 
+export default function TestimonialsSection() {
   return (
     <section className="py-24 px-6" style={{ backgroundColor: '#FFFFFF' }}>
       <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-[200px_1fr] gap-16 mb-12">
-          <p className="text-sm font-mono uppercase tracking-widest pt-2" style={{ color: '#8C7A6B' }}>
-            Client Feedback
-          </p>
-          <h2
-            className="font-black leading-tight"
-            style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', color: '#111111' }}
-          >
-            What Clients Say
-          </h2>
+        {/* Section divider */}
+        <div className="flex justify-between items-center pt-6 mb-12" style={{ borderTop: '1px solid #D4DCE2' }}>
+          <span className="text-xs uppercase tracking-widest font-medium text-gray-400">Testimonials</span>
+          <span className="font-mono text-xs text-gray-300">07</span>
         </div>
 
-        {/* Testimonial card */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -20 }}
-            transition={{ duration: 0.3 }}
-            className="rounded-2xl overflow-hidden"
-            style={{
-              backgroundColor: '#F5F2EF',
-              minHeight: '380px',
-              display: 'grid',
-              gridTemplateColumns: t.photo ? '1fr 1fr' : '1fr',
-            }}
-          >
-            {/* Quote side */}
-            <div className="p-10 flex flex-col justify-between">
-              <span className="text-6xl leading-none font-serif" style={{ color: '#333333' }}>&ldquo;</span>
-              <blockquote
-                className="text-xl font-medium leading-relaxed my-4"
-                style={{ color: '#111111' }}
-              >
-                {t.quote}
-              </blockquote>
-              <div>
-                <p className="font-bold" style={{ color: '#111111' }}>{t.name}</p>
-                <p className="text-sm" style={{ color: '#666666' }}>{t.title}</p>
-              </div>
-            </div>
-            {/* Photo side (hidden if no photo) */}
-            {t.photo && (
-              <div
-                style={{
-                  backgroundImage: `url(${t.photo})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                }}
-              />
-            )}
-          </motion.div>
-        </AnimatePresence>
+        {/* Heading */}
+        <div className="text-center mb-12">
+          <h2 className="font-black leading-tight" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', color: '#0A0B0D' }}>
+            What clients say
+          </h2>
+          <p className="mt-3 text-base" style={{ color: '#6B7280' }}>
+            Defense contractors who achieved compliance with Nathan&apos;s guidance.
+          </p>
+        </div>
 
-        {/* Controls */}
-        <div className="flex items-center gap-4 mt-6">
-          <button
-            onClick={() => setIndex((i) => (i - 1 + testimonials.length) % testimonials.length)}
-            className="w-10 h-10 flex items-center justify-center rounded-full border transition-colors"
-            style={{ borderColor: '#E5E5E5', color: '#333333' }}
-            aria-label="Previous testimonial"
+        {/* Bento grid */}
+        {/* Top row: large quote (2/3) + stat panel (1/3) */}
+        <div className="grid md:grid-cols-3 gap-6 mb-6">
+          <div className="md:col-span-2">
+            <QuoteCard {...testimonials[0]} delay={0} />
+          </div>
+
+          {/* Stat panel */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="rounded-2xl p-7 flex flex-col items-center justify-center text-center"
+            style={{ backgroundColor: '#274C77' }}
           >
-            <ArrowLeft className="w-4 h-4" />
-          </button>
-          <span className="text-sm" style={{ color: '#999999' }}>
-            {index + 1} / {testimonials.length}
-          </span>
-          <button
-            onClick={() => setIndex((i) => (i + 1) % testimonials.length)}
-            className="w-10 h-10 flex items-center justify-center rounded-full border transition-colors"
-            style={{ borderColor: '#E5E5E5', color: '#333333' }}
-            aria-label="Next testimonial"
-          >
-            <ArrowRight className="w-4 h-4" />
-          </button>
+            <p className="font-black leading-none mb-3" style={{ fontSize: 'clamp(3.5rem, 7vw, 5rem)', color: '#FFFFFF' }}>
+              100%
+            </p>
+            <p className="text-sm font-medium" style={{ color: 'rgba(255,255,255,0.7)' }}>
+              first-time assessment pass rate
+            </p>
+          </motion.div>
+        </div>
+
+        {/* Bottom row: two equal cards */}
+        <div className="grid md:grid-cols-2 gap-6">
+          <QuoteCard {...testimonials[1]} delay={0.15} />
+          <QuoteCard {...testimonials[2]} delay={0.25} />
         </div>
       </div>
     </section>
