@@ -1,77 +1,73 @@
 'use client'
-import { useEffect, useRef, useState } from 'react'
-import { useInView, useReducedMotion } from 'framer-motion'
+import { useRef } from 'react'
+import { motion, useInView, useReducedMotion } from 'framer-motion'
+import Link from 'next/link'
+import { ArrowRight } from 'lucide-react'
 
 const stats = [
-  { value: 5,   suffix: '+', label: 'Years Experience' },
-  { value: 50,  suffix: '+', label: 'Clients Served' },
-  { value: 110, suffix: '',  label: 'NIST Practices' },
-  { value: 3,   suffix: '',  label: 'Assessment Levels' },
+  { value: '5+',  label: 'Years Experience',  pct: 85 },
+  { value: '50+', label: 'Clients Served',    pct: 92 },
+  { value: '110', label: 'NIST Practices',    pct: 100 },
 ]
 
-function Counter({ value, suffix }: { value: number; suffix: string }) {
-  const [count, setCount] = useState(0)
-  const ref = useRef<HTMLSpanElement>(null)
+function StatBar({ stat, index }: { stat: typeof stats[0]; index: number }) {
+  const ref = useRef<HTMLDivElement>(null)
   const inView = useInView(ref, { once: true })
   const reducedMotion = useReducedMotion()
 
-  useEffect(() => {
-    if (!inView) return
-    if (reducedMotion) {
-      setCount(value)
-      return
-    }
-    let start = 0
-    const duration = 1200
-    const step = 16
-    const increment = value / (duration / step)
-    const timer = setInterval(() => {
-      start += increment
-      if (start >= value) {
-        setCount(value)
-        clearInterval(timer)
-      } else {
-        setCount(Math.floor(start))
-      }
-    }, step)
-    return () => clearInterval(timer)
-  }, [inView, value, reducedMotion])
-
   return (
-    <span ref={ref} className="tabular-nums">
-      {count}{suffix}
-    </span>
+    <div ref={ref}>
+      {/* Animated bar */}
+      <div className="h-0.5 w-full mb-4 overflow-hidden rounded-full" style={{ backgroundColor: '#D4DCE2' }}>
+        <motion.div
+          className="h-full rounded-full"
+          style={{ backgroundColor: '#274C77' }}
+          initial={{ scaleX: 0, originX: 0 }}
+          animate={inView ? { scaleX: reducedMotion ? 1 : stat.pct / 100 } : { scaleX: 0 }}
+          transition={reducedMotion ? { duration: 0 } : { duration: 1.2, delay: index * 0.15, ease: 'easeOut' }}
+        />
+      </div>
+      {/* Number + label */}
+      <p className="font-black mb-1" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', color: '#0A0B0D', lineHeight: 1 }}>
+        {stat.value}
+      </p>
+      <p className="text-sm font-medium" style={{ color: '#6B7280' }}>{stat.label}</p>
+    </div>
   )
 }
 
 export default function StatsSection() {
   return (
-    <section
-      className="py-16 px-6"
-      style={{ backgroundColor: '#1A2F4A' }}
-      aria-label="Company statistics"
-    >
+    <section className="py-24 px-6" style={{ backgroundColor: '#EEF2F8' }} aria-label="Company statistics">
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        {/* Section divider */}
+        <div className="flex justify-between items-center pt-6 mb-12" style={{ borderTop: '1px solid #D4DCE2' }}>
+          <span className="text-xs uppercase tracking-widest font-medium text-gray-400">Results</span>
+          <span className="font-mono text-xs text-gray-300">04</span>
+        </div>
+
+        {/* Heading row */}
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+          <div>
+            <h2 className="font-black leading-tight" style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)', color: '#0A0B0D' }}>
+              Compliance results
+            </h2>
+            <p className="mt-2 text-base" style={{ color: '#6B7280' }}>
+              Measurable outcomes for defense contractors we&apos;ve worked with.
+            </p>
+          </div>
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-2 bg-[#274C77] text-white px-5 py-2.5 rounded-full font-semibold text-sm transition-opacity hover:opacity-80 shrink-0"
+          >
+            Get a Consultation <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+
+        {/* Three stat bars */}
+        <div className="grid md:grid-cols-3 gap-10">
           {stats.map((stat, i) => (
-            <div
-              key={stat.label}
-              className={`text-center${i < stats.length - 1 ? ' md:border-r' : ''}`}
-              style={{ borderColor: 'rgba(163,206,241,0.15)' }}
-            >
-              <p
-                className="font-black leading-none mb-2"
-                style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', color: '#FFFFFF' }}
-              >
-                <Counter value={stat.value} suffix={stat.suffix} />
-              </p>
-              <p
-                className="text-sm font-medium uppercase tracking-wider"
-                style={{ color: '#A3CEF1' }}
-              >
-                {stat.label}
-              </p>
-            </div>
+            <StatBar key={stat.label} stat={stat} index={i} />
           ))}
         </div>
       </div>
