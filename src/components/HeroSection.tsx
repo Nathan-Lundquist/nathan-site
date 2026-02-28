@@ -1,13 +1,13 @@
 'use client'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { Plus } from 'lucide-react'
+import { Plus, Download, ArrowRight } from 'lucide-react'
 
 export default function HeroSection() {
   return (
     <section
       className="relative min-h-screen flex items-center pt-16 overflow-hidden"
-      style={{ backgroundColor: '#EFEFEF' }}
+      style={{ backgroundColor: '#E7ECEF' }}
     >
       {/* Background decoration */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -15,9 +15,9 @@ export default function HeroSection() {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: 'radial-gradient(circle, #AAAAAA 1px, transparent 1px)',
+            backgroundImage: 'radial-gradient(circle, #6096BA 1px, transparent 1px)',
             backgroundSize: '30px 30px',
-            opacity: 0.35,
+            opacity: 0.2,
           }}
         />
         {/* Large rotating rings — top right */}
@@ -28,9 +28,9 @@ export default function HeroSection() {
           style={{ top: -180, right: -180 }}
         >
           <svg width="680" height="680" viewBox="0 0 680 680" fill="none">
-            <circle cx="340" cy="340" r="328" stroke="#BBBBBB" strokeWidth="1" strokeDasharray="6 14" />
-            <circle cx="340" cy="340" r="270" stroke="#CCCCCC" strokeWidth="0.75" />
-            <circle cx="340" cy="340" r="208" stroke="#BBBBBB" strokeWidth="1" strokeDasharray="3 9" />
+            <circle cx="340" cy="340" r="328" stroke="#A3CEF1" strokeWidth="1" strokeDasharray="6 14" />
+            <circle cx="340" cy="340" r="270" stroke="#6096BA" strokeWidth="0.75" />
+            <circle cx="340" cy="340" r="208" stroke="#A3CEF1" strokeWidth="1" strokeDasharray="3 9" />
           </svg>
         </motion.div>
         {/* Small counter-rotating ring — bottom left */}
@@ -41,8 +41,8 @@ export default function HeroSection() {
           style={{ bottom: -120, left: -120 }}
         >
           <svg width="380" height="380" viewBox="0 0 380 380" fill="none">
-            <circle cx="190" cy="190" r="178" stroke="#C2C2C2" strokeWidth="1" strokeDasharray="5 12" />
-            <circle cx="190" cy="190" r="130" stroke="#CCCCCC" strokeWidth="0.75" strokeDasharray="2 8" />
+            <circle cx="190" cy="190" r="178" stroke="#A3CEF1" strokeWidth="1" strokeDasharray="5 12" />
+            <circle cx="190" cy="190" r="130" stroke="#6096BA" strokeWidth="0.75" strokeDasharray="2 8" />
           </svg>
         </motion.div>
       </div>
@@ -59,7 +59,7 @@ export default function HeroSection() {
             {/* Available badge */}
             <div
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium mb-8"
-              style={{ backgroundColor: '#FFFFFF', border: '1px solid #E0E0E0', color: '#555555' }}
+              style={{ backgroundColor: '#FFFFFF', border: '1px solid #D4DCE2', color: '#6096BA' }}
             >
               <span
                 className="w-1.5 h-1.5 rounded-full animate-pulse"
@@ -71,17 +71,17 @@ export default function HeroSection() {
             {/* Heading */}
             <h1
               className="font-black leading-tight tracking-tight mb-6"
-              style={{ fontSize: 'clamp(2rem, 4vw, 3.75rem)', color: '#0A0A0A' }}
+              style={{ fontSize: 'clamp(2rem, 4vw, 3.75rem)', color: '#274C77' }}
             >
               Hey, I&apos;m Nathan —<br />
-              <span>CMMC &amp; NIST 800-171</span><br />
+              <span style={{ color: '#6096BA' }}>CMMC &amp; NIST 800-171</span><br />
               Compliance Expert
             </h1>
 
             {/* Sub */}
             <p
               className="text-lg mb-8 max-w-md leading-relaxed"
-              style={{ color: '#666666' }}
+              style={{ color: '#8B8C89' }}
             >
               I help defense contractors achieve CMMC Level 2 compliance —
               protecting CUI and keeping you in the contract game.
@@ -92,37 +92,61 @@ export default function HeroSection() {
               <Link
                 href="/contact"
                 className="inline-flex items-center gap-2 px-5 py-3 font-semibold text-sm rounded-full transition-all hover:opacity-80"
-                style={{ backgroundColor: '#0A0A0A', color: '#FFFFFF' }}
+                style={{ backgroundColor: '#274C77', color: '#FFFFFF' }}
               >
                 <Plus className="w-4 h-4" /> Get a Consultation
               </Link>
               <Link
                 href="/resources"
-                className="inline-flex items-center gap-2 px-5 py-3 font-semibold text-sm rounded-full border transition-all hover:bg-black hover:text-white hover:border-black"
-                style={{ borderColor: '#CCCCCC', color: '#0A0A0A', backgroundColor: 'transparent' }}
+                className="inline-flex items-center gap-2 px-5 py-3 font-semibold text-sm rounded-full border transition-all"
+                style={{ borderColor: '#6096BA', color: '#274C77', backgroundColor: 'transparent' }}
+                onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#274C77'; e.currentTarget.style.color = '#FFFFFF'; e.currentTarget.style.borderColor = '#274C77' }}
+                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#274C77'; e.currentTarget.style.borderColor = '#6096BA' }}
               >
                 <Plus className="w-4 h-4" /> Free Resources
               </Link>
             </div>
 
+            {/* Checklist widget */}
+            <Link
+              href="/resources"
+              className="inline-flex items-center gap-3 px-4 py-3 rounded-xl transition-opacity hover:opacity-90 mb-10"
+              style={{
+                backgroundColor: 'rgba(255,255,255,0.85)',
+                border: '1px solid #D4DCE2',
+                backdropFilter: 'blur(8px)',
+              }}
+            >
+              <span
+                className="flex items-center justify-center w-9 h-9 rounded-lg shrink-0"
+                style={{ backgroundColor: '#DCEEFB' }}
+              >
+                <Download className="w-4 h-4" style={{ color: '#274C77' }} />
+              </span>
+              <span className="text-sm font-semibold" style={{ color: '#274C77' }}>
+                Download the CMMC L2 Readiness Checklist
+              </span>
+              <ArrowRight className="w-4 h-4 shrink-0" style={{ color: '#6096BA' }} />
+            </Link>
+
             {/* Social proof */}
             <div className="flex items-center gap-3">
               <div className="flex -space-x-2">
-                {['#0A0A0A', '#333333', '#666666', '#999999'].map((color, i) => (
+                {['#274C77', '#6096BA', '#A3CEF1', '#8B8C89'].map((color, i) => (
                   <div
                     key={i}
                     className="w-9 h-9 rounded-full flex items-center justify-center text-xs font-black text-white"
                     style={{
                       backgroundColor: color,
-                      border: '2px solid #EFEFEF',
+                      border: '2px solid #E7ECEF',
                     }}
                   >
                     {['NL', 'D', 'S', '+'][i]}
                   </div>
                 ))}
               </div>
-              <p className="text-sm" style={{ color: '#555555' }}>
-                Trusted by <strong style={{ color: '#0A0A0A' }}>50+</strong> defense contractors
+              <p className="text-sm" style={{ color: '#8B8C89' }}>
+                Trusted by <strong style={{ color: '#274C77' }}>50+</strong> defense contractors
               </p>
             </div>
           </motion.div>
@@ -139,7 +163,7 @@ export default function HeroSection() {
               className="relative rounded-3xl overflow-hidden w-full max-w-sm"
               style={{
                 aspectRatio: '3/4',
-                backgroundColor: '#DDDDDD',
+                backgroundColor: '#DCEEFB',
               }}
             >
               {/* Photo */}
@@ -160,18 +184,18 @@ export default function HeroSection() {
                 }}
               >
                 <div className="text-center">
-                  <p className="text-xs mb-0.5" style={{ color: '#888888' }}>Experience</p>
-                  <p className="text-xl font-black leading-none" style={{ color: '#0A0A0A' }}>10+</p>
+                  <p className="text-xs mb-0.5" style={{ color: '#8B8C89' }}>Experience</p>
+                  <p className="text-xl font-black leading-none" style={{ color: '#274C77' }}>5+</p>
                 </div>
-                <div className="w-px h-8" style={{ backgroundColor: '#E5E5E5' }} />
+                <div className="w-px h-8" style={{ backgroundColor: '#D4DCE2' }} />
                 <div className="text-center">
-                  <p className="text-xs mb-0.5" style={{ color: '#888888' }}>Clients</p>
-                  <p className="text-xl font-black leading-none" style={{ color: '#0A0A0A' }}>50+</p>
+                  <p className="text-xs mb-0.5" style={{ color: '#8B8C89' }}>Clients</p>
+                  <p className="text-xl font-black leading-none" style={{ color: '#274C77' }}>50+</p>
                 </div>
-                <div className="w-px h-8" style={{ backgroundColor: '#E5E5E5' }} />
+                <div className="w-px h-8" style={{ backgroundColor: '#D4DCE2' }} />
                 <div className="text-center">
-                  <p className="text-xs mb-0.5" style={{ color: '#888888' }}>Via</p>
-                  <p className="text-sm font-bold leading-none" style={{ color: '#8C7A6B' }}>PCShards</p>
+                  <p className="text-xs mb-0.5" style={{ color: '#8B8C89' }}>Via</p>
+                  <p className="text-sm font-bold leading-none" style={{ color: '#6096BA' }}>PCShards</p>
                 </div>
               </div>
             </div>
