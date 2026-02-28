@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowRight, Shield, FileSearch, Map, Lock, CheckCircle } from 'lucide-react'
+import { ArrowRight, Shield, FileSearch, Map as MapIcon, Lock, CheckCircle } from 'lucide-react'
 
 const cards = [
   {
@@ -13,7 +13,7 @@ const cards = [
     bullets: ['All 110 practices', 'CUI environment scope', 'Prioritized findings'],
   },
   {
-    icon: Map,
+    icon: MapIcon,
     title: 'Compliance Roadmap',
     bullets: ['SSP development', 'POAM creation', 'Control implementation'],
   },
