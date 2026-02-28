@@ -1,15 +1,53 @@
 'use client'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { Plus, ArrowRight } from 'lucide-react'
+import { Plus } from 'lucide-react'
 
 export default function HeroSection() {
   return (
     <section
-      className="min-h-screen flex items-center pt-16"
+      className="relative min-h-screen flex items-center pt-16 overflow-hidden"
       style={{ backgroundColor: '#EFEFEF' }}
     >
-      <div className="max-w-6xl mx-auto px-6 py-16 w-full">
+      {/* Background decoration */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {/* Dot grid */}
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: 'radial-gradient(circle, #AAAAAA 1px, transparent 1px)',
+            backgroundSize: '30px 30px',
+            opacity: 0.35,
+          }}
+        />
+        {/* Large rotating rings — top right */}
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{ duration: 70, repeat: Infinity, ease: 'linear' }}
+          className="absolute"
+          style={{ top: -180, right: -180 }}
+        >
+          <svg width="680" height="680" viewBox="0 0 680 680" fill="none">
+            <circle cx="340" cy="340" r="328" stroke="#BBBBBB" strokeWidth="1" strokeDasharray="6 14" />
+            <circle cx="340" cy="340" r="270" stroke="#CCCCCC" strokeWidth="0.75" />
+            <circle cx="340" cy="340" r="208" stroke="#BBBBBB" strokeWidth="1" strokeDasharray="3 9" />
+          </svg>
+        </motion.div>
+        {/* Small counter-rotating ring — bottom left */}
+        <motion.div
+          animate={{ rotate: -360 }}
+          transition={{ duration: 50, repeat: Infinity, ease: 'linear' }}
+          className="absolute"
+          style={{ bottom: -120, left: -120 }}
+        >
+          <svg width="380" height="380" viewBox="0 0 380 380" fill="none">
+            <circle cx="190" cy="190" r="178" stroke="#C2C2C2" strokeWidth="1" strokeDasharray="5 12" />
+            <circle cx="190" cy="190" r="130" stroke="#CCCCCC" strokeWidth="0.75" strokeDasharray="2 8" />
+          </svg>
+        </motion.div>
+      </div>
+
+      <div className="max-w-6xl mx-auto px-6 py-16 w-full relative">
         <div className="grid md:grid-cols-2 gap-12 items-center">
 
           {/* LEFT: text content */}
@@ -113,14 +151,6 @@ export default function HeroSection() {
                   backgroundPosition: 'center top',
                 }}
               />
-              {/* Placeholder monogram if no photo */}
-              <div
-                className="absolute inset-0 flex items-center justify-center"
-                style={{ color: '#BBBBBB' }}
-              >
-                <span className="text-7xl font-black select-none">NL</span>
-              </div>
-
               {/* Floating stats card at bottom */}
               <div
                 className="absolute bottom-4 left-4 right-4 px-4 py-3 rounded-2xl flex justify-between items-center"
@@ -146,29 +176,6 @@ export default function HeroSection() {
               </div>
             </div>
 
-            {/* Spinning circular badge */}
-            <div
-              className="absolute -bottom-6 left-4 w-20 h-20"
-            >
-              <svg
-                viewBox="0 0 100 100"
-                className="w-full h-full animate-spin"
-                style={{ animationDuration: '10s' }}
-              >
-                <defs>
-                  <path
-                    id="circlePath"
-                    d="M 50,50 m -30,0 a 30,30 0 1,1 60,0 a 30,30 0 1,1 -60,0"
-                  />
-                </defs>
-                <text style={{ fontSize: '9.5px', fill: '#333333', fontWeight: 700, letterSpacing: '0.05em' }}>
-                  <textPath href="#circlePath">CMMC EXPERT • NIST 800-171 • </textPath>
-                </text>
-              </svg>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <ArrowRight className="w-4 h-4" style={{ color: '#0A0A0A' }} />
-              </div>
-            </div>
           </motion.div>
 
         </div>
