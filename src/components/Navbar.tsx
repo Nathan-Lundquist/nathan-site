@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
 import { useState } from 'react'
-import { Menu, X, Shield } from 'lucide-react'
+import { Menu, X, Shield, Plus } from 'lucide-react'
 
 const links = [
   { href: '/about', label: 'About' },
@@ -18,20 +18,20 @@ export default function Navbar() {
     <nav
       className="fixed top-0 w-full z-50"
       style={{
-        backgroundColor: 'rgba(10,10,10,0.9)',
-        backdropFilter: 'blur(8px)',
-        borderBottom: '1px solid #222222',
+        backgroundColor: 'rgba(239,239,239,0.92)',
+        backdropFilter: 'blur(12px)',
+        borderBottom: '1px solid #E0E0E0',
       }}
     >
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
         <Link
           href="/"
           className="flex items-center gap-2 font-black text-lg tracking-tight"
-          style={{ color: '#F5F5F5' }}
+          style={{ color: '#0A0A0A' }}
         >
-          <Shield className="w-5 h-5" style={{ color: '#FF6B00' }} />
+          <Shield className="w-5 h-5" style={{ color: '#444444' }} />
           <span>
-            NATHAN<span style={{ color: '#FF6B00' }}>.</span>LUNDQUIST
+            NATHAN<span style={{ color: '#8C7A6B' }}>.</span>LUNDQUIST
           </span>
         </Link>
 
@@ -41,27 +41,31 @@ export default function Navbar() {
             <Link
               key={l.href}
               href={l.href}
-              className="text-sm font-medium uppercase tracking-wide transition-colors"
-              style={{ color: '#888888' }}
+              className="text-sm font-medium transition-colors"
+              style={{ color: '#555555' }}
               onMouseEnter={(e) =>
-                (e.currentTarget.style.color = '#FF6B00')
+                (e.currentTarget.style.color = '#111111')
               }
               onMouseLeave={(e) =>
-                (e.currentTarget.style.color = '#888888')
+                (e.currentTarget.style.color = '#555555')
               }
             >
               {l.label}
             </Link>
           ))}
-          <Link href="/contact" className="btn-primary text-sm py-2 px-4">
-            Get a Consultation
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full font-semibold text-sm transition-all hover:opacity-80"
+            style={{ backgroundColor: '#0A0A0A', color: '#FFFFFF' }}
+          >
+            <Plus className="w-3.5 h-3.5" /> Get a Consultation
           </Link>
         </div>
 
         {/* Mobile toggle */}
         <button
           className="md:hidden"
-          style={{ color: '#F5F5F5' }}
+          style={{ color: '#0A0A0A' }}
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -74,16 +78,16 @@ export default function Navbar() {
         <div
           className="md:hidden px-4 py-6 flex flex-col gap-4"
           style={{
-            backgroundColor: '#111111',
-            borderTop: '1px solid #222222',
+            backgroundColor: '#EFEFEF',
+            borderTop: '1px solid #E0E0E0',
           }}
         >
           {links.map((l) => (
             <Link
               key={l.href}
               href={l.href}
-              className="font-medium uppercase text-sm tracking-wide transition-colors"
-              style={{ color: '#888888' }}
+              className="font-medium text-sm transition-colors"
+              style={{ color: '#333333' }}
               onClick={() => setOpen(false)}
             >
               {l.label}
@@ -91,10 +95,11 @@ export default function Navbar() {
           ))}
           <Link
             href="/contact"
-            className="btn-primary text-sm w-fit"
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full font-semibold text-sm w-fit"
+            style={{ backgroundColor: '#0A0A0A', color: '#FFFFFF' }}
             onClick={() => setOpen(false)}
           >
-            Get a Consultation
+            <Plus className="w-3.5 h-3.5" /> Get a Consultation
           </Link>
         </div>
       )}

@@ -22,9 +22,9 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 font-black text-lg mb-3">
-              <Shield className="w-5 h-5" style={{ color: '#FF6B00' }} />
+              <Shield className="w-5 h-5" style={{ color: '#444444' }} />
               <span>
-                NATHAN<span style={{ color: '#FF6B00' }}>.</span>LUNDQUIST
+                NATHAN<span style={{ color: '#8C7A6B' }}>.</span>LUNDQUIST
               </span>
             </div>
             <p
@@ -44,7 +44,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-bold hover:underline"
-                style={{ color: '#FF6B00' }}
+                style={{ color: '#8C7A6B' }}
               >
                 PCShards
               </a>
@@ -85,7 +85,7 @@ export default function Footer() {
                 className="flex items-center gap-2 text-sm mb-3 transition-colors"
                 style={{ color: '#888888' }}
               >
-                <Linkedin className="w-4 h-4" style={{ color: '#FF6B00' }} />
+                <Linkedin className="w-4 h-4" style={{ color: '#444444' }} />
                 LinkedIn
               </a>
               <a
@@ -95,7 +95,7 @@ export default function Footer() {
                 className="flex items-center gap-2 text-sm transition-colors"
                 style={{ color: '#888888' }}
               >
-                <Github className="w-4 h-4" style={{ color: '#FF6B00' }} />
+                <Github className="w-4 h-4" style={{ color: '#444444' }} />
                 GitHub
               </a>
             </div>
