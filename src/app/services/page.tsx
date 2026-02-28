@@ -3,6 +3,7 @@ import { ClipboardCheck, Search, Map, ArrowRight } from 'lucide-react'
 
 const services = [
   {
+    number: '01',
     icon: ClipboardCheck,
     title: 'CMMC Level 2 Assessment Prep',
     description:
@@ -16,6 +17,7 @@ const services = [
     ],
   },
   {
+    number: '02',
     icon: Search,
     title: 'NIST 800-171 Gap Analysis',
     description:
@@ -29,6 +31,7 @@ const services = [
     ],
   },
   {
+    number: '03',
     icon: Map,
     title: 'Compliance Roadmap & Remediation',
     description:
@@ -45,79 +48,118 @@ const services = [
 
 export default function ServicesPage() {
   return (
-    <div className="section pt-24">
-      <span className="accent-line" />
-      <h1 className="section-heading">Services</h1>
-      <p className="max-w-2xl mb-16 leading-relaxed" style={{ color: '#888888' }}>
-        All consulting engagements are delivered through{' '}
-        <a
-          href="https://pcshards.com"
-          className="font-bold hover:underline"
-          style={{ color: '#FF6B00' }}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          PCShards
-        </a>
-        . I work with defense contractors of all sizes — from small machine
-        shops to mid-size manufacturers.
-      </p>
+    <div style={{ backgroundColor: '#EFEFEF', minHeight: '100vh' }}>
+      {/* Hero */}
+      <section className="pt-28 pb-16 px-6" style={{ backgroundColor: '#EFEFEF' }}>
+        <div className="max-w-6xl mx-auto">
+          <p className="text-sm font-mono uppercase tracking-widest mb-4" style={{ color: '#999999' }}>
+            What I offer
+          </p>
+          <h1
+            className="font-black leading-tight mb-6"
+            style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', color: '#0A0A0A' }}
+          >
+            Services
+          </h1>
+          <p className="text-lg max-w-2xl leading-relaxed" style={{ color: '#666666' }}>
+            All consulting engagements are delivered through{' '}
+            <a
+              href="https://pcshards.com"
+              className="font-bold hover:underline"
+              style={{ color: '#8C7A6B' }}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              PCShards
+            </a>
+            . I work with defense contractors of all sizes — from small machine
+            shops to mid-size manufacturers.
+          </p>
+        </div>
+      </section>
 
-      <div className="space-y-6 mb-16">
-        {services.map((s) => (
-          <div key={s.title} className="card p-8">
-            <div className="flex items-start gap-6">
-              <s.icon
-                className="w-10 h-10 shrink-0 mt-1"
-                style={{ color: '#FF6B00' }}
-              />
-              <div className="flex-1">
-                <h2
-                  className="font-black text-2xl mb-3"
-                  style={{ color: '#F5F5F5' }}
+      {/* Services numbered list */}
+      <section className="py-16 px-6" style={{ backgroundColor: '#FFFFFF' }}>
+        <div className="max-w-6xl mx-auto">
+          {services.map((s, i) => (
+            <div key={s.number}>
+              <div className="grid md:grid-cols-[80px_60px_1fr] gap-8 py-10 items-start">
+                {/* Number */}
+                <span
+                  className="text-5xl font-black leading-none"
+                  style={{ color: '#EEEEEE' }}
                 >
-                  {s.title}
-                </h2>
-                <p className="leading-relaxed mb-6" style={{ color: '#888888' }}>
-                  {s.description}
-                </p>
+                  {s.number}
+                </span>
+                {/* Icon */}
+                <s.icon className="w-8 h-8 mt-1" style={{ color: '#444444' }} />
+                {/* Content */}
                 <div>
-                  <p
-                    className="text-xs font-mono uppercase tracking-widest mb-3"
-                    style={{ color: '#888888' }}
+                  <h2
+                    className="font-black text-2xl mb-3"
+                    style={{ color: '#111111' }}
                   >
-                    Deliverables
+                    {s.title}
+                  </h2>
+                  <p className="leading-relaxed mb-6" style={{ color: '#555555' }}>
+                    {s.description}
                   </p>
-                  <div className="flex flex-wrap gap-2">
-                    {s.deliverables.map((d) => (
-                      <span key={d} className="tag">
-                        {d}
-                      </span>
-                    ))}
+                  <div>
+                    <p
+                      className="text-xs font-mono uppercase tracking-widest mb-3"
+                      style={{ color: '#999999' }}
+                    >
+                      Deliverables
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {s.deliverables.map((d) => (
+                        <span
+                          key={d}
+                          className="text-xs font-semibold px-3 py-1 rounded-full"
+                          style={{ backgroundColor: '#F0F0F0', color: '#555555' }}
+                        >
+                          {d}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
+              {i < services.length - 1 && (
+                <div style={{ borderTop: '1px solid #E5E5E5' }} />
+              )}
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      </section>
 
-      {/* CTA block */}
-      <div className="card p-10 text-center">
-        <h2
-          className="font-black text-3xl mb-4"
-          style={{ color: '#F5F5F5' }}
-        >
-          Ready to Get Compliant?
-        </h2>
-        <p className="mb-8 max-w-md mx-auto" style={{ color: '#888888' }}>
-          Let&apos;s discuss your environment and build a plan that actually works
-          for your organization.
-        </p>
-        <Link href="/contact" className="btn-primary text-base">
-          Schedule a Consultation <ArrowRight className="w-4 h-4" />
-        </Link>
-      </div>
+      {/* CTA */}
+      <section className="py-16 px-6" style={{ backgroundColor: '#F9F9F9' }}>
+        <div className="max-w-6xl mx-auto">
+          <div
+            className="rounded-3xl p-12 text-center"
+            style={{ backgroundColor: '#111111' }}
+          >
+            <h2
+              className="font-black mb-4"
+              style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', color: '#FFFFFF' }}
+            >
+              Ready to Get Compliant?
+            </h2>
+            <p className="mb-8 max-w-md mx-auto" style={{ color: '#999999' }}>
+              Let&apos;s discuss your environment and build a plan that actually works
+              for your organization.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 font-semibold px-6 py-3 rounded-full"
+              style={{ backgroundColor: '#FFFFFF', color: '#0A0A0A' }}
+            >
+              Schedule a Consultation <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   )
 }

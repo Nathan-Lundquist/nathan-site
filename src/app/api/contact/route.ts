@@ -21,7 +21,7 @@ export async function POST(req: Request) {
       subject: `New Consultation Request — ${service}`,
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
-          <h2 style="color: #FF6B00; border-bottom: 2px solid #FF6B00; padding-bottom: 8px;">
+          <h2 style="color: #0A0A0A; border-bottom: 2px solid #8C7A6B; padding-bottom: 8px;">
             New Consultation Request
           </h2>
           <table style="width: 100%; border-collapse: collapse;">
@@ -43,7 +43,7 @@ export async function POST(req: Request) {
             </tr>
           </table>
           <h3 style="color: #333; margin-top: 20px;">Message:</h3>
-          <p style="color: #555; line-height: 1.6; background: #f9f9f9; padding: 16px; border-left: 3px solid #FF6B00;">
+          <p style="color: #555; line-height: 1.6; background: #f9f9f9; padding: 16px; border-left: 3px solid #8C7A6B;">
             ${message.replace(/\n/g, '<br/>')}
           </p>
           <hr style="border: none; border-top: 1px solid #eee; margin: 24px 0;" />
