@@ -1,4 +1,4 @@
-import { getBlogPosts, BlogPost } from '@/lib/mdx'
+import { getBlogPosts } from '@/lib/mdx'
 import BlogNewsletterClient from './BlogNewsletterClient'
 
 export default function BlogNewsletterSection() {

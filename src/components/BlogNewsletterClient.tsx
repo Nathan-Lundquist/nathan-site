@@ -38,7 +38,7 @@ function NewsletterCard() {
             placeholder="Email address"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full px-4 py-2.5 text-sm rounded-full outline-none"
+            className="w-full px-4 py-2.5 text-sm rounded-full outline-none focus:ring-2 focus:ring-[#6096BA]"
             style={{
               backgroundColor: '#FFFFFF',
               border: '1px solid #D4DCE2',
@@ -81,7 +81,9 @@ export default function BlogNewsletterClient({ posts }: { posts: BlogPost[] }) {
         <div className="grid md:grid-cols-3 gap-6">
           {/* Left 2/3: blog posts stacked */}
           <div className="md:col-span-2 space-y-6">
-            {posts.map((post) => (
+            {posts.length === 0 ? (
+              <p className="text-sm" style={{ color: '#8B8C89' }}>No posts yet.</p>
+            ) : posts.map((post) => (
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
