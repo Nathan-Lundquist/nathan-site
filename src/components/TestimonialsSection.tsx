@@ -7,21 +7,18 @@ const testimonials = [
     name: "Mike D.",
     title: "CEO, Defense Manufacturer",
     initial: "M",
-    large: true,
   },
   {
     quote: "Working with Nathan saved us months of guesswork. His NIST 800-171 gap analysis was thorough, practical, and exactly what we needed.",
     name: "Sarah K.",
     title: "CTO, DoD Subcontractor",
     initial: "S",
-    large: false,
   },
   {
     quote: "The SSP and POAM templates alone were worth every penny. Nathan's hands-on guidance made compliance feel achievable.",
     name: "James R.",
     title: "IT Director, Aerospace Firm",
     initial: "J",
-    large: false,
   },
 ]
 
@@ -93,8 +90,8 @@ export default function TestimonialsSection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="rounded-2xl p-7 flex flex-col items-center justify-center text-center"
+            transition={{ duration: 0.4, delay: 0.1 }}
+            className="rounded-2xl p-7 flex flex-col items-center justify-center text-center min-h-[160px]"
             style={{ backgroundColor: '#274C77' }}
           >
             <p className="font-black leading-none mb-3" style={{ fontSize: 'clamp(3.5rem, 7vw, 5rem)', color: '#FFFFFF' }}>
