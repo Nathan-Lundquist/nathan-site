@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useRef, useState } from 'react'
-import { useInView } from 'framer-motion'
+import { useInView, useReducedMotion } from 'framer-motion'
 
 const stats = [
   { value: 5,   suffix: '+', label: 'Years Experience' },
@@ -11,11 +11,16 @@ const stats = [
 
 function Counter({ value, suffix }: { value: number; suffix: string }) {
   const [count, setCount] = useState(0)
-  const ref = useRef(null)
+  const ref = useRef<HTMLSpanElement>(null)
   const inView = useInView(ref, { once: true })
+  const reducedMotion = useReducedMotion()
 
   useEffect(() => {
     if (!inView) return
+    if (reducedMotion) {
+      setCount(value)
+      return
+    }
     let start = 0
     const duration = 1200
     const step = 16
@@ -30,7 +35,7 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
       }
     }, step)
     return () => clearInterval(timer)
-  }, [inView, value])
+  }, [inView, value, reducedMotion])
 
   return (
     <span ref={ref} className="tabular-nums">
@@ -44,16 +49,15 @@ export default function StatsSection() {
     <section
       className="py-16 px-6"
       style={{ backgroundColor: '#1A2F4A' }}
+      aria-label="Company statistics"
     >
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, i) => (
             <div
               key={stat.label}
-              className="text-center"
-              style={{
-                borderRight: i < stats.length - 1 ? '1px solid rgba(163,206,241,0.15)' : undefined,
-              }}
+              className={`text-center${i < stats.length - 1 ? ' md:border-r' : ''}`}
+              style={{ borderColor: 'rgba(163,206,241,0.15)' }}
             >
               <p
                 className="font-black leading-none mb-2"
