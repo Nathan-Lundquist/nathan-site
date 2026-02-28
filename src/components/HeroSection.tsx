@@ -98,10 +98,8 @@ export default function HeroSection() {
               </Link>
               <Link
                 href="/resources"
-                className="inline-flex items-center gap-2 px-5 py-3 font-semibold text-sm rounded-full border transition-all"
+                className="inline-flex items-center gap-2 px-5 py-3 font-semibold text-sm rounded-full border transition-all hover:bg-[#274C77] hover:text-white hover:border-[#274C77]"
                 style={{ borderColor: '#6096BA', color: '#274C77', backgroundColor: 'transparent' }}
-                onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#274C77'; e.currentTarget.style.color = '#FFFFFF'; e.currentTarget.style.borderColor = '#274C77' }}
-                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#274C77'; e.currentTarget.style.borderColor = '#6096BA' }}
               >
                 <Plus className="w-4 h-4" /> Free Resources
               </Link>
@@ -115,6 +113,7 @@ export default function HeroSection() {
                 backgroundColor: 'rgba(255,255,255,0.85)',
                 border: '1px solid #D4DCE2',
                 backdropFilter: 'blur(8px)',
+                WebkitBackdropFilter: 'blur(8px)',
               }}
             >
               <span
@@ -181,6 +180,7 @@ export default function HeroSection() {
                 style={{
                   backgroundColor: 'rgba(255,255,255,0.92)',
                   backdropFilter: 'blur(12px)',
+                  WebkitBackdropFilter: 'blur(12px)',
                 }}
               >
                 <div className="text-center">
