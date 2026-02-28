@@ -1,127 +1,178 @@
 'use client'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { ArrowRight, ChevronDown } from 'lucide-react'
+import { Plus, ArrowRight } from 'lucide-react'
 
 export default function HeroSection() {
   return (
     <section
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
-      style={{ backgroundColor: '#0A0A0A' }}
+      className="min-h-screen flex items-center pt-16"
+      style={{ backgroundColor: '#EFEFEF' }}
     >
-      {/* Animated grid background */}
-      <div
-        className="absolute inset-0 z-0 animate-[gridFade_8s_ease-in-out_infinite]"
-        style={{
-          backgroundImage: `
-            linear-gradient(rgba(255,107,0,0.06) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,107,0,0.06) 1px, transparent 1px)
-          `,
-          backgroundSize: '60px 60px',
-        }}
-      />
-      {/* Radial vignette overlay */}
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          background:
-            'radial-gradient(ellipse at center, transparent 30%, #0A0A0A 100%)',
-        }}
-      />
+      <div className="max-w-6xl mx-auto px-6 py-16 w-full">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
-        {/* Status badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-4 py-2 mb-8 text-xs font-mono uppercase tracking-widest"
-          style={{
-            backgroundColor: '#111111',
-            border: '1px solid rgba(255,107,0,0.3)',
-            color: '#FF6B00',
-          }}
-        >
-          <span
-            className="w-2 h-2 rounded-full animate-pulse"
-            style={{ backgroundColor: '#FF6B00' }}
-          />
-          Available for Consulting Engagements
-        </motion.div>
-
-        {/* Main heading */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-black tracking-tight mb-6 leading-none"
-          style={{
-            fontSize: 'clamp(2.5rem, 8vw, 5rem)',
-            color: '#F5F5F5',
-          }}
-        >
-          CMMC &amp;{' '}
-          <span style={{ color: '#FF6B00' }}>NIST 800-171</span>
-          <br />
-          Compliance Expert
-        </motion.h1>
-
-        {/* Subheading */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
-          style={{ color: '#888888' }}
-        >
-          I help defense contractors achieve and maintain CMMC Level 2
-          compliance — protecting CUI and keeping you in the contract game.
-        </motion.p>
-
-        {/* CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
-        >
-          <Link href="/contact" className="btn-primary text-base">
-            Get a Consultation <ArrowRight className="w-4 h-4" />
-          </Link>
-          <Link href="/resources" className="btn-outline text-base">
-            Free Resources
-          </Link>
-        </motion.div>
-
-        {/* PCShards attribution */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
-          className="mt-6 text-sm"
-          style={{ color: '#888888' }}
-        >
-          Consulting through{' '}
-          <a
-            href="https://pcshards.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-bold hover:underline"
-            style={{ color: '#FF6B00' }}
+          {/* LEFT: text content */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
           >
-            PCShards
-          </a>
-        </motion.p>
-      </div>
+            {/* Available badge */}
+            <div
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium mb-8"
+              style={{ backgroundColor: '#FFFFFF', border: '1px solid #E0E0E0', color: '#555555' }}
+            >
+              <span
+                className="w-1.5 h-1.5 rounded-full animate-pulse"
+                style={{ backgroundColor: '#22C55E' }}
+              />
+              Available for Consulting
+            </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        animate={{ y: [0, 8, 0] }}
-        transition={{ repeat: Infinity, duration: 1.5 }}
-      >
-        <ChevronDown className="w-6 h-6" style={{ color: '#888888' }} />
-      </motion.div>
+            {/* Heading */}
+            <h1
+              className="font-black leading-tight tracking-tight mb-6"
+              style={{ fontSize: 'clamp(2rem, 4vw, 3.75rem)', color: '#0A0A0A' }}
+            >
+              Hey, I&apos;m Nathan —<br />
+              <span>CMMC &amp; NIST 800-171</span><br />
+              Compliance Expert
+            </h1>
+
+            {/* Sub */}
+            <p
+              className="text-lg mb-8 max-w-md leading-relaxed"
+              style={{ color: '#666666' }}
+            >
+              I help defense contractors achieve CMMC Level 2 compliance —
+              protecting CUI and keeping you in the contract game.
+            </p>
+
+            {/* CTAs */}
+            <div className="flex flex-wrap gap-3 mb-10">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-5 py-3 font-semibold text-sm rounded-full transition-all hover:opacity-80"
+                style={{ backgroundColor: '#0A0A0A', color: '#FFFFFF' }}
+              >
+                <Plus className="w-4 h-4" /> Get a Consultation
+              </Link>
+              <Link
+                href="/resources"
+                className="inline-flex items-center gap-2 px-5 py-3 font-semibold text-sm rounded-full border transition-all hover:bg-black hover:text-white hover:border-black"
+                style={{ borderColor: '#CCCCCC', color: '#0A0A0A', backgroundColor: 'transparent' }}
+              >
+                <Plus className="w-4 h-4" /> Free Resources
+              </Link>
+            </div>
+
+            {/* Social proof */}
+            <div className="flex items-center gap-3">
+              <div className="flex -space-x-2">
+                {['#0A0A0A', '#333333', '#666666', '#999999'].map((color, i) => (
+                  <div
+                    key={i}
+                    className="w-9 h-9 rounded-full flex items-center justify-center text-xs font-black text-white"
+                    style={{
+                      backgroundColor: color,
+                      border: '2px solid #EFEFEF',
+                    }}
+                  >
+                    {['NL', 'D', 'S', '+'][i]}
+                  </div>
+                ))}
+              </div>
+              <p className="text-sm" style={{ color: '#555555' }}>
+                Trusted by <strong style={{ color: '#0A0A0A' }}>50+</strong> defense contractors
+              </p>
+            </div>
+          </motion.div>
+
+          {/* RIGHT: photo card */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="relative flex justify-center"
+          >
+            {/* Main photo card */}
+            <div
+              className="relative rounded-3xl overflow-hidden w-full max-w-sm"
+              style={{
+                aspectRatio: '3/4',
+                backgroundColor: '#DDDDDD',
+              }}
+            >
+              {/* Photo */}
+              <div
+                className="absolute inset-0"
+                style={{
+                  backgroundImage: 'url(/headshot.jpg)',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center top',
+                }}
+              />
+              {/* Placeholder monogram if no photo */}
+              <div
+                className="absolute inset-0 flex items-center justify-center"
+                style={{ color: '#BBBBBB' }}
+              >
+                <span className="text-7xl font-black select-none">NL</span>
+              </div>
+
+              {/* Floating stats card at bottom */}
+              <div
+                className="absolute bottom-4 left-4 right-4 px-4 py-3 rounded-2xl flex justify-between items-center"
+                style={{
+                  backgroundColor: 'rgba(255,255,255,0.92)',
+                  backdropFilter: 'blur(12px)',
+                }}
+              >
+                <div className="text-center">
+                  <p className="text-xs mb-0.5" style={{ color: '#888888' }}>Experience</p>
+                  <p className="text-xl font-black leading-none" style={{ color: '#0A0A0A' }}>10+</p>
+                </div>
+                <div className="w-px h-8" style={{ backgroundColor: '#E5E5E5' }} />
+                <div className="text-center">
+                  <p className="text-xs mb-0.5" style={{ color: '#888888' }}>Clients</p>
+                  <p className="text-xl font-black leading-none" style={{ color: '#0A0A0A' }}>50+</p>
+                </div>
+                <div className="w-px h-8" style={{ backgroundColor: '#E5E5E5' }} />
+                <div className="text-center">
+                  <p className="text-xs mb-0.5" style={{ color: '#888888' }}>Via</p>
+                  <p className="text-sm font-bold leading-none" style={{ color: '#8C7A6B' }}>PCShards</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Spinning circular badge */}
+            <div
+              className="absolute -bottom-6 left-4 w-20 h-20"
+            >
+              <svg
+                viewBox="0 0 100 100"
+                className="w-full h-full animate-spin"
+                style={{ animationDuration: '10s' }}
+              >
+                <defs>
+                  <path
+                    id="circlePath"
+                    d="M 50,50 m -30,0 a 30,30 0 1,1 60,0 a 30,30 0 1,1 -60,0"
+                  />
+                </defs>
+                <text style={{ fontSize: '9.5px', fill: '#333333', fontWeight: 700, letterSpacing: '0.05em' }}>
+                  <textPath href="#circlePath">CMMC EXPERT • NIST 800-171 • </textPath>
+                </text>
+              </svg>
+              <div className="absolute inset-0 flex items-center justify-center">
+                <ArrowRight className="w-4 h-4" style={{ color: '#0A0A0A' }} />
+              </div>
+            </div>
+          </motion.div>
+
+        </div>
+      </div>
     </section>
   )
 }
