@@ -1,5 +1,5 @@
 'use client'
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 
@@ -18,6 +18,7 @@ const expertiseBars = [
 ]
 
 function ProgressBar({ label, pct, delay }: { label: string; pct: number; delay: number }) {
+  const reducedMotion = useReducedMotion()
   return (
     <div className="mb-4">
       <div className="flex justify-between mb-1.5">
@@ -31,10 +32,10 @@ function ProgressBar({ label, pct, delay }: { label: string; pct: number; delay:
         <motion.div
           className="h-full rounded-full"
           style={{ backgroundColor: '#274C77' }}
-          initial={{ width: 0 }}
+          initial={{ width: reducedMotion ? `${pct}%` : 0 }}
           whileInView={{ width: `${pct}%` }}
           viewport={{ once: true }}
-          transition={{ duration: 1, delay, ease: 'easeOut' }}
+          transition={reducedMotion ? { duration: 0 } : { duration: 1, delay, ease: 'easeOut' }}
         />
       </div>
     </div>
