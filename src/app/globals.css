@@ -4,8 +4,8 @@
 @theme {
   --color-bg: #0A0A0A;
   --color-surface: #111111;
-  --color-accent: #FF6B00;
-  --color-accent-hover: #FF8C33;
+  --color-accent: #8C7A6B;
+  --color-accent-hover: #6B5A50;
   --color-foreground: #F5F5F5;
   --color-muted: #888888;
   --color-border: #222222;
@@ -33,29 +33,29 @@
   }
 
   body {
-    background-color: #0A0A0A;
-    color: #F5F5F5;
+    background-color: #EFEFEF;
+    color: #0A0A0A;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   ::selection {
-    background-color: #FF6B00;
-    color: #0A0A0A;
+    background-color: #0A0A0A;
+    color: #FFFFFF;
   }
 
   ::-webkit-scrollbar {
     width: 6px;
   }
   ::-webkit-scrollbar-track {
-    background-color: #0A0A0A;
+    background-color: #EFEFEF;
   }
   ::-webkit-scrollbar-thumb {
-    background-color: #222222;
+    background-color: #CCCCCC;
     border-radius: 9999px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background-color: #FF6B00;
+    background-color: #8C7A6B;
   }
 }
 
@@ -64,15 +64,15 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background-color: #FF6B00;
-    color: #0A0A0A;
+    background-color: #0A0A0A;
+    color: #FFFFFF;
     font-weight: 700;
     padding: 0.75rem 1.5rem;
     transition: all 0.2s;
     cursor: pointer;
   }
   .btn-primary:hover {
-    background-color: #FF8C33;
+    background-color: #333333;
     transform: scale(1.05);
   }
   .btn-primary:active {
@@ -83,25 +83,27 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    border: 1px solid #FF6B00;
-    color: #FF6B00;
+    border: 1px solid #0A0A0A;
+    color: #0A0A0A;
     font-weight: 700;
     padding: 0.75rem 1.5rem;
     transition: all 0.2s;
     cursor: pointer;
   }
   .btn-outline:hover {
-    background-color: #FF6B00;
-    color: #0A0A0A;
+    background-color: #0A0A0A;
+    color: #FFFFFF;
   }
 
   .card {
-    background-color: #111111;
-    border: 1px solid #222222;
-    transition: border-color 0.2s;
+    background: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    border-radius: 1.5rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
   }
   .card:hover {
-    border-color: #FF6B00;
+    border-color: rgba(255, 107, 0, 0.4);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
   }
 
   .tag {
@@ -109,11 +111,12 @@
     font-size: 0.75rem;
     font-family: var(--font-mono-var), monospace;
     font-weight: 700;
-    padding: 0.25rem 0.5rem;
-    background-color: #222222;
-    color: #888888;
+    padding: 0.25rem 0.75rem;
+    background-color: #F0F0F0;
+    color: #555555;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    border-radius: 9999px;
   }
 
   .tag-accent {
@@ -122,8 +125,8 @@
     font-family: var(--font-mono-var), monospace;
     font-weight: 700;
     padding: 0.25rem 0.5rem;
-    background-color: #FF6B00;
-    color: #0A0A0A;
+    background-color: #0A0A0A;
+    color: #FFFFFF;
     text-transform: uppercase;
     letter-spacing: 0.05em;
   }
@@ -141,7 +144,7 @@
   .section-heading {
     font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 900;
-    color: #F5F5F5;
+    color: #0A0A0A;
     margin-bottom: 1rem;
     letter-spacing: -0.025em;
     line-height: 1.1;
@@ -151,7 +154,11 @@
     display: block;
     width: 3rem;
     height: 0.25rem;
-    background-color: #FF6B00;
+    background-color: #8C7A6B;
     margin-bottom: 2rem;
+  }
+
+  .section-light {
+    border-top: 1px solid #E5E5E5;
   }
 }
