@@ -34,24 +34,24 @@ function QuoteCard({
       viewport={{ once: true }}
       transition={{ delay }}
       className="flex flex-col rounded-2xl p-7"
-      style={{ backgroundColor: '#FFFFFF', border: '1px solid #D4DCE2', height: '100%' }}
+      style={{ backgroundColor: '#FFFFFF', border: '1px solid #E5E5E5', height: '100%' }}
     >
       <div className="flex items-center gap-3 mb-5">
         <div
           className="w-10 h-10 rounded-full flex items-center justify-center font-black text-sm text-white shrink-0"
-          style={{ backgroundColor: '#274C77' }}
+          style={{ backgroundColor: '#B82416' }}
         >
           {initial}
         </div>
         <div>
-          <p className="font-bold text-sm" style={{ color: '#0A0B0D' }}>{name}</p>
-          <p className="text-xs" style={{ color: '#8B8C89' }}>{title}</p>
+          <p className="font-bold text-sm" style={{ color: '#1A1A1A' }}>{name}</p>
+          <p className="text-xs" style={{ color: '#646464' }}>{title}</p>
         </div>
-        <span className="text-xs px-2 py-0.5 rounded-full ml-auto shrink-0" style={{ backgroundColor: '#EEF2F8', color: '#6096BA' }}>
+        <span className="text-xs px-2 py-0.5 rounded-full ml-auto shrink-0" style={{ backgroundColor: '#FEF4EE', color: '#B82416' }}>
           Customer story
         </span>
       </div>
-      <blockquote className="text-sm leading-relaxed flex-1" style={{ color: '#374151' }}>
+      <blockquote className="text-sm leading-relaxed flex-1" style={{ color: '#333333' }}>
         &ldquo;{quote}&rdquo;
       </blockquote>
     </motion.div>
@@ -63,17 +63,18 @@ export default function TestimonialsSection() {
     <section className="py-24 px-6" style={{ backgroundColor: '#FFFFFF' }}>
       <div className="max-w-6xl mx-auto">
         {/* Section divider */}
-        <div className="flex justify-between items-center pt-6 mb-12" style={{ borderTop: '1px solid #D4DCE2' }}>
+        <div className="flex justify-between items-center pt-6 mb-12" style={{ borderTop: '1px solid #E5E5E5' }}>
           <span className="text-xs uppercase tracking-widest font-medium text-gray-400">Testimonials</span>
           <span className="font-mono text-xs text-gray-300">07</span>
         </div>
 
         {/* Heading */}
         <div className="text-center mb-12">
-          <h2 className="font-black leading-tight" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', color: '#0A0B0D' }}>
+          <p className="section-label">Testimonials</p>
+          <h2 className="font-black leading-tight" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', color: '#1A1A1A' }}>
             What clients say
           </h2>
-          <p className="mt-3 text-base" style={{ color: '#6B7280' }}>
+          <p className="mt-3 text-base" style={{ color: '#646464' }}>
             Defense contractors who achieved compliance with Nathan&apos;s guidance.
           </p>
         </div>
@@ -92,7 +93,7 @@ export default function TestimonialsSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.1 }}
             className="rounded-2xl p-7 flex flex-col items-center justify-center text-center min-h-[160px]"
-            style={{ backgroundColor: '#274C77' }}
+            style={{ backgroundColor: '#B82416' }}
           >
             <p className="font-black leading-none mb-3" style={{ fontSize: 'clamp(3.5rem, 7vw, 5rem)', color: '#FFFFFF' }}>
               100%
