@@ -1,69 +1,58 @@
 import Link from 'next/link'
-import { ArrowRight, Mail, MapPin } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 
 export default function CTASection() {
+  const bars = [60, 80, 55, 90, 70, 95, 65, 100, 75, 110, 85, 130, 105, 150, 120, 170]
+
   return (
-    <section className="py-24 px-6" style={{ backgroundColor: '#0D1824' }}>
-      <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          {/* Left column */}
+    <section className="relative overflow-hidden py-24 px-6" style={{ backgroundColor: '#B82416' }}>
+      <div className="max-w-7xl mx-auto relative z-10">
+
+        {/* Top label */}
+        <p className="text-xs font-bold uppercase tracking-[0.15em] mb-3" style={{ color: 'rgba(255,255,255,0.6)' }}>
+          Start Your Compliance Journey Today
+        </p>
+        <p className="text-sm font-bold uppercase tracking-[0.12em] mb-8" style={{ color: 'rgba(255,255,255,0.8)' }}>
+          Simple. Secure. Assessment-ready.
+        </p>
+
+        {/* Main heading + CTA row */}
+        <div className="grid md:grid-cols-2 gap-12 items-end">
           <div>
             <h2
-              className="font-black leading-tight mb-6"
-              style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', color: '#FFFFFF' }}
+              className="font-black leading-tight mb-8 text-white"
+              style={{ fontSize: 'clamp(2rem, 4.5vw, 4rem)' }}
             >
-              Achieve CMMC compliance with confidence
+              Nathan offers expertise, clarity, and a proven path to CMMC certification.
             </h2>
-            <p className="text-base mb-8" style={{ color: 'rgba(255,255,255,0.55)' }}>
-              Whether you&apos;re starting your compliance journey or preparing for a C3PAO assessment,
-              Nathan provides the expertise and hands-on guidance to get you there.
-            </p>
-            <div className="mb-10">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 bg-white text-[#274C77] px-5 py-2.5 rounded-full font-semibold text-sm transition-opacity hover:opacity-80"
-              >
-                Get a Consultation <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-            <div className="space-y-3">
-              <a
-                href="mailto:nathan@pcshards.com"
-                className="flex items-center gap-3 text-sm transition-opacity hover:opacity-80"
-                style={{ color: 'rgba(255,255,255,0.65)' }}
-              >
-                <Mail className="w-4 h-4 shrink-0" style={{ color: '#6096BA' }} />
-                nathan@pcshards.com
-              </a>
-              <div className="flex items-center gap-3 text-sm" style={{ color: 'rgba(255,255,255,0.65)' }}>
-                <MapPin className="w-4 h-4 shrink-0" style={{ color: '#6096BA' }} />
-                Metro Detroit, MI
-              </div>
-            </div>
+            <Link href="/contact" className="btn-outline-white">
+              Get a Consultation Today <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
 
-          {/* Right column: decorative dot grid */}
-          <div className="hidden md:flex items-center justify-center" aria-hidden="true">
-            <div
-              className="w-full max-w-xs aspect-square rounded-3xl"
-              style={{
-                backgroundImage: 'radial-gradient(circle, rgba(96,150,186,0.35) 1px, transparent 1px)',
-                backgroundSize: '24px 24px',
-                border: '1px solid rgba(255,255,255,0.06)',
-              }}
-            />
+          {/* Bar chart decoration */}
+          <div className="flex items-end gap-2 h-40 justify-end" aria-hidden="true">
+            {bars.map((h, i) => (
+              <div
+                key={i}
+                className="w-1 shrink-0"
+                style={{ height: `${h}px`, backgroundColor: 'rgba(255,255,255,0.35)' }}
+              />
+            ))}
           </div>
         </div>
 
-        {/* Section divider at bottom */}
-        <div
-          className="flex justify-between items-center mt-16 pt-6"
-          style={{ borderTop: '1px solid rgba(255,255,255,0.12)' }}
-        >
-          <span className="text-xs uppercase tracking-widest font-medium" style={{ color: 'rgba(255,255,255,0.4)' }}>
-            Work with Nathan
+        {/* Bottom tagline */}
+        <div className="mt-12 pt-8 flex items-center gap-4" style={{ borderTop: '1px solid rgba(255,255,255,0.2)' }}>
+          <div
+            className="w-8 h-8 flex items-center justify-center text-white text-xs font-black shrink-0"
+            style={{ backgroundColor: 'rgba(255,255,255,0.2)' }}
+          >
+            NL
+          </div>
+          <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: 'rgba(255,255,255,0.6)' }}>
+            CMMC &amp; NIST 800-171 Consulting for Defense Contractors
           </span>
-          <span className="font-mono text-xs" style={{ color: 'rgba(255,255,255,0.2)' }}>06</span>
         </div>
       </div>
     </section>
