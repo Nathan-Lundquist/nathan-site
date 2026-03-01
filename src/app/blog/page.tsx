@@ -6,20 +6,20 @@ export default function BlogPage() {
   const posts = getBlogPosts()
 
   return (
-    <div style={{ backgroundColor: '#EFEFEF', minHeight: '100vh' }}>
+    <div style={{ backgroundColor: '#E7ECEF', minHeight: '100vh' }}>
       {/* Hero */}
-      <section className="pt-28 pb-16 px-6" style={{ backgroundColor: '#EFEFEF' }}>
+      <section className="pt-28 pb-16 px-6" style={{ backgroundColor: '#E7ECEF' }}>
         <div className="max-w-6xl mx-auto">
-          <p className="text-sm font-mono uppercase tracking-widest mb-4" style={{ color: '#999999' }}>
+          <p className="text-sm font-mono uppercase tracking-widest mb-4" style={{ color: '#8F96A9' }}>
             Insights
           </p>
           <h1
             className="font-black leading-tight mb-6"
-            style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', color: '#0A0A0A' }}
+            style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', color: '#4768FA' }}
           >
             Blog
           </h1>
-          <p className="text-lg max-w-2xl leading-relaxed" style={{ color: '#666666' }}>
+          <p className="text-lg max-w-2xl leading-relaxed" style={{ color: '#8F96A9' }}>
             CMMC news, NIST guidance, and cybersecurity insights for defense contractors.
           </p>
         </div>
@@ -29,25 +29,17 @@ export default function BlogPage() {
       <section className="py-16 px-6" style={{ backgroundColor: '#FFFFFF' }}>
         <div className="max-w-6xl mx-auto">
           {posts.length === 0 ? (
-            <p style={{ color: '#888888' }}>No posts yet. Check back soon.</p>
+            <p style={{ color: '#8F96A9' }}>No posts yet. Check back soon.</p>
           ) : (
             <div className="grid md:grid-cols-2 gap-6">
               {posts.map((post) => (
                 <Link
                   key={post.slug}
                   href={`/blog/${post.slug}`}
-                  className="group block rounded-2xl p-6 transition-all"
+                  className="group block rounded-2xl p-6 transition-all hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:border-black/40"
                   style={{
-                    backgroundColor: '#F9F9F9',
-                    border: '1px solid #E5E5E5',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = 'rgba(17,17,17,0.4)'
-                    e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.06)'
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = '#E5E5E5'
-                    e.currentTarget.style.boxShadow = 'none'
+                    backgroundColor: '#F0F5FA',
+                    border: '1px solid #D3D8E9',
                   }}
                 >
                   <div className="flex flex-wrap gap-2 mb-4">
@@ -62,16 +54,16 @@ export default function BlogPage() {
                     ))}
                   </div>
                   <h2
-                    className="font-black text-xl mb-2 transition-colors group-hover:text-[#111111]"
-                    style={{ color: '#111111' }}
+                    className="font-black text-xl mb-2 transition-colors group-hover:text-[#4768FA]"
+                    style={{ color: '#4768FA' }}
                   >
                     {post.title}
                   </h2>
-                  <p className="text-sm mb-4 leading-relaxed" style={{ color: '#666666' }}>
+                  <p className="text-sm mb-4 leading-relaxed" style={{ color: '#8F96A9' }}>
                     {post.description}
                   </p>
                   <div className="flex items-center justify-between">
-                    <p className="text-xs font-mono" style={{ color: '#999999' }}>
+                    <p className="text-xs font-mono" style={{ color: '#8F96A9' }}>
                       {new Date(post.date).toLocaleDateString('en-US', {
                         year: 'numeric',
                         month: 'long',
@@ -79,8 +71,8 @@ export default function BlogPage() {
                       })}
                     </p>
                     <span
-                      className="inline-flex items-center gap-1 text-xs font-semibold transition-colors group-hover:text-[#111111]"
-                      style={{ color: '#999999' }}
+                      className="inline-flex items-center gap-1 text-xs font-semibold transition-colors group-hover:text-[#4768FA]"
+                      style={{ color: '#8F96A9' }}
                     >
                       Read <ArrowRight className="w-3 h-3" />
                     </span>
