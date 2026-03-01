@@ -5,10 +5,10 @@ import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
 
 const pillars = [
-  { num: '01', label: 'Gap Analysis', active: false },
-  { num: '02', label: 'Remediation Planning', active: false },
-  { num: '03', label: 'Assessment Preparation', active: false },
-  { num: '04', label: 'Ongoing Compliance Support', active: true },
+  { num: '01', label: 'Security Assessment', active: false },
+  { num: '02', label: 'Risk Management', active: false },
+  { num: '03', label: 'Compliance Readiness', active: false },
+  { num: '04', label: 'Ongoing Security Support', active: true },
 ]
 
 export default function AboutSection() {
@@ -30,8 +30,8 @@ export default function AboutSection() {
             maxWidth: '900px',
           }}
         >
-          Nathan Lundquist is redefining how defense contractors approach
-          compliance. We believe security should be clear, achievable, and
+          Nathan Lundquist is redefining how organizations approach information
+          security. We believe security should be clear, achievable, and
           built to last.
         </motion.h2>
 
@@ -79,7 +79,7 @@ export default function AboutSection() {
             <div className="relative w-full overflow-hidden rounded-xl" style={{ aspectRatio: '3/4' }}>
               <Image
                 src="/headshot.jpg"
-                alt="Nathan Lundquist, CMMC consultant"
+                alt="Nathan Lundquist, information security consultant"
                 fill
                 className="object-cover object-top"
                 priority
