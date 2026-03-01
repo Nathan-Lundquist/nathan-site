@@ -1,158 +1,141 @@
 'use client'
 import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
-import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
 
-const tabs = [
-  {
-    number: '01',
-    label: 'Gap Analysis',
-    title: 'Identify every compliance gap',
-    description:
-      'We map your current environment against all 110 NIST SP 800-171 practices and CMMC Level 2 requirements. You get a clear, prioritized list of what needs to be addressed — no guesswork.',
-    bullets: ['CUI data flow mapping', 'Control-by-control assessment', 'Risk-ranked gap list'],
+const tabs = {
+  approach: {
+    label: 'APPROACH',
+    p1: 'Our approach puts your team in control from day one. We map every gap, build a practical remediation roadmap, and stand beside you through every assessment milestone.',
+    p2: "We don't just deliver documents — we build the understanding your team needs to maintain compliance long after we're gone.",
   },
-  {
-    number: '02',
-    label: 'Remediation Planning',
-    title: 'Build a roadmap you can actually execute',
-    description:
-      'Each gap gets a concrete remediation task with owner, timeline, and effort estimate. We help you build your System Security Plan (SSP) and Plan of Action & Milestones (POAM) simultaneously.',
-    bullets: ['SSP drafting assistance', 'POAM creation & tracking', 'Technical control guidance'],
+  results: {
+    label: 'RESULTS',
+    p1: 'Defense contractors who work with Nathan achieve CMMC Level 2 certification without surprise findings or failed assessments.',
+    p2: 'Our structured process eliminates guesswork and replaces it with a repeatable system you can own and sustain.',
   },
-  {
-    number: '03',
-    label: 'Assessment Prep',
-    title: 'Walk into your C3PAO audit confident',
-    description:
-      'We conduct a final pre-assessment review simulating what your C3PAO will examine. Evidence collection, interviewer prep, and last-mile remediation — so there are no surprises.',
-    bullets: ['Mock assessment walkthrough', 'Evidence package review', 'Assessor interview prep'],
-  },
+}
+
+const stats = [
+  { num: '5+', label: 'Years Experience' },
+  { num: '50+', label: 'Clients Served' },
+  { num: '100%', label: 'First-try Pass Rate' },
 ]
 
 export default function ApproachSection() {
-  const [active, setActive] = useState(0)
+  const [active, setActive] = useState<'approach' | 'results'>('approach')
   const reducedMotion = useReducedMotion()
-
-  function handleKeyDown(e: React.KeyboardEvent) {
-    if (e.key === 'ArrowDown') {
-      e.preventDefault()
-      setActive((prev) => (prev + 1) % tabs.length)
-    } else if (e.key === 'ArrowUp') {
-      e.preventDefault()
-      setActive((prev) => (prev - 1 + tabs.length) % tabs.length)
-    }
-  }
+  const tab = tabs[active]
 
   return (
     <section className="py-24 px-6" style={{ backgroundColor: '#FFFFFF' }}>
-      <div className="max-w-6xl mx-auto">
-        {/* Section divider */}
-        <div className="flex justify-between items-center pt-6 mb-12" style={{ borderTop: '1px solid #D4DCE2' }}>
-          <span className="text-xs uppercase tracking-widest font-medium text-gray-400">Our approach</span>
-          <span className="font-mono text-xs text-gray-300">03</span>
-        </div>
-
+      <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-16 items-start">
-          {/* Left column */}
-          <div>
-            <h2
-              className="font-black leading-tight mb-4"
-              style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)', color: '#0A0B0D' }}
-            >
-              Built for defense contractors
-            </h2>
-            <p className="text-base mb-8" style={{ color: '#6B7280' }}>
-              A structured, no-guesswork path from compliance gaps to assessment-ready.
-            </p>
-            <div className="mb-10">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 bg-[#274C77] text-white px-5 py-2.5 rounded-full font-semibold text-sm transition-opacity hover:opacity-80"
-              >
-                Get a Consultation <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
 
-            {/* Tab list */}
-            <div
-              className="space-y-1"
-              role="tablist"
-              aria-label="Approach steps"
-              onKeyDown={handleKeyDown}
+          {/* Left */}
+          <div>
+            <p className="section-label">Our Approach</p>
+            <motion.h2
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="font-black leading-tight mb-8"
+              style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', color: '#1A1A1A' }}
             >
-              {tabs.map((tab, i) => (
+              We envision compliance as clear, systematic, and achievable.
+            </motion.h2>
+
+            {/* Toggle tabs */}
+            <div
+              className="flex items-center gap-6 mb-8"
+              role="tablist"
+              aria-label="Approach tabs"
+            >
+              {(['approach', 'results'] as const).map((key) => (
                 <button
-                  key={tab.number}
+                  key={key}
                   role="tab"
-                  aria-selected={active === i}
-                  aria-controls={`approach-panel-${tab.number}`}
-                  id={`approach-tab-${tab.number}`}
-                  onClick={() => setActive(i)}
-                  className="w-full text-left px-4 py-4 rounded-lg transition-all"
-                  style={{
-                    borderLeft: active === i ? '3px solid #274C77' : '3px solid transparent',
-                    backgroundColor: active === i ? '#F0F5FA' : 'transparent',
-                  }}
+                  aria-selected={active === key}
+                  onClick={() => setActive(key)}
+                  className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.15em] transition-colors"
+                  style={{ color: active === key ? '#B82416' : '#646464' }}
                 >
-                  <div className="flex items-center gap-3">
-                    <span className="font-mono text-xs" style={{ color: active === i ? '#6096BA' : '#9CA3AF' }}>
-                      {tab.number}
-                    </span>
+                  {/* Toggle pill */}
+                  <span
+                    className="w-10 h-5 rounded-full flex items-center transition-colors shrink-0"
+                    style={{
+                      backgroundColor: active === key ? '#B82416' : '#E5E5E5',
+                      padding: '2px',
+                    }}
+                  >
                     <span
-                      className="font-semibold text-sm"
-                      style={{ color: active === i ? '#0A0B0D' : '#9CA3AF' }}
-                    >
-                      {tab.label}
-                    </span>
-                    {active === i && (
-                      <ArrowRight className="w-4 h-4 ml-auto" style={{ color: '#274C77' }} />
-                    )}
-                  </div>
+                      className="w-4 h-4 rounded-full bg-white transition-transform"
+                      style={{ transform: active === key ? 'translateX(20px)' : 'translateX(0)' }}
+                    />
+                  </span>
+                  {tabs[key].label}
                 </button>
               ))}
             </div>
+
+            {/* Tab content */}
+            <div
+              role="tabpanel"
+              aria-label={tab.label}
+              tabIndex={0}
+              className="mb-8"
+            >
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={active}
+                  initial={{ opacity: 0, y: reducedMotion ? 0 : 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: reducedMotion ? 0 : -12 }}
+                  transition={{ duration: 0.25 }}
+                >
+                  <p className="text-base leading-relaxed mb-4" style={{ color: '#333333' }}>
+                    {tab.p1}
+                  </p>
+                  <p className="text-base leading-relaxed" style={{ color: '#646464' }}>
+                    {tab.p2}
+                  </p>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            {/* Stats */}
+            <div className="pt-8" style={{ borderTop: '1px solid #E5E5E5' }}>
+              <div className="grid grid-cols-3 gap-6">
+                {stats.map((s) => (
+                  <div key={s.num}>
+                    <p
+                      className="font-black leading-none mb-1"
+                      style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', color: '#B82416' }}
+                    >
+                      {s.num}
+                    </p>
+                    <p className="text-xs leading-snug" style={{ color: '#646464' }}>
+                      {s.label}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
 
-          {/* Right column: content panel */}
-          {/* minHeight prevents layout shift during AnimatePresence exit */}
-          <div
-            role="tabpanel"
-            tabIndex={0}
-            id={`approach-panel-${tabs[active].number}`}
-            aria-labelledby={`approach-tab-${tabs[active].number}`}
-            className="rounded-2xl p-8"
-            style={{ backgroundColor: '#F0F5FA', minHeight: 320 }}
-          >
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={active}
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: reducedMotion ? 0 : 0.25 }}
-              >
-                <p className="font-mono text-xs mb-3" style={{ color: '#6096BA' }}>
-                  {tabs[active].number}
-                </p>
-                <h3 className="font-black text-xl mb-3" style={{ color: '#0A0B0D' }}>
-                  {tabs[active].title}
-                </h3>
-                <p className="text-sm leading-relaxed mb-6" style={{ color: '#6B7280' }}>
-                  {tabs[active].description}
-                </p>
-                <ul className="space-y-2">
-                  {tabs[active].bullets.map((b) => (
-                    <li key={b} className="flex items-center gap-2 text-sm font-medium" style={{ color: '#274C77' }}>
-                      <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: '#6096BA' }} />
-                      {b}
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            </AnimatePresence>
-          </div>
+          {/* Right — headshot on cream */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.97 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="overflow-hidden"
+            style={{
+              aspectRatio: '3/4',
+              backgroundColor: '#FEF4EE',
+              backgroundImage: 'url(/headshot.jpg)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center top',
+            }}
+          />
         </div>
       </div>
     </section>
