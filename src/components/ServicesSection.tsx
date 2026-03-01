@@ -1,94 +1,124 @@
+'use client'
+import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { ArrowRight, Shield, FileSearch, Map as MapIcon, Lock, CheckCircle } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 
 const cards = [
   {
-    icon: Shield,
-    title: 'CMMC L2 Assessment Prep',
-    bullets: ['Readiness gap analysis', 'Remediation roadmap', 'Pre-assessment review'],
+    type: 'photo' as const,
+    gradient: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)',
+    title: 'Gap Analysis & Readiness',
+    href: '/services',
   },
   {
-    icon: FileSearch,
-    title: 'NIST 800-171 Gap Analysis',
-    bullets: ['All 110 practices', 'CUI environment scope', 'Prioritized findings'],
+    type: 'photo' as const,
+    gradient: 'linear-gradient(135deg, #0d1b2a 0%, #1b2838 50%, #243447 100%)',
+    title: 'NIST 800-171 & SSP',
+    href: '/services',
   },
   {
-    icon: MapIcon,
-    title: 'Compliance Roadmap',
-    bullets: ['SSP development', 'POAM creation', 'Control implementation'],
-  },
-  {
-    icon: Lock,
-    title: 'CUI Program Support',
-    bullets: ['CUI identification', 'Handling procedures', 'Training & docs'],
+    type: 'red' as const,
+    gradient: '',
+    title: 'Fast & results-driven',
+    description: 'Achieve CMMC Level 2 certification without the guesswork. Nathan delivers a clear path from current state to assessment-ready.',
+    href: '/contact',
   },
 ]
 
 export default function ServicesSection() {
   return (
-    <section className="py-24 px-6" style={{ backgroundColor: '#0D1824' }}>
-      <div className="max-w-6xl mx-auto">
-        {/* Section divider */}
-        <div
-          className="flex justify-between items-center pt-6 mb-12"
-          style={{ borderTop: '1px solid rgba(255,255,255,0.12)' }}
-        >
-          <span className="text-xs uppercase tracking-widest font-medium" style={{ color: 'rgba(255,255,255,0.4)' }}>
-            Our services
-          </span>
-          <span className="font-mono text-xs" style={{ color: 'rgba(255,255,255,0.2)' }}>02</span>
-        </div>
+    <section className="py-24 px-6" style={{ backgroundColor: '#FFFFFF' }}>
+      <div className="max-w-7xl mx-auto">
 
-        {/* Heading */}
-        <div className="text-center mb-12">
-          <h2 className="font-black leading-tight mb-4" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', color: '#FFFFFF' }}>
-            Complete compliance solutions
-          </h2>
-          <p className="text-base max-w-xl mx-auto" style={{ color: 'rgba(255,255,255,0.55)' }}>
-            From initial gap analysis to assessment day — everything you need to achieve CMMC Level 2 certification.
-          </p>
-        </div>
-
-        {/* 2×2 card grid */}
-        <div className="grid md:grid-cols-2 gap-6 mb-10">
-          {cards.map((card) => {
-            const Icon = card.icon
-            return (
-              <div
-                key={card.title}
-                className="rounded-2xl p-8"
-                style={{
-                  backgroundColor: 'rgba(255,255,255,0.05)',
-                  border: '1px solid rgba(255,255,255,0.1)',
-                }}
-              >
-                <div className="mb-5">
-                  <Icon className="w-7 h-7" style={{ color: '#6096BA' }} />
-                </div>
-                <h3 className="font-bold text-lg mb-4" style={{ color: '#FFFFFF' }}>
-                  {card.title}
-                </h3>
-                <ul className="space-y-2">
-                  {card.bullets.map((b) => (
-                    <li key={b} className="flex items-center gap-2 text-sm" style={{ color: 'rgba(255,255,255,0.65)' }}>
-                      <CheckCircle className="w-4 h-4 shrink-0" style={{ color: '#6096BA' }} />
-                      {b}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )
-          })}
-        </div>
-
-        {/* CTA */}
-        <div className="text-center">
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 bg-white text-[#274C77] px-5 py-2.5 rounded-full font-semibold text-sm transition-opacity hover:opacity-80"
-          >
-            Get a Consultation <ArrowRight className="w-4 h-4" />
+        {/* Header row */}
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+          <div>
+            <p className="section-label">Services</p>
+            <motion.h2
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="font-black leading-tight"
+              style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)', color: '#1A1A1A' }}
+            >
+              The compliance expertise<br />you need, fast.
+            </motion.h2>
+          </div>
+          <Link href="/services" className="btn-secondary shrink-0">
+            All Services
           </Link>
+        </div>
+
+        {/* Three cards */}
+        <div className="grid md:grid-cols-3 gap-4">
+          {cards.map((card, i) => (
+            <motion.div
+              key={card.title}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+            >
+              <Link
+                href={card.href}
+                className="block relative overflow-hidden group"
+                style={{ aspectRatio: '3/4' }}
+              >
+                {card.type === 'photo' ? (
+                  <>
+                    {/* Dark gradient bg */}
+                    <div
+                      className="absolute inset-0"
+                      style={{ background: card.gradient }}
+                    />
+                    {/* Subtle dot overlay */}
+                    <div
+                      className="absolute inset-0 opacity-10"
+                      style={{
+                        backgroundImage: 'radial-gradient(circle, #ffffff 1px, transparent 1px)',
+                        backgroundSize: '20px 20px',
+                      }}
+                    />
+                    {/* Bottom content */}
+                    <div className="absolute bottom-0 left-0 right-0 p-6 flex items-end justify-between">
+                      <span className="text-white font-bold text-lg leading-tight">
+                        {card.title}
+                      </span>
+                      <div
+                        className="w-10 h-10 flex items-center justify-center shrink-0 ml-3"
+                        style={{ backgroundColor: '#FFFFFF' }}
+                      >
+                        <ArrowRight className="w-4 h-4" style={{ color: '#B82416' }} />
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    {/* Red card */}
+                    <div className="absolute inset-0" style={{ backgroundColor: '#B82416' }} />
+                    <div className="absolute inset-0 p-6 flex flex-col justify-between">
+                      <h3 className="text-white font-black leading-tight" style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)' }}>
+                        {card.title}
+                      </h3>
+                      <div>
+                        <p className="text-white/80 text-sm leading-relaxed mb-6">
+                          {card.description}
+                        </p>
+                        <div className="flex justify-end">
+                          <div
+                            className="w-10 h-10 flex items-center justify-center"
+                            style={{ backgroundColor: '#FFFFFF' }}
+                          >
+                            <ArrowRight className="w-4 h-4" style={{ color: '#B82416' }} />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                )}
+              </Link>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
