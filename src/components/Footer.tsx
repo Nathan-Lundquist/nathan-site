@@ -1,117 +1,126 @@
+'use client'
 import Link from 'next/link'
-import { Shield, Linkedin, Github } from 'lucide-react'
-
-const navLinks = [
-  { href: '/about', label: 'About' },
-  { href: '/services', label: 'Services' },
-  { href: '/blog', label: 'Blog' },
-  { href: '/resources', label: 'Resources' },
-  { href: '/contact', label: 'Contact' },
-]
+import { ArrowRight } from 'lucide-react'
 
 export default function Footer() {
   return (
-    <footer
-      style={{
-        borderTop: '1px solid #222222',
-        backgroundColor: '#111111',
-      }}
-    >
-      <div className="max-w-6xl mx-auto px-4 py-12">
-        <div className="flex flex-col md:flex-row justify-between gap-8">
-          {/* Brand */}
+    <footer className="px-6 pt-20 pb-10" style={{ backgroundColor: '#FFFFFF', borderTop: '1px solid #E5E5E5' }}>
+      <div className="max-w-7xl mx-auto">
+
+        {/* Top grid */}
+        <div className="grid md:grid-cols-2 gap-16 mb-16">
+
+          {/* Left */}
           <div>
-            <div className="flex items-center gap-2 font-black text-lg mb-3">
-              <Shield className="w-5 h-5" style={{ color: '#444444' }} />
-              <span>
-                NATHAN<span style={{ color: '#8C7A6B' }}>.</span>LUNDQUIST
-              </span>
-            </div>
-            <p
-              className="text-sm max-w-xs leading-relaxed"
-              style={{ color: '#888888' }}
-            >
-              CMMC L2 &amp; NIST 800-171 compliance consultant. Helping
-              defense contractors protect CUI and achieve compliance.
-            </p>
-            <div
-              className="flex items-center gap-1 mt-3 text-sm"
-              style={{ color: '#888888' }}
-            >
-              <span>Consulting via</span>
-              <a
-                href="https://pcshards.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-bold hover:underline"
-                style={{ color: '#8C7A6B' }}
+            {/* Logo */}
+            <Link href="/" className="inline-flex items-center gap-2 mb-8">
+              <span
+                className="w-8 h-8 flex items-center justify-center text-white text-xs font-black"
+                style={{ backgroundColor: '#B82416' }}
               >
-                PCShards
-              </a>
+                NL
+              </span>
+              <span className="font-bold text-sm" style={{ color: '#1A1A1A' }}>Nathan Lundquist</span>
+            </Link>
+
+            <h3
+              className="font-black leading-tight mb-8"
+              style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', color: '#1A1A1A', maxWidth: '420px' }}
+            >
+              Work with Nathan Lundquist and achieve CMMC compliance with confidence.
+            </h3>
+
+            <Link href="/contact" className="btn-primary mb-12 w-fit">
+              Get a Consultation <ArrowRight className="w-4 h-4" />
+            </Link>
+
+            <div className="flex flex-col gap-3 mt-8">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: '#646464' }}>Email</p>
+                <a href="mailto:nathan@pcshards.com" className="text-sm font-medium underline" style={{ color: '#1A1A1A' }}>
+                  nathan@pcshards.com
+                </a>
+              </div>
+              <div>
+                <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: '#646464' }}>Location</p>
+                <p className="text-sm font-medium" style={{ color: '#1A1A1A' }}>Metro Detroit, MI</p>
+              </div>
             </div>
           </div>
 
-          {/* Links */}
-          <div className="flex gap-16">
+          {/* Right */}
+          <div className="flex flex-col gap-10">
+            {/* Newsletter */}
             <div>
-              <p
-                className="font-bold text-xs uppercase tracking-widest mb-4"
-                style={{ color: '#888888' }}
-              >
-                Navigation
-              </p>
-              {navLinks.map((l) => (
-                <Link
-                  key={l.href}
-                  href={l.href}
-                  className="block text-sm mb-2 transition-colors hover:text-accent"
-                  style={{ color: '#888888' }}
-                >
-                  {l.label}
-                </Link>
-              ))}
+              <h4 className="font-bold text-lg mb-4" style={{ color: '#1A1A1A' }}>
+                Subscribe to compliance insights.
+              </h4>
+              <form className="flex gap-0" onSubmit={(e) => e.preventDefault()}>
+                <input
+                  type="email"
+                  placeholder="Email Address"
+                  className="flex-1 px-0 py-3 text-sm outline-none bg-transparent"
+                  style={{ borderBottom: '1px solid #1A1A1A', color: '#1A1A1A' }}
+                />
+                <button type="submit" className="btn-secondary shrink-0 ml-4">
+                  Subscribe
+                </button>
+              </form>
             </div>
-            <div>
-              <p
-                className="font-bold text-xs uppercase tracking-widest mb-4"
-                style={{ color: '#888888' }}
-              >
-                Connect
-              </p>
-              <a
-                href="https://linkedin.com/in/nathanlundquist"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm mb-3 transition-colors"
-                style={{ color: '#888888' }}
-              >
-                <Linkedin className="w-4 h-4" style={{ color: '#444444' }} />
-                LinkedIn
-              </a>
-              <a
-                href="https://github.com/Nathan-Lundquist"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm transition-colors"
-                style={{ color: '#888888' }}
-              >
-                <Github className="w-4 h-4" style={{ color: '#444444' }} />
-                GitHub
-              </a>
+
+            {/* Nav columns */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: '#1A1A1A' }}>Company</p>
+                <div className="flex flex-col gap-2">
+                  {['About', 'Resources', 'Blog'].map((l) => (
+                    <Link key={l} href={`/${l.toLowerCase()}`} className="text-sm transition-colors hover:text-[#B82416]" style={{ color: '#646464' }}>
+                      {l}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: '#1A1A1A' }}>Services</p>
+                <div className="flex flex-col gap-2">
+                  {['CMMC L2 Prep', 'NIST Gap Analysis', 'SSP Development', 'CUI Support'].map((l) => (
+                    <Link key={l} href="/services" className="text-sm transition-colors hover:text-[#B82416]" style={{ color: '#646464' }}>
+                      {l}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: '#1A1A1A' }}>Support</p>
+                <div className="flex flex-col gap-2">
+                  {[['FAQ', '/resources'], ['Contact', '/contact'], ['Legal', '/']].map(([l, h]) => (
+                    <Link key={l} href={h} className="text-sm transition-colors hover:text-[#B82416]" style={{ color: '#646464' }}>
+                      {l}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: '#1A1A1A' }}>Social</p>
+                <div className="flex flex-col gap-2">
+                  {[['LinkedIn', 'https://linkedin.com'], ['Twitter / X', 'https://x.com'], ['GitHub', 'https://github.com']].map(([l, h]) => (
+                    <a key={l} href={h} target="_blank" rel="noopener noreferrer" className="text-sm transition-colors hover:text-[#B82416]" style={{ color: '#646464' }}>
+                      {l}
+                    </a>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Bottom bar */}
         <div
-          className="mt-12 pt-6 flex flex-col md:flex-row justify-between gap-2 text-xs"
-          style={{
-            borderTop: '1px solid #222222',
-            color: '#888888',
-          }}
+          className="flex flex-col md:flex-row md:items-center justify-between gap-3 pt-8 text-xs"
+          style={{ borderTop: '1px solid #E5E5E5', color: '#646464' }}
         >
-          <p>© {new Date().getFullYear()} Nathan Lundquist. All rights reserved.</p>
-          <p>Built with Next.js · Deployed on Vercel</p>
+          <p>© Nathan Lundquist. All Rights Reserved.</p>
+          <p>via <span className="font-semibold" style={{ color: '#1A1A1A' }}>PCShards</span></p>
         </div>
       </div>
     </footer>
