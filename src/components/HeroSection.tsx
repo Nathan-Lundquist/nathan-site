@@ -83,7 +83,7 @@ export default function HeroSection() {
               <div className="flex -space-x-2">
                 {(['#274C77', '#6096BA', '#A3CEF1', '#8B8C89'] as const).map((color, i) => (
                   <div
-                    key={i}
+                    key={color}
                     className="w-9 h-9 rounded-full flex items-center justify-center text-xs font-black text-white"
                     style={{ backgroundColor: color, border: '2px solid #F3F4F6' }}
                   >

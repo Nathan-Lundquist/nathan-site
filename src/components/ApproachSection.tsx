@@ -119,6 +119,7 @@ export default function ApproachSection() {
           {/* minHeight prevents layout shift during AnimatePresence exit */}
           <div
             role="tabpanel"
+            tabIndex={0}
             id={`approach-panel-${tabs[active].number}`}
             aria-labelledby={`approach-tab-${tabs[active].number}`}
             className="rounded-2xl p-8"

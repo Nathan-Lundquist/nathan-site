@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect, useCallback } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 
@@ -27,6 +27,7 @@ const steps = [
 
 export default function ProcessSection() {
   const [active, setActive] = useState(0)
+  const reducedMotion = useReducedMotion()
 
   // Restart interval when active changes (handles both auto and manual navigation)
   useEffect(() => {
@@ -89,7 +90,7 @@ export default function ProcessSection() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.35 }}
+                transition={{ duration: reducedMotion ? 0 : 0.35 }}
               >
                 <p className="font-mono text-xs mb-3" style={{ color: '#6096BA' }}>
                   {steps[active].label}
