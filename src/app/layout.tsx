@@ -12,12 +12,12 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 export const metadata: Metadata = {
-  title: 'Nathan Lundquist — CMMC & NIST 800-171 Consultant',
+  title: 'Nathan Lundquist — Information Security Consultant',
   description:
-    'CMMC Level 2 and NIST 800-171 compliance consulting. Helping defense contractors protect CUI and achieve compliance through PCShards.',
+    'Information security consulting for SMBs and enterprises. Security assessments, compliance readiness (SOC 2, ISO 27001, NIST CSF, HIPAA), and risk management.',
   openGraph: {
-    title: 'Nathan Lundquist — CMMC & NIST 800-171 Consultant',
-    description: 'Cybersecurity compliance consulting for defense contractors handling CUI.',
+    title: 'Nathan Lundquist — Information Security Consultant',
+    description: 'Information security consulting for SMBs and enterprises. Security assessments, compliance readiness, and risk management.',
     type: 'website',
   },
 }
