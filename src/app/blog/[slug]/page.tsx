@@ -34,12 +34,12 @@ export default async function BlogPostPage({
   return (
     <div style={{ backgroundColor: '#FFFFFF', minHeight: '100vh' }}>
       {/* Header */}
-      <section className="pt-28 pb-12 px-6" style={{ backgroundColor: '#E7ECEF' }}>
+      <section className="pt-28 pb-12 px-6" style={{ backgroundColor: '#E8F4FD' }}>
         <div className="max-w-3xl mx-auto">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-sm mb-8 transition-colors hover:text-[#4768FA]"
-            style={{ color: '#888888' }}
+            className="inline-flex items-center gap-2 text-sm mb-8 transition-colors hover:text-[#006FC6]"
+            style={{ color: '#646464' }}
           >
             <ArrowLeft className="w-4 h-4" /> Back to Blog
           </Link>
@@ -48,8 +48,8 @@ export default async function BlogPostPage({
             {post.tags.map((tag) => (
               <span
                 key={tag}
-                className="text-xs font-mono font-bold uppercase tracking-wider px-3 py-1 rounded-full"
-                style={{ backgroundColor: '#F0F0F0', color: '#555555' }}
+                className="text-xs font-bold uppercase tracking-wider px-3 py-1"
+                style={{ backgroundColor: '#E8F4FD', color: '#006FC6', border: '1px solid #B3D7F5' }}
               >
                 {tag}
               </span>
@@ -60,13 +60,13 @@ export default async function BlogPostPage({
             className="font-bold mb-4 leading-tight"
             style={{
               fontSize: 'clamp(1.75rem, 4vw, 2.75rem)',
-              color: '#4768FA',
+              color: '#1A1A1A',
             }}
           >
             {post.title}
           </h1>
 
-          <p className="font-mono text-sm" style={{ color: '#888888' }}>
+          <p className="text-sm" style={{ color: '#646464' }}>
             {new Date(post.date).toLocaleDateString('en-US', {
               year: 'numeric',
               month: 'long',
@@ -83,14 +83,14 @@ export default async function BlogPostPage({
             className="prose max-w-none"
             style={
               {
-                '--tw-prose-body': '#444444',
-                '--tw-prose-headings': '#4768FA',
-                '--tw-prose-links': '#6B84FB',
-                '--tw-prose-bold': '#4768FA',
-                '--tw-prose-code': '#6B84FB',
+                '--tw-prose-body': '#333333',
+                '--tw-prose-headings': '#1A1A1A',
+                '--tw-prose-links': '#006FC6',
+                '--tw-prose-bold': '#1A1A1A',
+                '--tw-prose-code': '#006FC6',
                 '--tw-prose-hr': '#E5E5E5',
-                '--tw-prose-quotes': '#555555',
-                '--tw-prose-quote-borders': '#6B84FB',
+                '--tw-prose-quotes': '#333333',
+                '--tw-prose-quote-borders': '#006FC6',
               } as React.CSSProperties
             }
           >
@@ -99,19 +99,19 @@ export default async function BlogPostPage({
 
           {/* CTA */}
           <div
-            className="mt-16 rounded-3xl p-10 text-center"
-            style={{ backgroundColor: '#4768FA' }}
+            className="mt-16 p-10 text-center"
+            style={{ backgroundColor: '#006FC6' }}
           >
             <h2 className="font-bold text-xl mb-2" style={{ color: '#FFFFFF' }}>
-              Need Help with Compliance?
+              Ready to strengthen your security posture?
             </h2>
-            <p className="text-sm mb-6" style={{ color: '#888888' }}>
-              Get personalized guidance for your specific environment.
+            <p className="text-sm mb-6" style={{ color: 'rgba(255,255,255,0.75)' }}>
+              Get personalized guidance tailored to your specific environment and compliance needs.
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 font-semibold px-5 py-2.5 rounded-full text-sm"
-              style={{ backgroundColor: '#FFFFFF', color: '#4768FA' }}
+              className="inline-flex items-center gap-2 font-bold text-sm px-6 py-3"
+              style={{ backgroundColor: '#FFFFFF', color: '#006FC6' }}
             >
               Schedule a Consultation <ArrowRight className="w-4 h-4" />
             </Link>

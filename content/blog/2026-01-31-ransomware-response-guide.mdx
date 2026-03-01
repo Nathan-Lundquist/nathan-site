@@ -1,0 +1,142 @@
+---
+title: "Ransomware: What to Do Before, During, and After an Attack"
+date: "2026-01-31"
+description: "Ransomware hit 59% of organizations in 2024. The companies that recover fastest share one thing in common: they planned before it happened. Here's the complete guide."
+tags: ["Ransomware", "Incident Response", "Security"]
+---
+
+The call comes in at 6:45 a.m. Someone's computer shows a red screen with a demand for $180,000 in Bitcoin. The network drives aren't responding. Your accounting system won't open.
+
+In the first 30 minutes after a ransomware attack, most organizations make decisions that determine whether they pay the ransom, how long they're down, and whether regulators get involved. Almost none of those organizations had a plan.
+
+Here's what you need to know — before, during, and after.
+
+---
+
+## Before: Building Ransomware Resilience
+
+### Backups That Actually Survive the Attack
+
+The ransomware playbook has evolved. Modern strains spend days or weeks inside your network before encrypting — specifically hunting for and deleting or encrypting your backups first.
+
+A backup strategy that survives a modern ransomware attack requires:
+
+**3-2-1-1 Rule:**
+- 3 copies of data
+- 2 different storage types (e.g., local NAS and cloud)
+- 1 offsite copy
+- 1 immutable/air-gapped copy (cannot be modified or deleted by ransomware)
+
+**Critical practices:**
+- Test your restoration process quarterly — not just whether the backup exists, but whether you can actually restore from it within your acceptable recovery time
+- Maintain offsite backups at a "snapshot" interval so ransomware can't reach back and corrupt them
+- Protect your backup credentials separately from your primary environment
+
+### Network Segmentation
+
+If ransomware enters on an employee laptop, how far can it spread? On a flat network (where everything can talk to everything), the answer is: everywhere.
+
+Network segmentation limits the blast radius:
+- Separate your servers from employee workstations
+- Isolate critical systems (financial, HR, customer data) into their own segments
+- Require separate authentication to cross segment boundaries
+
+### Endpoint Detection and Response (EDR)
+
+EDR tools detect ransomware behavior — the characteristic pattern of rapidly encrypting files — before it completes. A properly configured EDR can automatically isolate an infected machine within seconds of detecting the pattern.
+
+This is why EDR is now required by cyber insurers. It's not bureaucratic box-checking — it's the control that limits a ransomware incident to one machine instead of the entire network.
+
+### Incident Response Plan
+
+Write the plan before you need it. At minimum, your IR plan should document:
+- Who gets called first (IT, legal, insurance broker, executives)
+- What are the first 10 steps (don't turn off infected machines — preserve forensic evidence)
+- When do you engage external incident response support?
+- When and how do you notify customers, regulators, or law enforcement?
+
+---
+
+## During: The First 24 Hours
+
+### Step 1: Don't Panic-Reboot
+
+The instinct is to turn everything off immediately. Resist it. Rebooting may destroy forensic evidence and trigger additional payload delivery. **Only power off systems that are actively encrypting files and haven't yet been fully encrypted.**
+
+### Step 2: Contain — Don't Cure
+
+Immediately isolate infected systems from the network by **unplugging the network cable** (not just disabling Wi-Fi — modern malware can re-enable it). Do not delete anything.
+
+Identify what is still clean and segment it off. Your unaffected systems need to stay that way.
+
+### Step 3: Call Your Incident Response Team
+
+This is not the moment to figure things out yourself. Call your cyber insurance carrier — most policies include 24/7 incident response hotline access. Your insurer will deploy (or have you retain) a forensic IR firm.
+
+**Call your attorney before calling law enforcement.** Attorney-client privilege may protect the forensic report and incident details from regulatory discovery.
+
+### Step 4: Preserve Evidence
+
+- Take photographs of ransom notes displayed on screens
+- Preserve memory (RAM) from affected machines if technically possible
+- Do not reimage machines before forensics are complete
+
+### Step 5: Assess What Was Affected
+
+The forensic team will determine:
+- What data was accessed or exfiltrated (not just encrypted — many attackers steal data first)
+- The attack vector (how did they get in?)
+- Whether the attacker still has access
+
+### Do You Pay the Ransom?
+
+This is more complex than it sounds. Things to know:
+
+- **Paying doesn't guarantee recovery** — About 54% of companies that pay don't recover all their data
+- **It may be illegal** — Paying ransomware groups on the OFAC sanctions list is a federal violation; your IR team or attorney must confirm the group's status before payment
+- **It funds future attacks** — Both yours and others'
+- **Cyber insurance may cover it** — But only with proper documentation and insurer pre-approval
+
+In many cases, organizations with solid, tested backups don't need to pay. Organizations without backups often have no practical choice.
+
+---
+
+## After: Recovery and Lessons Learned
+
+### Full Rebuild, Not Partial Patch
+
+Once ransomware is in your environment, you cannot trust that it's fully gone. A clean recovery means rebuilding affected systems from known-good images or completely fresh, not just deleting the malware and hoping.
+
+Your IR firm will define the scope of what needs to be rebuilt.
+
+### Root Cause and Remediation
+
+Every ransomware attack entered your environment somehow. The most common entry points in 2025:
+
+- **Phishing emails** — Credential-harvesting links or malicious attachments
+- **Remote Desktop Protocol (RDP) exposed to the internet** — A scan of your IP range will show attackers open RDP ports within hours
+- **Unpatched vulnerabilities** — Particularly in VPNs, firewalls, and email servers
+- **Compromised credentials from previous breaches** — Reused passwords from other breached services
+
+Close the entry point completely before going back online.
+
+### Notification Obligations
+
+Depending on what data was accessed, you may have legal notification obligations:
+- **State breach notification laws** — Most US states require notification within 30–90 days if personal information was accessed
+- **HIPAA** — Breach notification to HHS and affected individuals within 60 days of discovery
+- **PCI-DSS** — Notify your acquiring bank and payment card brands within 24 hours if cardholder data was compromised
+
+Your attorney and IR firm will guide this process.
+
+### Post-Incident Review
+
+Document what happened and why your defenses failed. This isn't about blame — it's about making sure it doesn't happen again. Update your IR plan based on what you learned.
+
+---
+
+Ransomware recovery is measured in days, weeks, and sometimes months. Organizations with tested backups, solid segmentation, and an IR plan in place recover in days. Organizations without these foundations recover in months — or don't recover at all.
+
+The time to build ransomware resilience is now, not after the demand.
+
+[Talk to us](/contact) about building ransomware resilience into your security program.

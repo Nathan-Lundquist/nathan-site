@@ -1,0 +1,101 @@
+---
+title: "Cyber Insurance Requirements in 2025: What Insurers Now Demand Before They'll Cover You"
+date: "2026-02-07"
+description: "Cyber insurers have fundamentally changed what they require before issuing policies. Here are the five controls that are now non-negotiable, and how to get your business ready."
+tags: ["Cyber Insurance", "Compliance", "Risk"]
+---
+
+Three years ago, a cyber insurance application asked: "Do you have antivirus? Yes or no?" You checked yes, paid your premium, and moved on.
+
+Today's underwriting process looks nothing like that.
+
+Cyber insurers paid out massive losses from the 2020–2022 ransomware wave, and they responded the way insurance companies always do: by getting dramatically more selective. Premiums have risen by an average of 50% since 2021, and coverage has narrowed significantly. More importantly, requirements have become concrete and verifiable.
+
+Here's what insurers now actually look for — and what happens when you can't demonstrate it.
+
+## The Five Controls That Are Now Non-Negotiable
+
+### 1. Multi-Factor Authentication (MFA)
+
+This is the single biggest underwriting question in 2025. Not "do you have MFA" — but *where* you have it:
+
+- **Remote access (VPN, RDP)** — MFA required on all remote access points, no exceptions
+- **Email (Microsoft 365 / Google Workspace)** — MFA required for all users, including admins
+- **Privileged accounts** — Admin accounts especially; some insurers require hardware keys for domain admins
+- **Cloud infrastructure** — AWS, Azure, GCP console access
+
+Insurers who discover post-claim that MFA was not enforced have successfully denied coverage based on material misrepresentation. The risk of checking "yes" when the answer is "kind of" is significant.
+
+### 2. Endpoint Detection and Response (EDR)
+
+Basic antivirus is no longer sufficient. Insurers want **EDR** — tools like CrowdStrike Falcon, SentinelOne, or Microsoft Defender for Endpoint — deployed on all endpoints (laptops, servers, workstations).
+
+EDR differs from antivirus in that it:
+- Monitors behavior, not just known malware signatures
+- Provides forensic visibility into what happened during an incident
+- Enables remote isolation of compromised machines
+
+Without EDR on all endpoints, many insurers will either decline coverage or add a ransomware sub-limit that dramatically reduces your payout.
+
+### 3. Tested, Offsite Backups
+
+The ransomware playbook is: encrypt your live data, then find and encrypt your backups. Insurers have seen this pattern so many times they now ask specifically about:
+
+- **Backup frequency** — Daily incremental, weekly full is the minimum expectation
+- **Offsite / offline storage** — Backups that live on network-connected storage can be encrypted along with everything else
+- **Immutable backups** — Storage that can't be modified after the fact (object lock, air-gapped systems)
+- **Recovery testing** — Do you actually test restoring from backup? How often? Can you demonstrate the test?
+
+"We have backups" is not an acceptable answer. "We have daily encrypted backups with immutable cloud storage, tested quarterly with documented recovery times" is.
+
+### 4. Security Awareness Training with Phishing Simulations
+
+Human error is involved in approximately 68% of all breaches (Verizon 2025 DBIR). Insurers know this, which is why documented employee training is now standard:
+
+- **Formal security awareness training** — Annual minimum, quarterly preferred, with completion tracking
+- **Phishing simulation program** — Regular simulated phishing campaigns with metrics showing improvement over time
+- **Incident reporting culture** — Employees know how and where to report suspicious emails
+
+Companies that can show a 12-month decline in phishing simulation click rates — from 30%+ down to single digits — demonstrate a measurable risk reduction that underwriters respond to favorably.
+
+### 5. Vulnerability Management / Patch Management
+
+Unpatched systems are the most common entry point in network-based attacks. Insurers want to see:
+
+- **Patch cadence** — Critical patches deployed within 30 days (7 days for critical vulnerabilities under active exploit)
+- **Vulnerability scanning** — Regular internal and external scanning to identify exposures
+- **Documented exceptions** — If a system can't be patched, there's a documented compensating control
+
+## What Insurers Are Starting to Ask About
+
+These aren't universal yet, but they're appearing on underwriting applications with increasing frequency:
+
+- **Email security** — DMARC, DKIM, and SPF configured and enforced (prevents impersonation attacks)
+- **Privileged access management** — Separation of admin and standard accounts, just-in-time access
+- **Third-party risk** — Do you evaluate the security of your vendors? Do you have a process?
+- **Incident response plan** — A written, tested plan for how you'd respond to a breach
+
+## What Happens When You Don't Qualify
+
+If you can't meet the minimum requirements, you have three options:
+
+1. **Accept the gap** — Your policy may still issue with a ransomware sub-limit (e.g., $250K coverage instead of $2M) or a higher deductible. Read your policy carefully.
+2. **Remediate before renewal** — Most requirements can be addressed in 30–90 days with focused effort
+3. **Work with a specialist broker** — Some insurers are more flexible than others for specific industries or risk profiles; a cyber-focused broker knows which carriers to approach
+
+## How a Security Consultant Helps
+
+Most businesses don't fail cyber insurance requirements because they're negligent. They fail because they don't know what specifically is required until the renewal call. A security consultant can:
+
+- Run a pre-renewal assessment against current underwriting criteria
+- Help implement missing controls before your application
+- Provide documentation that satisfies evidence requests
+- Prepare you for the increasingly detailed supplemental questionnaires
+
+The cost of remediation is almost always less than the premium increase — or the coverage denial.
+
+---
+
+Cyber insurance is not a substitute for security. But for most organizations, it's an essential risk transfer mechanism. The requirements have gotten harder because the risks have gotten worse. Meeting them makes you genuinely more secure — which is the point.
+
+[Schedule a consultation](/contact) to review your current controls against current underwriting criteria.
