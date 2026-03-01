@@ -4,18 +4,18 @@ import Link from 'next/link'
 import { ArrowRight, Shield } from 'lucide-react'
 
 const sectors = [
-  { name: 'Aerospace', sub: 'CUI handling' },
-  { name: 'Manufacturing', sub: 'CMMC scope' },
-  { name: 'IT Services', sub: 'System security' },
-  { name: 'R&D', sub: 'CUI protection' },
-  { name: 'Systems Integration', sub: 'Access control' },
-  { name: 'Engineering', sub: 'NIST mapping' },
-  { name: 'Defense Electronics', sub: 'Asset inventory' },
-  { name: 'Cyber Services', sub: 'Incident response' },
-  { name: 'Software Dev', sub: 'Secure SDLC' },
-  { name: 'Logistics', sub: 'Supply chain' },
-  { name: 'Prime Contractors', sub: 'Flow-down reqs' },
-  { name: 'Consulting Firms', sub: 'Advisory scope' },
+  { name: 'Healthcare', sub: 'HIPAA scope' },
+  { name: 'Finance', sub: 'PCI-DSS' },
+  { name: 'Technology', sub: 'SOC 2' },
+  { name: 'Manufacturing', sub: 'NIST CSF' },
+  { name: 'Legal', sub: 'Data protection' },
+  { name: 'Professional Services', sub: 'ISO 27001' },
+  { name: 'Retail', sub: 'PCI-DSS v4' },
+  { name: 'Education', sub: 'FERPA' },
+  { name: 'Government', sub: 'NIST 800-53' },
+  { name: 'Startups', sub: 'Security baseline' },
+  { name: 'SaaS Companies', sub: 'SOC 2 Type II' },
+  { name: 'Nonprofits', sub: 'Data privacy' },
 ]
 
 export default function SectorsSection() {
@@ -24,7 +24,7 @@ export default function SectorsSection() {
       <div className="max-w-7xl mx-auto">
 
         {/* Label */}
-        <p className="section-label text-center">Defense Sectors We Serve</p>
+        <p className="section-label text-center">Industries We Serve</p>
 
         {/* Heading */}
         <motion.h2
@@ -34,12 +34,12 @@ export default function SectorsSection() {
           className="text-center font-bold leading-tight mb-4"
           style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)', color: '#1A1A1A' }}
         >
-          Protecting defense contractors{' '}
+          Protecting organizations{' '}
           <Shield
             className="inline-block align-middle"
             style={{ color: '#B82416', width: '1em', height: '1em' }}
           />{' '}
-          across every sector.
+          across every industry.
         </motion.h2>
 
         {/* CTA */}
