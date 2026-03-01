@@ -6,20 +6,20 @@ import Image from 'next/image'
 const tabs = {
   approach: {
     label: 'APPROACH',
-    p1: 'Our approach puts your team in control from day one. We map every gap, build a practical remediation roadmap, and stand beside you through every assessment milestone.',
-    p2: "We don't just deliver documents — we build the understanding your team needs to maintain compliance long after we're gone.",
+    p1: 'Our approach puts your team in control from day one. We map every risk, build a practical remediation roadmap, and stand beside you through every compliance milestone.',
+    p2: "We don't just deliver documents — we build the security understanding your team needs to maintain a strong posture long after we're gone.",
   },
   results: {
     label: 'RESULTS',
-    p1: 'Defense contractors who work with Nathan achieve CMMC Level 2 certification without surprise findings or failed assessments.',
-    p2: 'Our structured process eliminates guesswork and replaces it with a repeatable system you can own and sustain.',
+    p1: 'Organizations that work with Nathan achieve their security and compliance goals without surprise findings or failed assessments.',
+    p2: 'Our structured process eliminates guesswork and replaces it with a repeatable security program you can own and sustain.',
   },
 }
 
 const stats = [
   { num: '5+', label: 'Years Experience' },
   { num: '50+', label: 'Clients Served' },
-  { num: '100%', label: 'First-try Pass Rate' },
+  { num: '10+', label: 'Frameworks Supported' },
 ]
 
 export default function ApproachSection() {
@@ -42,7 +42,7 @@ export default function ApproachSection() {
               className="font-bold leading-tight mb-8"
               style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', color: '#1A1A1A' }}
             >
-              We envision compliance as clear, systematic, and achievable.
+              We envision security as clear, systematic, and achievable.
             </motion.h2>
 
             {/* Toggle tabs */}
@@ -135,7 +135,7 @@ export default function ApproachSection() {
             <div className="relative w-full overflow-hidden rounded-xl" style={{ aspectRatio: '3/4' }}>
               <Image
                 src="/headshot.jpg"
-                alt="Nathan Lundquist, CMMC consultant"
+                alt="Nathan Lundquist, information security consultant"
                 fill
                 className="object-cover object-top"
               />
