@@ -23,7 +23,7 @@ export default function HeroSection() {
               <Shield className="w-5 h-5 shrink-0" style={{ color: '#B82416' }} />
               <div className="w-px h-5" style={{ backgroundColor: '#E5E5E5' }} />
               <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: '#1A1A1A' }}>
-                CMMC &amp; NIST 800-171 Consulting for Defense Contractors
+                Information Security Consulting for Growing Organizations
               </span>
             </div>
 
@@ -36,16 +36,15 @@ export default function HeroSection() {
                 letterSpacing: '-0.02em',
               }}
             >
-              Achieving<br />
-              Compliance<br />
-              Is Easier<br />
-              Than You Think.
+              Securing Your<br />
+              Business Is<br />
+              Easier Than<br />
+              You Think.
             </h1>
 
             {/* Sub */}
             <p className="text-lg leading-relaxed mb-8 max-w-md" style={{ color: '#333333' }}>
-              We guide defense contractors through CMMC Level 2 and NIST 800-171 —
-              from first gap analysis to passed assessment, with clarity at every step.
+              We help SMBs and enterprises build real security programs — from first risk assessment to a compliance-ready posture, with clarity at every step.
             </p>
 
             {/* CTAs */}
@@ -73,7 +72,7 @@ export default function HeroSection() {
               {/* Card header */}
               <div className="flex items-center justify-between mb-1">
                 <span className="text-xs font-bold uppercase tracking-widest" style={{ color: '#B82416' }}>
-                  +100%
+                  +98%
                 </span>
                 <div className="flex gap-3 text-xs" style={{ color: '#646464' }}>
                   <span>Q1</span>
@@ -81,7 +80,7 @@ export default function HeroSection() {
                   <span className="font-bold" style={{ color: '#B82416' }}>Q3</span>
                 </div>
               </div>
-              <p className="text-xs mb-6" style={{ color: '#B82416' }}>First-try assessment pass rate</p>
+              <p className="text-xs mb-6" style={{ color: '#B82416' }}>Clients who achieve their security goals on first attempt</p>
 
               {/* Dot matrix chart */}
               <div className="grid mb-6" style={{ gridTemplateColumns: 'repeat(20, 1fr)', gap: '3px' }}>
@@ -106,8 +105,8 @@ export default function HeroSection() {
 
               {/* Card footer */}
               <div className="flex justify-between text-xs" style={{ color: '#646464' }}>
-                <span>Assessments 2023</span>
-                <span>Assessments 2024</span>
+                <span>Engagements 2023</span>
+                <span>Engagements 2024</span>
               </div>
             </div>
           </motion.div>
