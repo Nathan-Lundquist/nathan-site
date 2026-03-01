@@ -27,7 +27,7 @@ export default function Footer() {
               className="font-bold leading-tight mb-8"
               style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', color: '#1A1A1A', maxWidth: '420px' }}
             >
-              Work with Nathan Lundquist and achieve CMMC compliance with confidence.
+              Work with Nathan Lundquist and achieve your security and compliance goals with confidence.
             </h3>
 
             <Link href="/contact" className="btn-primary mb-12 w-fit">
@@ -53,7 +53,7 @@ export default function Footer() {
             {/* Newsletter */}
             <div>
               <h4 className="font-bold text-lg mb-4" style={{ color: '#1A1A1A' }}>
-                Subscribe to compliance insights.
+                Subscribe to security insights.
               </h4>
               <form className="flex gap-0" onSubmit={(e) => e.preventDefault()}>
                 <input
@@ -83,7 +83,7 @@ export default function Footer() {
               <div>
                 <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: '#1A1A1A' }}>Services</p>
                 <div className="flex flex-col gap-2">
-                  {['CMMC L2 Prep', 'NIST Gap Analysis', 'SSP Development', 'CUI Support'].map((l) => (
+                  {['Security Assessment', 'Compliance Readiness', 'Risk Management', 'Security Program Dev'].map((l) => (
                     <Link key={l} href="/services" className="text-sm transition-colors hover:text-[#B82416]" style={{ color: '#646464' }}>
                       {l}
                     </Link>
