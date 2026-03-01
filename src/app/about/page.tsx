@@ -1,4 +1,4 @@
-import { Shield, Award, Briefcase } from 'lucide-react'
+import { Award } from 'lucide-react'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 
@@ -9,33 +9,33 @@ const certifications = [
 ]
 
 const expertise = [
-  { label: 'CMMC Level 1 & 2', desc: 'Assessment prep, gap analysis, and remediation for DIB contractors' },
-  { label: 'NIST 800-171 Rev 2', desc: 'All 110 practices across 14 families — implementation and documentation' },
-  { label: 'System Security Plans', desc: 'Writing and reviewing SSPs that actually hold up to assessor scrutiny' },
-  { label: 'POAM Development', desc: 'Realistic, defensible Plans of Action & Milestones' },
-  { label: 'CUI Identification & Scoping', desc: 'Defining what you protect and where it lives' },
-  { label: 'Vendor & Supply Chain', desc: 'Flow-down requirements and subcontractor compliance support' },
+  { label: 'Security Risk Assessment', desc: 'Systematic identification, analysis, and prioritization of risks aligned to NIST SP 800-30 and ISO 31000.' },
+  { label: 'SOC 2 Compliance', desc: 'Type I and Type II readiness support across all Trust Service Criteria — from gap analysis to audit day.' },
+  { label: 'ISO 27001', desc: 'Gap analysis and implementation guidance for the international information security management standard.' },
+  { label: 'HIPAA Security Rule', desc: 'Technical, administrative, and physical safeguards for covered entities and their business associates.' },
+  { label: 'NIST CSF & 800-53', desc: 'Mapping and implementing controls across the Identify, Protect, Detect, Respond, and Recover functions.' },
+  { label: 'Security Program Dev', desc: 'Policies, procedures, and governance frameworks designed to be practical — and actually used by your team.' },
 ]
 
 export default function AboutPage() {
   return (
-    <div style={{ backgroundColor: '#E7ECEF', minHeight: '100vh' }}>
+    <div style={{ backgroundColor: '#E8F4FD', minHeight: '100vh' }}>
       {/* Hero */}
-      <section className="pt-28 pb-16 px-6" style={{ backgroundColor: '#E7ECEF' }}>
+      <section className="pt-28 pb-16 px-6" style={{ backgroundColor: '#E8F4FD' }}>
         <div className="max-w-6xl mx-auto">
-          <p className="text-sm font-mono uppercase tracking-widest mb-4" style={{ color: '#8F96A9' }}>
-            About me
+          <p className="text-xs font-bold uppercase tracking-[0.2em] mb-4" style={{ color: '#006FC6' }}>
+            About Nathan
           </p>
           <h1
             className="font-bold leading-tight mb-6"
-            style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', color: '#4768FA' }}
+            style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', color: '#1A1A1A' }}
           >
             Nathan Lundquist
           </h1>
-          <p className="text-lg max-w-2xl leading-relaxed" style={{ color: '#8F96A9' }}>
+          <p className="text-lg max-w-2xl leading-relaxed" style={{ color: '#333333' }}>
             Information Security Analyst at PCShards — a Managed Security Service Provider
-            based in Metro Detroit. I help defense contractors navigate CMMC and NIST 800-171
-            so they can focus on what they do best.
+            based in Metro Detroit. I help growing organizations build practical security
+            programs they can actually maintain.
           </p>
         </div>
       </section>
@@ -44,7 +44,7 @@ export default function AboutPage() {
       <section className="py-16 px-6" style={{ backgroundColor: '#FFFFFF' }}>
         <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-12">
           {/* Bio */}
-          <div className="md:col-span-2 space-y-5 leading-relaxed" style={{ color: '#555555' }}>
+          <div className="md:col-span-2 space-y-5 leading-relaxed" style={{ color: '#333333' }}>
             <p>
               I&apos;m Nathan Lundquist — an Information Security Analyst at{' '}
               <a
@@ -52,45 +52,35 @@ export default function AboutPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-bold hover:underline"
-                style={{ color: '#6B84FB' }}
+                style={{ color: '#006FC6' }}
               >
                 PCShards
               </a>
               , a Managed Security Service Provider based out of Shelby Township
-              in the Metro Detroit area. I specialize in CMMC and NIST 800-171
-              compliance for defense contractors — helping them navigate the path
-              to certification so they can focus on what they do best.
+              in the Metro Detroit area. I specialize in helping SMBs and enterprises
+              build security programs that are practical, achievable, and built to last.
             </p>
             <p>
-              My path into compliance started on the development side. I was
-              building software to track all five levels of the original CMMC
-              framework when I realized my real passion wasn&apos;t the code —
-              it was the policies themselves. That shift took me from software
-              engineering into compliance consulting, where I could put that
-              knowledge to work directly for the organizations navigating these
-              requirements.
+              With 5+ years in information security, my work spans risk assessments,
+              compliance readiness across frameworks like SOC 2, ISO 27001, HIPAA, and
+              NIST CSF, and end-to-end security program development. I&apos;ve helped
+              over 50 organizations achieve their security goals — most on the first attempt.
             </p>
             <p>
-              At NUDG Systems, I led a development team designing tools to help
-              organizations implement and maintain NIST 800-171 controls — giving
-              me hands-on experience with both the technical and policy sides of
-              compliance. Today I build System Security Plans, run gap
-              assessments, and guide defense contractors through the C3PAO audit
-              process.
+              My path into security started on the development side. I was building software
+              to track compliance frameworks when I realized my real passion wasn&apos;t the
+              code — it was the policies themselves. That shift took me from software engineering
+              into security consulting, where I could put that knowledge to work directly for
+              the organizations navigating these requirements.
             </p>
             <p>
-              What I find most rewarding is helping teams actually understand
-              these policies — breaking complex requirements into language that
-              makes sense for their business, so compliance feels achievable
-              instead of overwhelming.
+              What I find most rewarding is helping teams actually understand their security
+              posture — breaking complex requirements into language that makes sense for their
+              business, so security feels achievable instead of overwhelming.
             </p>
             <div className="pt-4">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 font-semibold text-sm px-5 py-2.5 rounded-full"
-                style={{ backgroundColor: '#4768FA', color: '#FFFFFF' }}
-              >
-                Work With Me <ArrowRight className="w-4 h-4" />
+              <Link href="/contact" className="btn-primary w-fit">
+                Work With Nathan <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
@@ -98,44 +88,37 @@ export default function AboutPage() {
           {/* Credentials */}
           <div>
             <h2
-              className="font-bold text-lg mb-5 flex items-center gap-2"
-              style={{ color: '#4768FA' }}
+              className="font-bold text-xs uppercase tracking-[0.15em] mb-5 flex items-center gap-2"
+              style={{ color: '#646464' }}
             >
-              <Award className="w-5 h-5" style={{ color: '#444444' }} />
+              <Award className="w-4 h-4" style={{ color: '#006FC6' }} />
               Credentials
             </h2>
             <ul className="space-y-3 mb-8">
               {certifications.map((c) => (
                 <li
                   key={c}
-                  className="flex items-start gap-2 text-sm"
-                  style={{ color: '#555555' }}
+                  className="text-sm"
+                  style={{ color: '#333333', borderLeft: '2px solid #006FC6', paddingLeft: '12px' }}
                 >
-                  <Shield
-                    className="w-4 h-4 mt-0.5 shrink-0"
-                    style={{ color: '#444444' }}
-                  />
                   {c}
                 </li>
               ))}
             </ul>
 
-            {/* Quick stats */}
-            <div
-              className="rounded-2xl p-5 space-y-4"
-              style={{ backgroundColor: '#F0F5FA', border: '1px solid #D3D8E9' }}
-            >
-              <div>
-                <p className="text-3xl font-bold" style={{ color: '#4768FA' }}>5+</p>
-                <p className="text-sm" style={{ color: '#8F96A9' }}>Years of experience</p>
+            {/* Stats block */}
+            <div style={{ backgroundColor: '#006FC6' }} className="p-6">
+              <div className="mb-5">
+                <p className="text-3xl font-bold text-white leading-none">5+</p>
+                <p className="text-sm mt-1" style={{ color: 'rgba(255,255,255,0.75)' }}>Years of experience</p>
               </div>
-              <div style={{ borderTop: '1px solid #D3D8E9', paddingTop: '1rem' }}>
-                <p className="text-sm font-bold leading-snug" style={{ color: '#4768FA' }}>Metro Detroit, MI</p>
-                <p className="text-sm" style={{ color: '#8F96A9' }}>Shelby Township</p>
+              <div style={{ borderTop: '1px solid rgba(255,255,255,0.2)', paddingTop: '1.25rem' }} className="mb-5">
+                <p className="text-2xl font-bold text-white leading-none">50+</p>
+                <p className="text-sm mt-1" style={{ color: 'rgba(255,255,255,0.75)' }}>Clients served</p>
               </div>
-              <div style={{ borderTop: '1px solid #D3D8E9', paddingTop: '1rem' }}>
-                <p className="text-sm font-bold" style={{ color: '#6B84FB' }}>PCShards</p>
-                <p className="text-sm" style={{ color: '#8F96A9' }}>Managed Security Services</p>
+              <div style={{ borderTop: '1px solid rgba(255,255,255,0.2)', paddingTop: '1.25rem' }}>
+                <p className="text-sm font-bold text-white">Metro Detroit, MI</p>
+                <p className="text-sm" style={{ color: 'rgba(255,255,255,0.75)' }}>PCShards · Shelby Township</p>
               </div>
             </div>
           </div>
@@ -143,41 +126,64 @@ export default function AboutPage() {
       </section>
 
       {/* Expertise grid */}
-      <section className="py-16 px-6" style={{ backgroundColor: '#F0F5FA' }}>
+      <section className="py-16 px-6" style={{ backgroundColor: '#E8F4FD' }}>
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-[200px_1fr] gap-16 mb-12">
-            <p className="text-sm font-mono uppercase tracking-widest pt-2" style={{ color: '#8F96A9' }}>
+          <div className="mb-10">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] mb-3" style={{ color: '#006FC6' }}>
               Expertise
             </p>
-            <div>
-              <h2
-                className="font-bold leading-tight mb-3"
-                style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', color: '#4768FA' }}
-              >
-                <Briefcase className="inline w-7 h-7 mr-2 mb-1" style={{ color: '#444444' }} />
-                Areas of Expertise
-              </h2>
-              <p style={{ color: '#8F96A9' }}>
-                Deep specialization across all CMMC and NIST 800-171 domains.
-              </p>
-            </div>
+            <h2
+              className="font-bold leading-tight"
+              style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', color: '#1A1A1A' }}
+            >
+              Areas of Expertise
+            </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-5">
+          <div className="grid md:grid-cols-3 gap-4">
             {expertise.map((e) => (
               <div
                 key={e.label}
-                className="rounded-2xl p-6"
-                style={{ backgroundColor: '#FFFFFF', border: '1px solid #D3D8E9' }}
+                className="p-6"
+                style={{ backgroundColor: '#FFFFFF', border: '1px solid #E5E5E5' }}
               >
-                <h3 className="font-bold mb-2" style={{ color: '#6B84FB' }}>
+                <h3 className="font-bold mb-2 text-sm uppercase tracking-[0.1em]" style={{ color: '#006FC6' }}>
                   {e.label}
                 </h3>
-                <p className="text-sm leading-relaxed" style={{ color: '#8F96A9' }}>
+                <p className="text-sm leading-relaxed" style={{ color: '#646464' }}>
                   {e.desc}
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-16 px-6" style={{ backgroundColor: '#FFFFFF' }}>
+        <div className="max-w-6xl mx-auto">
+          <div
+            className="p-12 flex flex-col md:flex-row items-center justify-between gap-8"
+            style={{ backgroundColor: '#006FC6' }}
+          >
+            <div>
+              <h2
+                className="font-bold mb-2"
+                style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', color: '#FFFFFF' }}
+              >
+                Ready to build your security program?
+              </h2>
+              <p style={{ color: 'rgba(255,255,255,0.75)' }}>
+                Get hands-on guidance tailored to your environment and compliance requirements.
+              </p>
+            </div>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 font-bold px-6 py-3 shrink-0 text-sm"
+              style={{ backgroundColor: '#FFFFFF', color: '#006FC6' }}
+            >
+              Get a Consultation <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </section>

@@ -6,7 +6,7 @@ import { ArrowRight, Shield } from 'lucide-react'
 export default function HeroSection() {
   return (
     <section
-      className="min-h-screen flex flex-col justify-between pt-16"
+      className="md:min-h-screen flex flex-col justify-between pt-16"
       style={{ backgroundColor: '#E8F4FD' }}
     >
       {/*
@@ -16,7 +16,7 @@ export default function HeroSection() {
         Background colour floods the remaining viewport width on either side.
       */}
       <div className="max-w-7xl 2xl:max-w-[1600px] mx-auto px-6 xl:px-10 w-full flex-1 flex flex-col justify-center">
-        <div className="grid md:grid-cols-2 gap-10 xl:gap-16 items-start pt-16 pb-8">
+        <div className="grid md:grid-cols-2 gap-8 xl:gap-16 items-start pt-8 pb-6 md:pt-16 md:pb-8">
 
           {/* LEFT */}
           <motion.div
@@ -25,7 +25,7 @@ export default function HeroSection() {
             transition={{ duration: 0.6 }}
           >
             {/* Badge */}
-            <div className="inline-flex items-center gap-3 mb-8">
+            <div className="inline-flex items-center gap-3 mb-5 md:mb-8">
               <Shield className="w-5 h-5 shrink-0" style={{ color: '#006FC6' }} />
               <div className="w-px h-5" style={{ backgroundColor: '#E5E5E5' }} />
               <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: '#1A1A1A' }}>
@@ -33,11 +33,11 @@ export default function HeroSection() {
               </span>
             </div>
 
-            {/* Headline — clamp keeps it readable from 768 px → 2560 px */}
+            {/* Headline — clamp keeps it readable from 375px → 2560px */}
             <h1
-              className="font-bold leading-none mb-10"
+              className="font-bold leading-none mb-6 md:mb-10"
               style={{
-                fontSize: 'clamp(3rem, 4.5vw, 5.5rem)',
+                fontSize: 'clamp(2rem, 5vw, 5.5rem)',
                 color: '#006FC6',
                 letterSpacing: '-0.02em',
               }}
@@ -49,7 +49,7 @@ export default function HeroSection() {
             </h1>
 
             {/* Sub */}
-            <p className="text-lg leading-relaxed mb-8 max-w-md" style={{ color: '#333333' }}>
+            <p className="text-base md:text-lg leading-relaxed mb-6 md:mb-8 max-w-md" style={{ color: '#333333' }}>
               We help SMBs and enterprises build real security programs — from first risk assessment to a compliance-ready posture, with clarity at every step.
             </p>
 
@@ -69,40 +69,40 @@ export default function HeroSection() {
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="flex flex-col gap-4 pt-4"
+            className="flex flex-col gap-4"
           >
             {/* Primary stat card */}
             <div
               className="w-full bg-white p-6 xl:p-8"
               style={{ border: '1px solid #E5E5E5' }}
             >
-              {/* Big stat + quarter labels */}
+              {/* Big stat + year labels */}
               <div className="flex items-start justify-between mb-2">
                 <div>
                   <span
                     className="font-bold leading-none block"
-                    style={{ fontSize: 'clamp(2.5rem, 3.5vw, 4rem)', color: '#006FC6' }}
+                    style={{ fontSize: 'clamp(2rem, 3.5vw, 4rem)', color: '#006FC6' }}
                   >
-                    +98%
+                    $4.88M
                   </span>
                   <p className="text-sm mt-2 max-w-[220px]" style={{ color: '#333333' }}>
-                    Clients who achieve their security goals on first attempt
+                    Average cost of a data breach in 2024
                   </p>
                 </div>
                 <div className="flex gap-3 text-xs pt-1" style={{ color: '#646464' }}>
-                  <span>Q1</span>
-                  <span>Q2</span>
-                  <span className="font-bold" style={{ color: '#006FC6' }}>Q3</span>
+                  <span>'22</span>
+                  <span>'23</span>
+                  <span className="font-bold" style={{ color: '#006FC6' }}>'24</span>
                 </div>
               </div>
 
-              {/* Animated bar chart */}
+              {/* Animated bar chart — breach cost rising YoY */}
               <div className="mt-6 mb-2">
                 <div className="flex items-end gap-3" style={{ height: '72px' }}>
                   {[
-                    { label: 'Q1', h: 30, active: false },
-                    { label: 'Q2', h: 50, active: false },
-                    { label: 'Q3', h: 72, active: true },
+                    { label: "'22", h: 46, active: false },
+                    { label: "'23", h: 58, active: false },
+                    { label: "'24", h: 72, active: true },
                   ].map(({ label, h, active }) => (
                     <motion.div
                       key={label}
@@ -115,7 +115,7 @@ export default function HeroSection() {
                   ))}
                 </div>
                 <div className="flex gap-3 mt-2">
-                  {['Q1', 'Q2', 'Q3'].map((label, i) => (
+                  {["'22", "'23", "'24"].map((label, i) => (
                     <span
                       key={label}
                       className="flex-1 text-center text-xs"
@@ -132,12 +132,12 @@ export default function HeroSection() {
                 className="flex justify-between text-xs pt-4 mt-3"
                 style={{ color: '#646464', borderTop: '1px solid #E5E5E5' }}
               >
-                <span>Engagements 2023</span>
-                <span>Engagements 2024</span>
+                <span>IBM Cost of a Data Breach Report</span>
+                <span>2024</span>
               </div>
             </div>
 
-            {/* Secondary card — mini stats */}
+            {/* Secondary card — risk mini stats */}
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
@@ -146,13 +146,13 @@ export default function HeroSection() {
               style={{ backgroundColor: '#006FC6' }}
             >
               {[
-                { num: '5+', label: 'Years Experience' },
-                { num: '50+', label: 'Clients Served' },
-                { num: '10+', label: 'Frameworks' },
+                { num: '60%', label: 'SMBs close within 6 months of a breach' },
+                { num: '94%', label: 'Attacks start with phishing or email' },
+                { num: '72h', label: 'Avg time to detect a breach' },
               ].map(({ num, label }, i) => (
                 <div
                   key={num}
-                  className="flex flex-col items-center text-center flex-1"
+                  className="flex flex-col items-center text-center flex-1 px-2"
                   style={i < 2 ? { borderRight: '1px solid rgba(255,255,255,0.2)' } : undefined}
                 >
                   <span
@@ -161,7 +161,7 @@ export default function HeroSection() {
                   >
                     {num}
                   </span>
-                  <span className="text-xs xl:text-sm" style={{ color: 'rgba(255,255,255,0.75)' }}>{label}</span>
+                  <span className="text-xs leading-snug" style={{ color: 'rgba(255,255,255,0.75)' }}>{label}</span>
                 </div>
               ))}
             </motion.div>
@@ -170,8 +170,8 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Scroll for more */}
-      <div className="max-w-7xl 2xl:max-w-[1600px] mx-auto px-6 xl:px-10 w-full pb-6 flex justify-end">
+      {/* Scroll for more — only visible on md+ where min-h-screen applies */}
+      <div className="hidden md:flex max-w-7xl 2xl:max-w-[1600px] mx-auto px-6 xl:px-10 w-full pb-6 justify-end">
         <span className="text-xs font-bold uppercase tracking-[0.15em] flex items-center gap-2" style={{ color: '#006FC6' }}>
           Scroll for more <ArrowRight className="w-3.5 h-3.5" />
         </span>

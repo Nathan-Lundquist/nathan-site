@@ -19,8 +19,10 @@ export interface Resource {
   title: string
   description: string
   category: string
+  framework?: string
   fileUrl?: string
   free: boolean
+  highlights: string[]
   content: string
 }
 
@@ -72,8 +74,10 @@ export function getResources(): Resource[] {
       title: data.title ?? 'Untitled',
       description: data.description ?? '',
       category: data.category ?? 'General',
+      framework: data.framework,
       fileUrl: data.fileUrl,
       free: data.free ?? true,
+      highlights: data.highlights ?? [],
       content,
     }
   })

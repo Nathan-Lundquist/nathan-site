@@ -1,79 +1,82 @@
 import Link from 'next/link'
-import { ClipboardCheck, Search, Map, ArrowRight } from 'lucide-react'
+import { ClipboardCheck, Search, ShieldCheck, ArrowRight } from 'lucide-react'
 
 const services = [
   {
     number: '01',
-    icon: ClipboardCheck,
-    title: 'CMMC Level 2 Assessment Prep',
+    icon: Search,
+    title: 'Security Assessment & Gap Analysis',
     description:
-      'End-to-end readiness support before your C3PAO assessment. Includes mock assessment, gap remediation, SSP review, and POAM development. I help you walk into your assessment confident — not scrambling.',
+      'A comprehensive analysis of your current security posture against industry frameworks like NIST CSF, ISO 27001, or CIS Controls. You get a clear picture of where you stand, what risks exist, and a prioritized roadmap to address them — no guesswork.',
     deliverables: [
-      'Gap Assessment Report',
-      'SSP Review & Updates',
-      'POAM Development',
-      'Evidence Package Prep',
-      'Mock Assessment',
+      'Risk Assessment Report',
+      'Gap Analysis',
+      'Asset Inventory',
+      'Threat Modeling',
+      'Executive Summary',
+      'Remediation Roadmap',
     ],
   },
   {
     number: '02',
-    icon: Search,
-    title: 'NIST 800-171 Gap Analysis',
+    icon: ClipboardCheck,
+    title: 'Compliance Readiness',
     description:
-      'Comprehensive analysis of your current security practices against all 110 NIST 800-171 Rev 2 requirements. You get a clear picture of where you stand, what needs to change, and what order to tackle it in.',
+      'End-to-end readiness support for SOC 2, ISO 27001, HIPAA, NIST CSF, PCI-DSS, CMMC, and more. I help you walk into your audit confident — not scrambling. Includes gap analysis, policy development, evidence preparation, and mock assessments.',
     deliverables: [
-      'Gap Analysis Report',
-      'Risk Scoring by Domain',
-      'Prioritized Remediation Plan',
-      'Executive Summary',
-      'SPRS Score Estimate',
+      'Compliance Gap Report',
+      'Policy & Procedure Templates',
+      'Control Evidence Package',
+      'Audit Preparation',
+      'Mock Assessment',
+      'Remediation Tracker',
     ],
   },
   {
     number: '03',
-    icon: Map,
-    title: 'Compliance Roadmap & Remediation',
+    icon: ShieldCheck,
+    title: 'Security Program Development',
     description:
-      'Ongoing compliance support including technical control implementation guidance, policy development, and staff training. Ideal for organizations just starting their compliance journey or managing continuous compliance.',
+      'Ongoing security support including policy development, control implementation guidance, security awareness training, and continuous compliance management. Ideal for organizations building their security program from the ground up or maturing an existing one.',
     deliverables: [
-      'Compliance Roadmap',
-      'Policy & Procedure Templates',
-      'Technical Implementation Guide',
-      'Staff Awareness Training',
+      'Security Program Charter',
+      'Policy & Procedure Library',
+      'Security Awareness Training',
       'Quarterly Review Sessions',
+      'Vendor Risk Assessment',
+      'Incident Response Plan',
     ],
   },
 ]
 
 export default function ServicesPage() {
   return (
-    <div style={{ backgroundColor: '#E7ECEF', minHeight: '100vh' }}>
+    <div style={{ backgroundColor: '#E8F4FD', minHeight: '100vh' }}>
       {/* Hero */}
-      <section className="pt-28 pb-16 px-6" style={{ backgroundColor: '#E7ECEF' }}>
+      <section className="pt-28 pb-16 px-6" style={{ backgroundColor: '#E8F4FD' }}>
         <div className="max-w-6xl mx-auto">
-          <p className="text-sm font-mono uppercase tracking-widest mb-4" style={{ color: '#8F96A9' }}>
+          <p className="text-xs font-bold uppercase tracking-[0.2em] mb-4" style={{ color: '#006FC6' }}>
             What I offer
           </p>
           <h1
             className="font-bold leading-tight mb-6"
-            style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', color: '#4768FA' }}
+            style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', color: '#1A1A1A' }}
           >
             Services
           </h1>
-          <p className="text-lg max-w-2xl leading-relaxed" style={{ color: '#8F96A9' }}>
+          <p className="text-lg max-w-2xl leading-relaxed" style={{ color: '#333333' }}>
             All consulting engagements are delivered through{' '}
             <a
               href="https://pcshards.com"
               className="font-bold hover:underline"
-              style={{ color: '#6B84FB' }}
+              style={{ color: '#006FC6' }}
               target="_blank"
               rel="noopener noreferrer"
             >
               PCShards
             </a>
-            . I work with defense contractors of all sizes — from small machine
-            shops to mid-size manufacturers.
+            . I work with organizations of all sizes — from small businesses to
+            mid-market enterprises across every industry.
           </p>
         </div>
       </section>
@@ -83,31 +86,31 @@ export default function ServicesPage() {
         <div className="max-w-6xl mx-auto">
           {services.map((s, i) => (
             <div key={s.number}>
-              <div className="grid md:grid-cols-[80px_60px_1fr] gap-8 py-10 items-start">
+              <div className="grid md:grid-cols-[80px_56px_1fr] gap-8 py-10 items-start">
                 {/* Number */}
                 <span
                   className="text-5xl font-bold leading-none"
-                  style={{ color: '#D3D8E9' }}
+                  style={{ color: '#E5E5E5' }}
                 >
                   {s.number}
                 </span>
                 {/* Icon */}
-                <s.icon className="w-8 h-8 mt-1" style={{ color: '#444444' }} />
+                <s.icon className="w-7 h-7 mt-1" style={{ color: '#006FC6' }} />
                 {/* Content */}
                 <div>
                   <h2
                     className="font-bold text-2xl mb-3"
-                    style={{ color: '#4768FA' }}
+                    style={{ color: '#1A1A1A' }}
                   >
                     {s.title}
                   </h2>
-                  <p className="leading-relaxed mb-6" style={{ color: '#555555' }}>
+                  <p className="leading-relaxed mb-6" style={{ color: '#333333' }}>
                     {s.description}
                   </p>
                   <div>
                     <p
-                      className="text-xs font-mono uppercase tracking-widest mb-3"
-                      style={{ color: '#8F96A9' }}
+                      className="text-xs font-bold uppercase tracking-[0.15em] mb-3"
+                      style={{ color: '#646464' }}
                     >
                       Deliverables
                     </p>
@@ -115,8 +118,8 @@ export default function ServicesPage() {
                       {s.deliverables.map((d) => (
                         <span
                           key={d}
-                          className="text-xs font-semibold px-3 py-1 rounded-full"
-                          style={{ backgroundColor: '#F0F0F0', color: '#555555' }}
+                          className="text-xs font-bold uppercase tracking-wider px-3 py-1"
+                          style={{ backgroundColor: '#E8F4FD', color: '#006FC6' }}
                         >
                           {d}
                         </span>
@@ -126,7 +129,7 @@ export default function ServicesPage() {
                 </div>
               </div>
               {i < services.length - 1 && (
-                <div style={{ borderTop: '1px solid #D3D8E9' }} />
+                <div style={{ borderTop: '1px solid #E5E5E5' }} />
               )}
             </div>
           ))}
@@ -134,26 +137,28 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 px-6" style={{ backgroundColor: '#F0F5FA' }}>
+      <section className="py-16 px-6" style={{ backgroundColor: '#E8F4FD' }}>
         <div className="max-w-6xl mx-auto">
           <div
-            className="rounded-3xl p-12 text-center"
-            style={{ backgroundColor: '#4768FA' }}
+            className="p-12 flex flex-col md:flex-row items-center justify-between gap-8"
+            style={{ backgroundColor: '#006FC6' }}
           >
-            <h2
-              className="font-bold mb-4"
-              style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', color: '#FFFFFF' }}
-            >
-              Ready to Get Compliant?
-            </h2>
-            <p className="mb-8 max-w-md mx-auto" style={{ color: '#8F96A9' }}>
-              Let&apos;s discuss your environment and build a plan that actually works
-              for your organization.
-            </p>
+            <div>
+              <h2
+                className="font-bold mb-2"
+                style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', color: '#FFFFFF' }}
+              >
+                Ready to strengthen your security posture?
+              </h2>
+              <p style={{ color: 'rgba(255,255,255,0.75)' }}>
+                Let&apos;s discuss your environment and build a plan that actually works
+                for your organization.
+              </p>
+            </div>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 font-semibold px-6 py-3 rounded-full"
-              style={{ backgroundColor: '#FFFFFF', color: '#4768FA' }}
+              className="inline-flex items-center gap-2 font-bold px-6 py-3 shrink-0 text-sm"
+              style={{ backgroundColor: '#FFFFFF', color: '#006FC6' }}
             >
               Schedule a Consultation <ArrowRight className="w-4 h-4" />
             </Link>
