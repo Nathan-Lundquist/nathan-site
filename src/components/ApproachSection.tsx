@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
+import Image from 'next/image'
 
 const tabs = {
   approach: {
@@ -38,7 +39,7 @@ export default function ApproachSection() {
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="font-black leading-tight mb-8"
+              className="font-bold leading-tight mb-8"
               style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', color: '#1A1A1A' }}
             >
               We envision compliance as clear, systematic, and achievable.
@@ -53,8 +54,10 @@ export default function ApproachSection() {
               {(['approach', 'results'] as const).map((key) => (
                 <button
                   key={key}
+                  id={`tab-${key}`}
                   role="tab"
                   aria-selected={active === key}
+                  aria-controls={`tabpanel-${key}`}
                   onClick={() => setActive(key)}
                   className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.15em] transition-colors"
                   style={{ color: active === key ? '#B82416' : '#646464' }}
@@ -79,8 +82,9 @@ export default function ApproachSection() {
 
             {/* Tab content */}
             <div
+              id={`tabpanel-${active}`}
               role="tabpanel"
-              aria-label={tab.label}
+              aria-labelledby={`tab-${active}`}
               tabIndex={0}
               className="mb-8"
             >
@@ -108,7 +112,7 @@ export default function ApproachSection() {
                 {stats.map((s) => (
                   <div key={s.num}>
                     <p
-                      className="font-black leading-none mb-1"
+                      className="font-bold leading-none mb-1"
                       style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', color: '#B82416' }}
                     >
                       {s.num}
@@ -127,15 +131,16 @@ export default function ApproachSection() {
             initial={{ opacity: 0, scale: 0.97 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="overflow-hidden"
-            style={{
-              aspectRatio: '3/4',
-              backgroundColor: '#FEF4EE',
-              backgroundImage: 'url(/headshot.jpg)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center top',
-            }}
-          />
+          >
+            <div className="relative w-full overflow-hidden rounded-xl" style={{ aspectRatio: '3/4' }}>
+              <Image
+                src="/headshot.jpg"
+                alt="Nathan Lundquist, CMMC consultant"
+                fill
+                className="object-cover object-top"
+              />
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

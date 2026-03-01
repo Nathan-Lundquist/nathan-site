@@ -48,25 +48,25 @@ const services = [
 
 export default function ServicesPage() {
   return (
-    <div style={{ backgroundColor: '#EFEFEF', minHeight: '100vh' }}>
+    <div style={{ backgroundColor: '#E7ECEF', minHeight: '100vh' }}>
       {/* Hero */}
-      <section className="pt-28 pb-16 px-6" style={{ backgroundColor: '#EFEFEF' }}>
+      <section className="pt-28 pb-16 px-6" style={{ backgroundColor: '#E7ECEF' }}>
         <div className="max-w-6xl mx-auto">
-          <p className="text-sm font-mono uppercase tracking-widest mb-4" style={{ color: '#999999' }}>
+          <p className="text-sm font-mono uppercase tracking-widest mb-4" style={{ color: '#8F96A9' }}>
             What I offer
           </p>
           <h1
-            className="font-black leading-tight mb-6"
-            style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', color: '#0A0A0A' }}
+            className="font-bold leading-tight mb-6"
+            style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', color: '#4768FA' }}
           >
             Services
           </h1>
-          <p className="text-lg max-w-2xl leading-relaxed" style={{ color: '#666666' }}>
+          <p className="text-lg max-w-2xl leading-relaxed" style={{ color: '#8F96A9' }}>
             All consulting engagements are delivered through{' '}
             <a
               href="https://pcshards.com"
               className="font-bold hover:underline"
-              style={{ color: '#8C7A6B' }}
+              style={{ color: '#6B84FB' }}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -86,8 +86,8 @@ export default function ServicesPage() {
               <div className="grid md:grid-cols-[80px_60px_1fr] gap-8 py-10 items-start">
                 {/* Number */}
                 <span
-                  className="text-5xl font-black leading-none"
-                  style={{ color: '#EEEEEE' }}
+                  className="text-5xl font-bold leading-none"
+                  style={{ color: '#D3D8E9' }}
                 >
                   {s.number}
                 </span>
@@ -96,8 +96,8 @@ export default function ServicesPage() {
                 {/* Content */}
                 <div>
                   <h2
-                    className="font-black text-2xl mb-3"
-                    style={{ color: '#111111' }}
+                    className="font-bold text-2xl mb-3"
+                    style={{ color: '#4768FA' }}
                   >
                     {s.title}
                   </h2>
@@ -107,7 +107,7 @@ export default function ServicesPage() {
                   <div>
                     <p
                       className="text-xs font-mono uppercase tracking-widest mb-3"
-                      style={{ color: '#999999' }}
+                      style={{ color: '#8F96A9' }}
                     >
                       Deliverables
                     </p>
@@ -126,7 +126,7 @@ export default function ServicesPage() {
                 </div>
               </div>
               {i < services.length - 1 && (
-                <div style={{ borderTop: '1px solid #E5E5E5' }} />
+                <div style={{ borderTop: '1px solid #D3D8E9' }} />
               )}
             </div>
           ))}
@@ -134,26 +134,26 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 px-6" style={{ backgroundColor: '#F9F9F9' }}>
+      <section className="py-16 px-6" style={{ backgroundColor: '#F0F5FA' }}>
         <div className="max-w-6xl mx-auto">
           <div
             className="rounded-3xl p-12 text-center"
-            style={{ backgroundColor: '#111111' }}
+            style={{ backgroundColor: '#4768FA' }}
           >
             <h2
-              className="font-black mb-4"
+              className="font-bold mb-4"
               style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', color: '#FFFFFF' }}
             >
               Ready to Get Compliant?
             </h2>
-            <p className="mb-8 max-w-md mx-auto" style={{ color: '#999999' }}>
+            <p className="mb-8 max-w-md mx-auto" style={{ color: '#8F96A9' }}>
               Let&apos;s discuss your environment and build a plan that actually works
               for your organization.
             </p>
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 font-semibold px-6 py-3 rounded-full"
-              style={{ backgroundColor: '#FFFFFF', color: '#0A0A0A' }}
+              style={{ backgroundColor: '#FFFFFF', color: '#4768FA' }}
             >
               Schedule a Consultation <ArrowRight className="w-4 h-4" />
             </Link>

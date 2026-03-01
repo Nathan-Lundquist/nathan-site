@@ -31,7 +31,7 @@ export default function SectorsSection() {
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center font-black leading-tight mb-4"
+          className="text-center font-bold leading-tight mb-4"
           style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)', color: '#1A1A1A' }}
         >
           Protecting defense contractors{' '}

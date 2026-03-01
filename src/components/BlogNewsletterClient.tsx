@@ -19,7 +19,7 @@ function NewsletterCard() {
         </div>
         <span className="text-sm font-semibold" style={{ color: '#B82416' }}>Newsletter</span>
       </div>
-      <h3 className="font-black text-lg mb-2" style={{ color: '#1A1A1A' }}>
+      <h3 className="font-bold text-lg mb-2" style={{ color: '#1A1A1A' }}>
         Our latest articles in your inbox
       </h3>
       <p className="text-sm mb-6 flex-1" style={{ color: '#646464' }}>
@@ -70,7 +70,7 @@ export default function BlogNewsletterClient({ posts }: { posts: BlogPost[] }) {
         <div className="flex items-baseline justify-between mb-10">
           <div>
             <p className="section-label">Latest Insights</p>
-            <h2 className="font-black" style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)', color: '#1A1A1A' }}>
+            <h2 className="font-bold" style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)', color: '#1A1A1A' }}>
               Insights &amp; articles
             </h2>
           </div>

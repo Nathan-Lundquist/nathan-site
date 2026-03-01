@@ -14,7 +14,7 @@ export default function BlogPage() {
             Insights
           </p>
           <h1
-            className="font-black leading-tight mb-6"
+            className="font-bold leading-tight mb-6"
             style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', color: '#4768FA' }}
           >
             Blog
@@ -54,7 +54,7 @@ export default function BlogPage() {
                     ))}
                   </div>
                   <h2
-                    className="font-black text-xl mb-2 transition-colors group-hover:text-[#4768FA]"
+                    className="font-bold text-xl mb-2 transition-colors group-hover:text-[#4768FA]"
                     style={{ color: '#4768FA' }}
                   >
                     {post.title}

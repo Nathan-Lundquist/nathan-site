@@ -19,7 +19,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 font-bold text-base" style={{ color: '#1A1A1A' }}>
           <span
-            className="w-8 h-8 flex items-center justify-center text-white text-xs font-black"
+            className="w-8 h-8 flex items-center justify-center text-white text-xs font-bold"
             style={{ backgroundColor: '#B82416' }}
           >
             NL

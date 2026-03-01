@@ -15,7 +15,7 @@ export default function Footer() {
             {/* Logo */}
             <Link href="/" className="inline-flex items-center gap-2 mb-8">
               <span
-                className="w-8 h-8 flex items-center justify-center text-white text-xs font-black"
+                className="w-8 h-8 flex items-center justify-center text-white text-xs font-bold"
                 style={{ backgroundColor: '#B82416' }}
               >
                 NL
@@ -24,7 +24,7 @@ export default function Footer() {
             </Link>
 
             <h3
-              className="font-black leading-tight mb-8"
+              className="font-bold leading-tight mb-8"
               style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', color: '#1A1A1A', maxWidth: '420px' }}
             >
               Work with Nathan Lundquist and achieve CMMC compliance with confidence.

@@ -20,7 +20,7 @@ export default function CTASection() {
         <div className="grid md:grid-cols-2 gap-12 items-end">
           <div>
             <h2
-              className="font-black leading-tight mb-8 text-white"
+              className="font-bold leading-tight mb-8 text-white"
               style={{ fontSize: 'clamp(2rem, 4.5vw, 4rem)' }}
             >
               Nathan offers expertise, clarity, and a proven path to CMMC certification.
@@ -31,7 +31,7 @@ export default function CTASection() {
           </div>
 
           {/* Bar chart decoration */}
-          <div className="flex items-end gap-2 h-40 justify-end" aria-hidden="true">
+          <div className="flex items-end gap-2 h-48 justify-end" aria-hidden="true">
             {bars.map((h, i) => (
               <div
                 key={i}
@@ -45,7 +45,7 @@ export default function CTASection() {
         {/* Bottom tagline */}
         <div className="mt-12 pt-8 flex items-center gap-4" style={{ borderTop: '1px solid rgba(255,255,255,0.2)' }}>
           <div
-            className="w-8 h-8 flex items-center justify-center text-white text-xs font-black shrink-0"
+            className="w-8 h-8 flex items-center justify-center text-white text-xs font-bold shrink-0"
             style={{ backgroundColor: 'rgba(255,255,255,0.2)' }}
           >
             NL

@@ -38,7 +38,7 @@ export default function ServicesSection() {
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="font-black leading-tight"
+              className="font-bold leading-tight"
               style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)', color: '#1A1A1A' }}
             >
               The compliance expertise<br />you need, fast.
@@ -97,7 +97,7 @@ export default function ServicesSection() {
                     {/* Red card */}
                     <div className="absolute inset-0" style={{ backgroundColor: '#B82416' }} />
                     <div className="absolute inset-0 p-6 flex flex-col justify-between">
-                      <h3 className="text-white font-black leading-tight" style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)' }}>
+                      <h3 className="text-white font-bold leading-tight" style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)' }}>
                         {card.title}
                       </h3>
                       <div>

@@ -29,7 +29,7 @@ export default function HeroSection() {
 
             {/* Headline */}
             <h1
-              className="font-black leading-none mb-10"
+              className="font-bold leading-none mb-10"
               style={{
                 fontSize: 'clamp(3.5rem, 7vw, 6.5rem)',
                 color: '#B82416',

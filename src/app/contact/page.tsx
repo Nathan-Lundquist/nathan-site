@@ -38,25 +38,25 @@ export default function ContactPage() {
 
   const inputClass = `
     w-full px-4 py-3 text-sm outline-none transition-colors rounded-xl
-    bg-[#F9F9F9] border border-[#E5E5E5] text-[#0A0A0A]
-    focus:border-[#0A0A0A] placeholder:text-[#AAAAAA]
+    bg-[#F0F5FA] border border-[#D3D8E9] text-[#4768FA]
+    focus:border-[#4768FA] placeholder:text-[#AAAAAA]
   `
 
   return (
-    <div style={{ backgroundColor: '#EFEFEF', minHeight: '100vh' }}>
+    <div style={{ backgroundColor: '#E7ECEF', minHeight: '100vh' }}>
       {/* Hero */}
-      <section className="pt-28 pb-16 px-6" style={{ backgroundColor: '#EFEFEF' }}>
+      <section className="pt-28 pb-16 px-6" style={{ backgroundColor: '#E7ECEF' }}>
         <div className="max-w-6xl mx-auto">
-          <p className="text-sm font-mono uppercase tracking-widest mb-4" style={{ color: '#999999' }}>
+          <p className="text-sm font-mono uppercase tracking-widest mb-4" style={{ color: '#8F96A9' }}>
             Let&apos;s talk
           </p>
           <h1
-            className="font-black leading-tight mb-4"
-            style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', color: '#0A0A0A' }}
+            className="font-bold leading-tight mb-4"
+            style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', color: '#4768FA' }}
           >
             Get a Consultation
           </h1>
-          <p className="text-lg max-w-xl leading-relaxed" style={{ color: '#666666' }}>
+          <p className="text-lg max-w-xl leading-relaxed" style={{ color: '#8F96A9' }}>
             Tell me about your environment and I&apos;ll put together a practical
             plan to get you compliant.
           </p>
@@ -71,19 +71,19 @@ export default function ContactPage() {
             {submitted ? (
               <div
                 className="rounded-3xl p-12 text-center"
-                style={{ backgroundColor: '#F9F9F9', border: '1px solid #E5E5E5' }}
+                style={{ backgroundColor: '#F0F5FA', border: '1px solid #D3D8E9' }}
               >
                 <CheckCircle
                   className="w-16 h-16 mx-auto mb-4"
                   style={{ color: '#22C55E' }}
                 />
                 <h2
-                  className="font-black text-2xl mb-2"
-                  style={{ color: '#0A0A0A' }}
+                  className="font-bold text-2xl mb-2"
+                  style={{ color: '#4768FA' }}
                 >
                   Message Received
                 </h2>
-                <p style={{ color: '#666666' }}>
+                <p style={{ color: '#8F96A9' }}>
                   I&apos;ll be in touch within 1 business day.
                 </p>
               </div>
@@ -95,7 +95,7 @@ export default function ContactPage() {
                     style={{
                       backgroundColor: 'rgba(0,0,0,0.04)',
                       border: '1px solid rgba(0,0,0,0.2)',
-                      color: '#333333',
+                      color: '#4768FA',
                     }}
                   >
                     <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
@@ -107,7 +107,7 @@ export default function ContactPage() {
                   <div>
                     <label
                       className="block text-sm font-bold mb-2"
-                      style={{ color: '#333333' }}
+                      style={{ color: '#4768FA' }}
                     >
                       Name *
                     </label>
@@ -117,7 +117,7 @@ export default function ContactPage() {
                       className={inputClass}
                     />
                     {errors.name && (
-                      <p className="text-xs mt-1" style={{ color: '#333333' }}>
+                      <p className="text-xs mt-1" style={{ color: '#4768FA' }}>
                         {errors.name.message}
                       </p>
                     )}
@@ -125,7 +125,7 @@ export default function ContactPage() {
                   <div>
                     <label
                       className="block text-sm font-bold mb-2"
-                      style={{ color: '#333333' }}
+                      style={{ color: '#4768FA' }}
                     >
                       Email *
                     </label>
@@ -142,7 +142,7 @@ export default function ContactPage() {
                       className={inputClass}
                     />
                     {errors.email && (
-                      <p className="text-xs mt-1" style={{ color: '#333333' }}>
+                      <p className="text-xs mt-1" style={{ color: '#4768FA' }}>
                         {errors.email.message}
                       </p>
                     )}
@@ -152,7 +152,7 @@ export default function ContactPage() {
                 <div>
                   <label
                     className="block text-sm font-bold mb-2"
-                    style={{ color: '#333333' }}
+                    style={{ color: '#4768FA' }}
                   >
                     Company
                   </label>
@@ -166,7 +166,7 @@ export default function ContactPage() {
                 <div>
                   <label
                     className="block text-sm font-bold mb-2"
-                    style={{ color: '#333333' }}
+                    style={{ color: '#4768FA' }}
                   >
                     Service Needed *
                   </label>
@@ -190,7 +190,7 @@ export default function ContactPage() {
                     <option value="General Inquiry">General Inquiry</option>
                   </select>
                   {errors.service && (
-                    <p className="text-xs mt-1" style={{ color: '#333333' }}>
+                    <p className="text-xs mt-1" style={{ color: '#4768FA' }}>
                       {errors.service.message}
                     </p>
                   )}
@@ -199,7 +199,7 @@ export default function ContactPage() {
                 <div>
                   <label
                     className="block text-sm font-bold mb-2"
-                    style={{ color: '#333333' }}
+                    style={{ color: '#4768FA' }}
                   >
                     Message *
                   </label>
@@ -211,7 +211,7 @@ export default function ContactPage() {
                     style={{ resize: 'none' }}
                   />
                   {errors.message && (
-                    <p className="text-xs mt-1" style={{ color: '#333333' }}>
+                    <p className="text-xs mt-1" style={{ color: '#4768FA' }}>
                       {errors.message.message}
                     </p>
                   )}
@@ -222,7 +222,7 @@ export default function ContactPage() {
                   disabled={isSubmitting}
                   className="inline-flex items-center justify-center gap-2 w-full font-semibold px-6 py-3.5 rounded-full transition-opacity text-sm"
                   style={{
-                    backgroundColor: '#0A0A0A',
+                    backgroundColor: '#4768FA',
                     color: '#FFFFFF',
                     opacity: isSubmitting ? 0.7 : 1,
                   }}
@@ -243,14 +243,14 @@ export default function ContactPage() {
           <div className="space-y-5">
             <div>
               <h2
-                className="font-black text-lg mb-4"
-                style={{ color: '#111111' }}
+                className="font-bold text-lg mb-4"
+                style={{ color: '#4768FA' }}
               >
                 Contact Info
               </h2>
               <a
                 href="mailto:nathan@pcshards.com"
-                className="flex items-center gap-2 text-sm transition-colors hover:text-[#111111]"
+                className="flex items-center gap-2 text-sm transition-colors hover:text-[#4768FA]"
                 style={{ color: '#555555' }}
               >
                 <Mail className="w-4 h-4" style={{ color: '#444444' }} />
@@ -260,37 +260,37 @@ export default function ContactPage() {
 
             <div
               className="rounded-2xl p-5"
-              style={{ backgroundColor: '#F9F9F9', border: '1px solid #E5E5E5' }}
+              style={{ backgroundColor: '#F0F5FA', border: '1px solid #D3D8E9' }}
             >
               <div className="flex items-center gap-2 mb-1">
                 <Clock className="w-4 h-4" style={{ color: '#444444' }} />
-                <h3 className="font-black text-sm" style={{ color: '#111111' }}>
+                <h3 className="font-bold text-sm" style={{ color: '#4768FA' }}>
                   Response Time
                 </h3>
               </div>
-              <p className="text-sm" style={{ color: '#666666' }}>
+              <p className="text-sm" style={{ color: '#8F96A9' }}>
                 I respond to all inquiries within 1 business day.
               </p>
             </div>
 
             <div
               className="rounded-2xl p-5"
-              style={{ backgroundColor: '#F9F9F9', border: '1px solid #E5E5E5' }}
+              style={{ backgroundColor: '#F0F5FA', border: '1px solid #D3D8E9' }}
             >
               <div className="flex items-center gap-2 mb-1">
                 <Shield className="w-4 h-4" style={{ color: '#444444' }} />
-                <h3 className="font-black text-sm" style={{ color: '#111111' }}>
+                <h3 className="font-bold text-sm" style={{ color: '#4768FA' }}>
                   Engagements via PCShards
                 </h3>
               </div>
-              <p className="text-sm" style={{ color: '#666666' }}>
+              <p className="text-sm" style={{ color: '#8F96A9' }}>
                 All work is contracted through{' '}
                 <a
                   href="https://pcshards.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-bold hover:underline"
-                  style={{ color: '#8C7A6B' }}
+                  style={{ color: '#6B84FB' }}
                 >
                   PCShards
                 </a>
@@ -304,7 +304,7 @@ export default function ContactPage() {
                 <span
                   key={b}
                   className="text-xs font-semibold px-3 py-1 rounded-full"
-                  style={{ backgroundColor: '#F0EDE9', color: '#8C7A6B', border: '1px solid rgba(140,122,107,0.2)' }}
+                  style={{ backgroundColor: '#EBF0FE', color: '#6B84FB', border: '1px solid rgba(96,150,186,0.2)' }}
                 >
                   {b}
                 </span>

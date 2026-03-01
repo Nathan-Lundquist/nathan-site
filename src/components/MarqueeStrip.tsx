@@ -1,11 +1,11 @@
-export default function MarqueeStrip() {
-  const items = [
-    'CMMC Level 2', 'NIST 800-171', 'CUI Compliance', 'SSP Development',
-    'POAM Creation', 'Gap Analysis', 'Assessment Prep', 'Defense Contractors',
-    'PCShards Consulting', 'DoD Subcontractors',
-  ]
+const items = [
+  'CMMC Level 2', 'NIST 800-171', 'CUI Compliance', 'SSP Development',
+  'POAM Creation', 'Gap Analysis', 'Assessment Prep', 'Defense Contractors',
+  'PCShards Consulting', 'DoD Subcontractors',
+]
 
-  const Row = () => (
+function Row() {
+  return (
     <div className="flex items-center gap-4 shrink-0">
       {items.map((item) => (
         <span
@@ -18,7 +18,9 @@ export default function MarqueeStrip() {
       ))}
     </div>
   )
+}
 
+export default function MarqueeStrip() {
   return (
     <section className="py-10 overflow-hidden" style={{ backgroundColor: '#FFFFFF', borderBottom: '1px solid #E5E5E5' }}>
       <p className="text-center text-xs font-bold uppercase tracking-[0.2em] mb-6" style={{ color: '#B82416' }}>

@@ -34,11 +34,11 @@ export default async function BlogPostPage({
   return (
     <div style={{ backgroundColor: '#FFFFFF', minHeight: '100vh' }}>
       {/* Header */}
-      <section className="pt-28 pb-12 px-6" style={{ backgroundColor: '#EFEFEF' }}>
+      <section className="pt-28 pb-12 px-6" style={{ backgroundColor: '#E7ECEF' }}>
         <div className="max-w-3xl mx-auto">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-sm mb-8 transition-colors hover:text-[#111111]"
+            className="inline-flex items-center gap-2 text-sm mb-8 transition-colors hover:text-[#4768FA]"
             style={{ color: '#888888' }}
           >
             <ArrowLeft className="w-4 h-4" /> Back to Blog
@@ -57,10 +57,10 @@ export default async function BlogPostPage({
           </div>
 
           <h1
-            className="font-black mb-4 leading-tight"
+            className="font-bold mb-4 leading-tight"
             style={{
               fontSize: 'clamp(1.75rem, 4vw, 2.75rem)',
-              color: '#0A0A0A',
+              color: '#4768FA',
             }}
           >
             {post.title}
@@ -84,13 +84,13 @@ export default async function BlogPostPage({
             style={
               {
                 '--tw-prose-body': '#444444',
-                '--tw-prose-headings': '#0A0A0A',
-                '--tw-prose-links': '#8C7A6B',
-                '--tw-prose-bold': '#0A0A0A',
-                '--tw-prose-code': '#8C7A6B',
+                '--tw-prose-headings': '#4768FA',
+                '--tw-prose-links': '#6B84FB',
+                '--tw-prose-bold': '#4768FA',
+                '--tw-prose-code': '#6B84FB',
                 '--tw-prose-hr': '#E5E5E5',
                 '--tw-prose-quotes': '#555555',
-                '--tw-prose-quote-borders': '#8C7A6B',
+                '--tw-prose-quote-borders': '#6B84FB',
               } as React.CSSProperties
             }
           >
@@ -100,9 +100,9 @@ export default async function BlogPostPage({
           {/* CTA */}
           <div
             className="mt-16 rounded-3xl p-10 text-center"
-            style={{ backgroundColor: '#111111' }}
+            style={{ backgroundColor: '#4768FA' }}
           >
-            <h2 className="font-black text-xl mb-2" style={{ color: '#FFFFFF' }}>
+            <h2 className="font-bold text-xl mb-2" style={{ color: '#FFFFFF' }}>
               Need Help with Compliance?
             </h2>
             <p className="text-sm mb-6" style={{ color: '#888888' }}>
@@ -111,7 +111,7 @@ export default async function BlogPostPage({
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 font-semibold px-5 py-2.5 rounded-full text-sm"
-              style={{ backgroundColor: '#FFFFFF', color: '#0A0A0A' }}
+              style={{ backgroundColor: '#FFFFFF', color: '#4768FA' }}
             >
               Schedule a Consultation <ArrowRight className="w-4 h-4" />
             </Link>

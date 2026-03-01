@@ -1,6 +1,7 @@
 'use client'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
 
 const pillars = [
@@ -22,7 +23,7 @@ export default function AboutSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-black leading-tight mb-16"
+          className="font-bold leading-tight mb-16"
           style={{
             fontSize: 'clamp(1.8rem, 3.5vw, 3rem)',
             color: '#1A1A1A',
@@ -75,16 +76,15 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
           >
-            <div
-              className="overflow-hidden w-full"
-              style={{
-                aspectRatio: '3/4',
-                backgroundColor: '#FEF4EE',
-                backgroundImage: 'url(/headshot.jpg)',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center top',
-              }}
-            />
+            <div className="relative w-full overflow-hidden rounded-xl" style={{ aspectRatio: '3/4' }}>
+              <Image
+                src="/headshot.jpg"
+                alt="Nathan Lundquist, CMMC consultant"
+                fill
+                className="object-cover object-top"
+                priority
+              />
+            </div>
           </motion.div>
         </div>
       </div>

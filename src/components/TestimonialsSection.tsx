@@ -38,7 +38,7 @@ function QuoteCard({
     >
       <div className="flex items-center gap-3 mb-5">
         <div
-          className="w-10 h-10 rounded-full flex items-center justify-center font-black text-sm text-white shrink-0"
+          className="w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm text-white shrink-0"
           style={{ backgroundColor: '#B82416' }}
         >
           {initial}
@@ -71,7 +71,7 @@ export default function TestimonialsSection() {
         {/* Heading */}
         <div className="text-center mb-12">
           <p className="section-label">Testimonials</p>
-          <h2 className="font-black leading-tight" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', color: '#1A1A1A' }}>
+          <h2 className="font-bold leading-tight" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', color: '#1A1A1A' }}>
             What clients say
           </h2>
           <p className="mt-3 text-base" style={{ color: '#646464' }}>
@@ -95,7 +95,7 @@ export default function TestimonialsSection() {
             className="rounded-2xl p-7 flex flex-col items-center justify-center text-center min-h-[160px]"
             style={{ backgroundColor: '#B82416' }}
           >
-            <p className="font-black leading-none mb-3" style={{ fontSize: 'clamp(3.5rem, 7vw, 5rem)', color: '#FFFFFF' }}>
+            <p className="font-bold leading-none mb-3" style={{ fontSize: 'clamp(3.5rem, 7vw, 5rem)', color: '#FFFFFF' }}>
               100%
             </p>
             <p className="text-sm font-medium" style={{ color: 'rgba(255,255,255,0.7)' }}>
