@@ -1,7 +1,7 @@
 const items = [
-  'CMMC Level 2', 'NIST 800-171', 'CUI Compliance', 'SSP Development',
-  'POAM Creation', 'Gap Analysis', 'Assessment Prep', 'Defense Contractors',
-  'PCShards Consulting', 'DoD Subcontractors',
+  'ISO 27001', 'SOC 2 Type II', 'NIST CSF', 'HIPAA', 'PCI-DSS',
+  'NIST 800-53', 'CIS Controls', 'GDPR Readiness', 'FedRAMP',
+  'CMMC L2', 'PCI-DSS v4', 'ISO 27701',
 ]
 
 function Row() {
@@ -24,7 +24,7 @@ export default function MarqueeStrip() {
   return (
     <section className="py-10 overflow-hidden" style={{ backgroundColor: '#FFFFFF', borderBottom: '1px solid #E5E5E5' }}>
       <p className="text-center text-xs font-bold uppercase tracking-[0.2em] mb-6" style={{ color: '#B82416' }}>
-        Trusted by Defense Contractors
+        Trusted by Organizations Across Industries
       </p>
       <div className="flex">
         <div className="flex animate-marquee gap-4">
