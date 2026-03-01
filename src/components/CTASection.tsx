@@ -10,10 +10,10 @@ export default function CTASection() {
 
         {/* Top label */}
         <p className="text-xs font-bold uppercase tracking-[0.15em] mb-3" style={{ color: 'rgba(255,255,255,0.6)' }}>
-          Start Your Compliance Journey Today
+          Start Your Security Journey Today
         </p>
         <p className="text-sm font-bold uppercase tracking-[0.12em] mb-8" style={{ color: 'rgba(255,255,255,0.8)' }}>
-          Simple. Secure. Assessment-ready.
+          Simple. Secure. Audit-ready.
         </p>
 
         {/* Main heading + CTA row */}
@@ -23,7 +23,7 @@ export default function CTASection() {
               className="font-bold leading-tight mb-8 text-white"
               style={{ fontSize: 'clamp(2rem, 4.5vw, 4rem)' }}
             >
-              Nathan offers expertise, clarity, and a proven path to CMMC certification.
+              Nathan offers expertise, clarity, and a proven path to a stronger security posture.
             </h2>
             <Link href="/contact" className="btn-outline-white">
               Get a Consultation Today <ArrowRight className="w-4 h-4" />
@@ -51,7 +51,7 @@ export default function CTASection() {
             NL
           </div>
           <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: 'rgba(255,255,255,0.6)' }}>
-            CMMC &amp; NIST 800-171 Consulting for Defense Contractors
+            Information Security Consulting
           </span>
         </div>
       </div>
