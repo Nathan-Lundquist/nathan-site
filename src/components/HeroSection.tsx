@@ -9,65 +9,67 @@ export default function HeroSection() {
       className="min-h-screen flex flex-col justify-between pt-16"
       style={{ backgroundColor: '#E8F4FD' }}
     >
-      {/* Full-width two-column grid — no max-w cap so it fills any screen */}
-      <div className="flex-1 flex flex-col justify-center">
-        <div className="grid md:grid-cols-2 items-center">
+      {/*
+        Container strategy:
+        - Default (≤1535px): max-w-7xl = 1280px — fills a standard laptop screen
+        - 2xl (≥1536px):     max-w-[1600px]   — grows to 1600px on 1080p/4K desks
+        Background colour floods the remaining viewport width on either side.
+      */}
+      <div className="max-w-7xl 2xl:max-w-[1600px] mx-auto px-6 xl:px-10 w-full flex-1 flex flex-col justify-center">
+        <div className="grid md:grid-cols-2 gap-10 xl:gap-16 items-start pt-16 pb-8">
 
-          {/* LEFT — right-aligned toward the centerline at large screens */}
+          {/* LEFT */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="px-6 md:pl-8 lg:pl-12 xl:pl-16 2xl:pl-24 md:pr-8 lg:pr-12 xl:pr-16 pt-20 pb-8"
           >
-            <div className="max-w-xl xl:max-w-2xl xl:ml-auto">
-              {/* Badge */}
-              <div className="inline-flex items-center gap-3 mb-8">
-                <Shield className="w-5 h-5 shrink-0" style={{ color: '#006FC6' }} />
-                <div className="w-px h-5" style={{ backgroundColor: '#E5E5E5' }} />
-                <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: '#1A1A1A' }}>
-                  Information Security Consulting for Growing Organizations
-                </span>
-              </div>
+            {/* Badge */}
+            <div className="inline-flex items-center gap-3 mb-8">
+              <Shield className="w-5 h-5 shrink-0" style={{ color: '#006FC6' }} />
+              <div className="w-px h-5" style={{ backgroundColor: '#E5E5E5' }} />
+              <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: '#1A1A1A' }}>
+                Information Security Consulting for Growing Organizations
+              </span>
+            </div>
 
-              {/* Headline */}
-              <h1
-                className="font-bold leading-none mb-10"
-                style={{
-                  fontSize: 'clamp(3.5rem, 5.5vw, 7rem)',
-                  color: '#006FC6',
-                  letterSpacing: '-0.02em',
-                }}
-              >
-                Securing Your<br />
-                Business Is<br />
-                Easier Than<br />
-                You Think.
-              </h1>
+            {/* Headline — clamp keeps it readable from 768 px → 2560 px */}
+            <h1
+              className="font-bold leading-none mb-10"
+              style={{
+                fontSize: 'clamp(3rem, 4.5vw, 5.5rem)',
+                color: '#006FC6',
+                letterSpacing: '-0.02em',
+              }}
+            >
+              Securing Your<br />
+              Business Is<br />
+              Easier Than<br />
+              You Think.
+            </h1>
 
-              {/* Sub */}
-              <p className="text-lg leading-relaxed mb-8 max-w-md" style={{ color: '#333333' }}>
-                We help SMBs and enterprises build real security programs — from first risk assessment to a compliance-ready posture, with clarity at every step.
-              </p>
+            {/* Sub */}
+            <p className="text-lg leading-relaxed mb-8 max-w-md" style={{ color: '#333333' }}>
+              We help SMBs and enterprises build real security programs — from first risk assessment to a compliance-ready posture, with clarity at every step.
+            </p>
 
-              {/* CTAs */}
-              <div className="flex flex-wrap gap-3">
-                <Link href="/contact" className="btn-primary">
-                  Get a Consultation <ArrowRight className="w-4 h-4" />
-                </Link>
-                <Link href="/resources" className="btn-secondary">
-                  Free Resources
-                </Link>
-              </div>
+            {/* CTAs */}
+            <div className="flex flex-wrap gap-3">
+              <Link href="/contact" className="btn-primary">
+                Get a Consultation <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link href="/resources" className="btn-secondary">
+                Free Resources
+              </Link>
             </div>
           </motion.div>
 
-          {/* RIGHT — stat cards fill from centerline outward */}
+          {/* RIGHT — Stat Cards Stack */}
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="px-6 md:pl-8 lg:pl-12 xl:pl-16 md:pr-8 lg:pr-12 xl:pr-16 2xl:pr-24 pt-8 md:pt-20 pb-8 flex flex-col gap-4"
+            className="flex flex-col gap-4 pt-4"
           >
             {/* Primary stat card */}
             <div
@@ -79,7 +81,7 @@ export default function HeroSection() {
                 <div>
                   <span
                     className="font-bold leading-none block"
-                    style={{ fontSize: 'clamp(2.5rem, 4vw, 4.5rem)', color: '#006FC6' }}
+                    style={{ fontSize: 'clamp(2.5rem, 3.5vw, 4rem)', color: '#006FC6' }}
                   >
                     +98%
                   </span>
@@ -95,12 +97,12 @@ export default function HeroSection() {
               </div>
 
               {/* Animated bar chart */}
-              <div className="mt-8 mb-2">
-                <div className="flex items-end gap-3" style={{ height: '80px' }}>
+              <div className="mt-6 mb-2">
+                <div className="flex items-end gap-3" style={{ height: '72px' }}>
                   {[
-                    { label: 'Q1', h: 32, active: false },
-                    { label: 'Q2', h: 52, active: false },
-                    { label: 'Q3', h: 80, active: true },
+                    { label: 'Q1', h: 30, active: false },
+                    { label: 'Q2', h: 50, active: false },
+                    { label: 'Q3', h: 72, active: true },
                   ].map(({ label, h, active }) => (
                     <motion.div
                       key={label}
@@ -140,7 +142,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.6 }}
-              className="w-full p-6 xl:p-7 flex justify-between"
+              className="w-full p-5 xl:p-6 flex justify-between"
               style={{ backgroundColor: '#006FC6' }}
             >
               {[
@@ -153,7 +155,12 @@ export default function HeroSection() {
                   className="flex flex-col items-center text-center flex-1"
                   style={i < 2 ? { borderRight: '1px solid rgba(255,255,255,0.2)' } : undefined}
                 >
-                  <span className="font-bold text-white leading-none mb-1" style={{ fontSize: 'clamp(1.25rem, 2vw, 1.75rem)' }}>{num}</span>
+                  <span
+                    className="font-bold text-white leading-none mb-1"
+                    style={{ fontSize: 'clamp(1.25rem, 1.75vw, 1.75rem)' }}
+                  >
+                    {num}
+                  </span>
                   <span className="text-xs xl:text-sm" style={{ color: 'rgba(255,255,255,0.75)' }}>{label}</span>
                 </div>
               ))}
@@ -164,7 +171,7 @@ export default function HeroSection() {
       </div>
 
       {/* Scroll for more */}
-      <div className="px-6 xl:px-16 2xl:px-24 w-full pb-6 flex justify-end">
+      <div className="max-w-7xl 2xl:max-w-[1600px] mx-auto px-6 xl:px-10 w-full pb-6 flex justify-end">
         <span className="text-xs font-bold uppercase tracking-[0.15em] flex items-center gap-2" style={{ color: '#006FC6' }}>
           Scroll for more <ArrowRight className="w-3.5 h-3.5" />
         </span>
