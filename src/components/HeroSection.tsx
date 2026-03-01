@@ -7,7 +7,7 @@ export default function HeroSection() {
   return (
     <section
       className="min-h-screen flex flex-col justify-between pt-16"
-      style={{ backgroundColor: '#FEF4EE' }}
+      style={{ backgroundColor: '#E8F4FD' }}
     >
       <div className="max-w-7xl mx-auto px-6 w-full flex-1 flex flex-col justify-center">
         <div className="grid md:grid-cols-2 gap-12 items-start pt-16 pb-8">
@@ -20,7 +20,7 @@ export default function HeroSection() {
           >
             {/* Badge */}
             <div className="inline-flex items-center gap-3 mb-8">
-              <Shield className="w-5 h-5 shrink-0" style={{ color: '#B82416' }} />
+              <Shield className="w-5 h-5 shrink-0" style={{ color: '#006FC6' }} />
               <div className="w-px h-5" style={{ backgroundColor: '#E5E5E5' }} />
               <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: '#1A1A1A' }}>
                 Information Security Consulting for Growing Organizations
@@ -32,7 +32,7 @@ export default function HeroSection() {
               className="font-bold leading-none mb-10"
               style={{
                 fontSize: 'clamp(3.5rem, 7vw, 6.5rem)',
-                color: '#B82416',
+                color: '#006FC6',
                 letterSpacing: '-0.02em',
               }}
             >
@@ -71,16 +71,16 @@ export default function HeroSection() {
             >
               {/* Card header */}
               <div className="flex items-center justify-between mb-1">
-                <span className="text-xs font-bold uppercase tracking-widest" style={{ color: '#B82416' }}>
+                <span className="text-xs font-bold uppercase tracking-widest" style={{ color: '#006FC6' }}>
                   +98%
                 </span>
                 <div className="flex gap-3 text-xs" style={{ color: '#646464' }}>
                   <span>Q1</span>
                   <span>Q2</span>
-                  <span className="font-bold" style={{ color: '#B82416' }}>Q3</span>
+                  <span className="font-bold" style={{ color: '#006FC6' }}>Q3</span>
                 </div>
               </div>
-              <p className="text-xs mb-6" style={{ color: '#B82416' }}>Clients who achieve their security goals on first attempt</p>
+              <p className="text-xs mb-6" style={{ color: '#006FC6' }}>Clients who achieve their security goals on first attempt</p>
 
               {/* Dot matrix chart */}
               <div className="grid mb-6" style={{ gridTemplateColumns: 'repeat(20, 1fr)', gap: '3px' }}>
@@ -96,7 +96,7 @@ export default function HeroSection() {
                       style={{
                         width: 5,
                         height: 5,
-                        backgroundColor: active ? '#B82416' : '#F9C8AF',
+                        backgroundColor: active ? '#006FC6' : '#B3D7F5',
                       }}
                     />
                   )
@@ -115,7 +115,7 @@ export default function HeroSection() {
 
       {/* Scroll for more */}
       <div className="max-w-7xl mx-auto px-6 w-full pb-6 flex justify-end">
-        <span className="text-xs font-bold uppercase tracking-[0.15em] flex items-center gap-2" style={{ color: '#B82416' }}>
+        <span className="text-xs font-bold uppercase tracking-[0.15em] flex items-center gap-2" style={{ color: '#006FC6' }}>
           Scroll for more <ArrowRight className="w-3.5 h-3.5" />
         </span>
       </div>

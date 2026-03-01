@@ -23,7 +23,7 @@ function Row() {
 export default function MarqueeStrip() {
   return (
     <section className="py-10 overflow-hidden" style={{ backgroundColor: '#FFFFFF', borderBottom: '1px solid #E5E5E5' }}>
-      <p className="text-center text-xs font-bold uppercase tracking-[0.2em] mb-6" style={{ color: '#B82416' }}>
+      <p className="text-center text-xs font-bold uppercase tracking-[0.2em] mb-6" style={{ color: '#006FC6' }}>
         Trusted by Organizations Across Industries
       </p>
       <div className="flex">

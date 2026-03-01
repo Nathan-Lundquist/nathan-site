@@ -20,7 +20,7 @@ const sectors = [
 
 export default function SectorsSection() {
   return (
-    <section className="py-24 px-6" style={{ backgroundColor: '#FEF4EE' }}>
+    <section className="py-24 px-6" style={{ backgroundColor: '#E8F4FD' }}>
       <div className="max-w-7xl mx-auto">
 
         {/* Label */}
@@ -37,7 +37,7 @@ export default function SectorsSection() {
           Protecting organizations{' '}
           <Shield
             className="inline-block align-middle"
-            style={{ color: '#B82416', width: '1em', height: '1em' }}
+            style={{ color: '#006FC6', width: '1em', height: '1em' }}
           />{' '}
           across every industry.
         </motion.h2>

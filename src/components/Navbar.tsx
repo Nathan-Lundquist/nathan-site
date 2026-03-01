@@ -20,7 +20,7 @@ export default function Navbar() {
         <Link href="/" className="flex items-center gap-2 font-bold text-base" style={{ color: '#1A1A1A' }}>
           <span
             className="w-8 h-8 flex items-center justify-center text-white text-xs font-bold"
-            style={{ backgroundColor: '#B82416' }}
+            style={{ backgroundColor: '#006FC6' }}
           >
             NL
           </span>
@@ -33,7 +33,7 @@ export default function Navbar() {
             <Link
               key={l.href}
               href={l.href}
-              className="text-sm font-medium transition-colors hover:text-[#B82416]"
+              className="text-sm font-medium transition-colors hover:text-[#006FC6]"
               style={{ color: '#333333' }}
             >
               {l.label}

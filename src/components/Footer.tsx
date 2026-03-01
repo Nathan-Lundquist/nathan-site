@@ -16,7 +16,7 @@ export default function Footer() {
             <Link href="/" className="inline-flex items-center gap-2 mb-8">
               <span
                 className="w-8 h-8 flex items-center justify-center text-white text-xs font-bold"
-                style={{ backgroundColor: '#B82416' }}
+                style={{ backgroundColor: '#006FC6' }}
               >
                 NL
               </span>
@@ -74,7 +74,7 @@ export default function Footer() {
                 <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: '#1A1A1A' }}>Company</p>
                 <div className="flex flex-col gap-2">
                   {['About', 'Resources', 'Blog'].map((l) => (
-                    <Link key={l} href={`/${l.toLowerCase()}`} className="text-sm transition-colors hover:text-[#B82416]" style={{ color: '#646464' }}>
+                    <Link key={l} href={`/${l.toLowerCase()}`} className="text-sm transition-colors hover:text-[#006FC6]" style={{ color: '#646464' }}>
                       {l}
                     </Link>
                   ))}
@@ -84,7 +84,7 @@ export default function Footer() {
                 <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: '#1A1A1A' }}>Services</p>
                 <div className="flex flex-col gap-2">
                   {['Security Assessment', 'Compliance Readiness', 'Risk Management', 'Security Program Dev'].map((l) => (
-                    <Link key={l} href="/services" className="text-sm transition-colors hover:text-[#B82416]" style={{ color: '#646464' }}>
+                    <Link key={l} href="/services" className="text-sm transition-colors hover:text-[#006FC6]" style={{ color: '#646464' }}>
                       {l}
                     </Link>
                   ))}
@@ -94,7 +94,7 @@ export default function Footer() {
                 <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: '#1A1A1A' }}>Support</p>
                 <div className="flex flex-col gap-2">
                   {[['FAQ', '/resources'], ['Contact', '/contact'], ['Legal', '/']].map(([l, h]) => (
-                    <Link key={l} href={h} className="text-sm transition-colors hover:text-[#B82416]" style={{ color: '#646464' }}>
+                    <Link key={l} href={h} className="text-sm transition-colors hover:text-[#006FC6]" style={{ color: '#646464' }}>
                       {l}
                     </Link>
                   ))}
@@ -104,7 +104,7 @@ export default function Footer() {
                 <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: '#1A1A1A' }}>Social</p>
                 <div className="flex flex-col gap-2">
                   {[['LinkedIn', 'https://linkedin.com'], ['Twitter / X', 'https://x.com'], ['GitHub', 'https://github.com']].map(([l, h]) => (
-                    <a key={l} href={h} target="_blank" rel="noopener noreferrer" className="text-sm transition-colors hover:text-[#B82416]" style={{ color: '#646464' }}>
+                    <a key={l} href={h} target="_blank" rel="noopener noreferrer" className="text-sm transition-colors hover:text-[#006FC6]" style={{ color: '#646464' }}>
                       {l}
                     </a>
                   ))}

@@ -50,12 +50,12 @@ export default function AboutSection() {
                   className="flex items-center gap-6 py-5"
                   style={{ borderBottom: '1px solid #E5E5E5' }}
                 >
-                  <span className="text-xs font-bold w-6 shrink-0" style={{ color: '#B82416' }}>
+                  <span className="text-xs font-bold w-6 shrink-0" style={{ color: '#006FC6' }}>
                     {p.num}
                   </span>
                   <span
                     className="text-xl font-bold"
-                    style={{ color: p.active ? '#B82416' : '#F9C8AF' }}
+                    style={{ color: p.active ? '#006FC6' : '#B3D7F5' }}
                   >
                     {p.label}
                   </span>

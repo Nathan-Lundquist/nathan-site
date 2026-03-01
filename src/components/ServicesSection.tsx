@@ -88,14 +88,14 @@ export default function ServicesSection() {
                         className="w-10 h-10 flex items-center justify-center shrink-0 ml-3"
                         style={{ backgroundColor: '#FFFFFF' }}
                       >
-                        <ArrowRight className="w-4 h-4" style={{ color: '#B82416' }} />
+                        <ArrowRight className="w-4 h-4" style={{ color: '#006FC6' }} />
                       </div>
                     </div>
                   </>
                 ) : (
                   <>
                     {/* Red card */}
-                    <div className="absolute inset-0" style={{ backgroundColor: '#B82416' }} />
+                    <div className="absolute inset-0" style={{ backgroundColor: '#006FC6' }} />
                     <div className="absolute inset-0 p-6 flex flex-col justify-between">
                       <h3 className="text-white font-bold leading-tight" style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)' }}>
                         {card.title}
@@ -109,7 +109,7 @@ export default function ServicesSection() {
                             className="w-10 h-10 flex items-center justify-center"
                             style={{ backgroundColor: '#FFFFFF' }}
                           >
-                            <ArrowRight className="w-4 h-4" style={{ color: '#B82416' }} />
+                            <ArrowRight className="w-4 h-4" style={{ color: '#006FC6' }} />
                           </div>
                         </div>
                       </div>

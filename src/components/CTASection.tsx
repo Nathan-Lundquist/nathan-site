@@ -5,7 +5,7 @@ export default function CTASection() {
   const bars = [60, 80, 55, 90, 70, 95, 65, 100, 75, 110, 85, 130, 105, 150, 120, 170]
 
   return (
-    <section className="relative overflow-hidden py-24 px-6" style={{ backgroundColor: '#B82416' }}>
+    <section className="relative overflow-hidden py-24 px-6" style={{ backgroundColor: '#006FC6' }}>
       <div className="max-w-7xl mx-auto relative z-10">
 
         {/* Top label */}

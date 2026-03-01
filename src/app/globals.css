@@ -2,9 +2,9 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --color-red: #B82416;
-  --color-cream: #FEF4EE;
-  --color-peach: #F9C8AF;
+  --color-red: #006FC6;
+  --color-cream: #E8F4FD;
+  --color-peach: #B3D7F5;
   --color-black: #1A1A1A;
   --color-body: #333333;
   --color-muted: #646464;
@@ -23,10 +23,10 @@
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center gap-2 bg-[#B82416] text-white px-6 py-4 text-xs font-bold uppercase tracking-[0.12em] transition-opacity hover:opacity-90;
+    @apply inline-flex items-center gap-2 bg-[#006FC6] text-white px-6 py-4 text-xs font-bold uppercase tracking-[0.12em] transition-opacity hover:opacity-90;
   }
   .btn-secondary {
-    @apply inline-flex items-center gap-2 bg-[#F9C8AF] text-[#B82416] px-6 py-4 text-xs font-bold uppercase tracking-[0.12em] transition-opacity hover:opacity-90;
+    @apply inline-flex items-center gap-2 bg-[#B3D7F5] text-[#006FC6] px-6 py-4 text-xs font-bold uppercase tracking-[0.12em] transition-opacity hover:opacity-90;
   }
   .btn-outline-white {
     @apply inline-flex items-center gap-2 border border-white text-white bg-transparent px-6 py-4 text-xs font-bold uppercase tracking-[0.12em] transition-opacity hover:opacity-90;
@@ -35,7 +35,7 @@
     @apply inline-flex items-center gap-2 bg-[#1A1A1A] text-white px-5 py-2.5 text-xs font-bold uppercase tracking-[0.12em] transition-opacity hover:opacity-90;
   }
   .section-label {
-    @apply text-xs font-bold uppercase tracking-[0.15em] text-[#B82416] mb-5;
+    @apply text-xs font-bold uppercase tracking-[0.15em] text-[#006FC6] mb-5;
   }
 
   /* Marquee animation */

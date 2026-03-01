@@ -39,7 +39,7 @@ function QuoteCard({
       <div className="flex items-center gap-3 mb-5">
         <div
           className="w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm text-white shrink-0"
-          style={{ backgroundColor: '#B82416' }}
+          style={{ backgroundColor: '#006FC6' }}
         >
           {initial}
         </div>
@@ -47,7 +47,7 @@ function QuoteCard({
           <p className="font-bold text-sm" style={{ color: '#1A1A1A' }}>{name}</p>
           <p className="text-xs" style={{ color: '#646464' }}>{title}</p>
         </div>
-        <span className="text-xs px-2 py-0.5 rounded-full ml-auto shrink-0" style={{ backgroundColor: '#FEF4EE', color: '#B82416' }}>
+        <span className="text-xs px-2 py-0.5 rounded-full ml-auto shrink-0" style={{ backgroundColor: '#E8F4FD', color: '#006FC6' }}>
           Customer story
         </span>
       </div>
@@ -93,7 +93,7 @@ export default function TestimonialsSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.1 }}
             className="rounded-2xl p-7 flex flex-col items-center justify-center text-center min-h-[160px]"
-            style={{ backgroundColor: '#B82416' }}
+            style={{ backgroundColor: '#006FC6' }}
           >
             <p className="font-bold leading-none mb-3" style={{ fontSize: 'clamp(3.5rem, 7vw, 5rem)', color: '#FFFFFF' }}>
               100%

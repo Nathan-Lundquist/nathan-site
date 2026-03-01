@@ -11,13 +11,13 @@ function NewsletterCard() {
   return (
     <div
       className="rounded-2xl p-8 flex flex-col h-full"
-      style={{ backgroundColor: '#FEF4EE', border: '1px solid #E5E5E5' }}
+      style={{ backgroundColor: '#E8F4FD', border: '1px solid #E5E5E5' }}
     >
       <div className="flex items-center gap-2 mb-5">
-        <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ backgroundColor: '#FEF4EE' }}>
-          <Mail className="w-4 h-4" style={{ color: '#B82416' }} />
+        <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ backgroundColor: '#E8F4FD' }}>
+          <Mail className="w-4 h-4" style={{ color: '#006FC6' }} />
         </div>
-        <span className="text-sm font-semibold" style={{ color: '#B82416' }}>Newsletter</span>
+        <span className="text-sm font-semibold" style={{ color: '#006FC6' }}>Newsletter</span>
       </div>
       <h3 className="font-bold text-lg mb-2" style={{ color: '#1A1A1A' }}>
         Security insights in your inbox
@@ -26,7 +26,7 @@ function NewsletterCard() {
         Stay current on frameworks, best practices, and what's changing in information security.
       </p>
       {submitted ? (
-        <p className="text-sm font-semibold" style={{ color: '#B82416' }}>Thanks! You&apos;re on the list.</p>
+        <p className="text-sm font-semibold" style={{ color: '#006FC6' }}>Thanks! You&apos;re on the list.</p>
       ) : (
         <form
           onSubmit={(e) => { e.preventDefault(); setSubmitted(true) }}
@@ -74,7 +74,7 @@ export default function BlogNewsletterClient({ posts }: { posts: BlogPost[] }) {
               Insights &amp; articles
             </h2>
           </div>
-          <Link href="/blog" className="flex items-center gap-1 text-sm font-semibold transition-opacity hover:opacity-70" style={{ color: '#B82416' }}>
+          <Link href="/blog" className="flex items-center gap-1 text-sm font-semibold transition-opacity hover:opacity-70" style={{ color: '#006FC6' }}>
             Browse all <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
@@ -93,14 +93,14 @@ export default function BlogNewsletterClient({ posts }: { posts: BlogPost[] }) {
                 style={{ backgroundColor: '#FFFFFF', border: '1px solid #E5E5E5' }}
               >
                 {/* Thumbnail placeholder */}
-                <div className="w-24 h-20 rounded-xl shrink-0" style={{ backgroundColor: '#FEF4EE' }} />
+                <div className="w-24 h-20 rounded-xl shrink-0" style={{ backgroundColor: '#E8F4FD' }} />
                 <div className="flex-1 min-w-0">
                   <div className="flex flex-wrap gap-2 mb-2">
                     {post.tags.slice(0, 2).map((tag) => (
                       <span
                         key={tag}
                         className="px-2.5 py-0.5 rounded-full text-xs font-semibold"
-                        style={{ backgroundColor: '#FEF4EE', color: '#B82416' }}
+                        style={{ backgroundColor: '#E8F4FD', color: '#006FC6' }}
                       >
                         {tag}
                       </span>

@@ -60,13 +60,13 @@ export default function ApproachSection() {
                   aria-controls={`tabpanel-${key}`}
                   onClick={() => setActive(key)}
                   className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.15em] transition-colors"
-                  style={{ color: active === key ? '#B82416' : '#646464' }}
+                  style={{ color: active === key ? '#006FC6' : '#646464' }}
                 >
                   {/* Toggle pill */}
                   <span
                     className="w-10 h-5 rounded-full flex items-center transition-colors shrink-0"
                     style={{
-                      backgroundColor: active === key ? '#B82416' : '#E5E5E5',
+                      backgroundColor: active === key ? '#006FC6' : '#E5E5E5',
                       padding: '2px',
                     }}
                   >
@@ -113,7 +113,7 @@ export default function ApproachSection() {
                   <div key={s.num}>
                     <p
                       className="font-bold leading-none mb-1"
-                      style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', color: '#B82416' }}
+                      style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', color: '#006FC6' }}
                     >
                       {s.num}
                     </p>
