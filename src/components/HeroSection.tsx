@@ -58,57 +58,102 @@ export default function HeroSection() {
             </div>
           </motion.div>
 
-          {/* RIGHT — Stat Card */}
+          {/* RIGHT — Stat Cards Stack */}
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="flex justify-end items-start pt-4"
+            className="flex flex-col gap-3 pt-4"
           >
+            {/* Primary stat card */}
             <div
-              className="w-full max-w-sm bg-white p-6"
+              className="w-full bg-white p-6"
               style={{ border: '1px solid #E5E5E5' }}
             >
-              {/* Card header */}
-              <div className="flex items-center justify-between mb-1">
-                <span className="text-xs font-bold uppercase tracking-widest" style={{ color: '#006FC6' }}>
-                  +98%
-                </span>
-                <div className="flex gap-3 text-xs" style={{ color: '#646464' }}>
+              {/* Big stat + quarter labels */}
+              <div className="flex items-start justify-between mb-2">
+                <div>
+                  <span
+                    className="font-bold leading-none block"
+                    style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', color: '#006FC6' }}
+                  >
+                    +98%
+                  </span>
+                  <p className="text-xs mt-2 max-w-[180px]" style={{ color: '#333333' }}>
+                    Clients who achieve their security goals on first attempt
+                  </p>
+                </div>
+                <div className="flex gap-3 text-xs pt-1" style={{ color: '#646464' }}>
                   <span>Q1</span>
                   <span>Q2</span>
                   <span className="font-bold" style={{ color: '#006FC6' }}>Q3</span>
                 </div>
               </div>
-              <p className="text-xs mb-6" style={{ color: '#006FC6' }}>Clients who achieve their security goals on first attempt</p>
 
-              {/* Dot matrix chart */}
-              <div className="grid mb-6" style={{ gridTemplateColumns: 'repeat(20, 1fr)', gap: '3px' }}>
-                {Array.from({ length: 100 }).map((_, i) => {
-                  const col = i % 20
-                  const row = Math.floor(i / 20)
-                  const threshold = Math.floor((col / 19) * 4)
-                  const active = row >= (4 - threshold)
-                  return (
-                    <div
-                      key={i}
-                      className="rounded-full"
-                      style={{
-                        width: 5,
-                        height: 5,
-                        backgroundColor: active ? '#006FC6' : '#B3D7F5',
-                      }}
+              {/* Animated bar chart */}
+              <div className="mt-6 mb-2">
+                <div className="flex items-end gap-2" style={{ height: '64px' }}>
+                  {[
+                    { label: 'Q1', h: 28, active: false },
+                    { label: 'Q2', h: 44, active: false },
+                    { label: 'Q3', h: 64, active: true },
+                  ].map(({ label, h, active }) => (
+                    <motion.div
+                      key={label}
+                      initial={{ height: 0 }}
+                      animate={{ height: h }}
+                      transition={{ duration: 0.6, delay: active ? 0.8 : 0.6 }}
+                      className="flex-1"
+                      style={{ backgroundColor: active ? '#006FC6' : '#B3D7F5' }}
                     />
-                  )
-                })}
+                  ))}
+                </div>
+                <div className="flex gap-2 mt-1">
+                  {['Q1', 'Q2', 'Q3'].map((label, i) => (
+                    <span
+                      key={label}
+                      className="flex-1 text-center text-xs"
+                      style={{ color: i === 2 ? '#006FC6' : '#646464', fontWeight: i === 2 ? 700 : 400 }}
+                    >
+                      {label}
+                    </span>
+                  ))}
+                </div>
               </div>
 
               {/* Card footer */}
-              <div className="flex justify-between text-xs" style={{ color: '#646464' }}>
+              <div
+                className="flex justify-between text-xs pt-4 mt-2"
+                style={{ color: '#646464', borderTop: '1px solid #E5E5E5' }}
+              >
                 <span>Engagements 2023</span>
                 <span>Engagements 2024</span>
               </div>
             </div>
+
+            {/* Secondary card — mini stats */}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              className="w-full p-5 flex justify-between"
+              style={{ backgroundColor: '#006FC6' }}
+            >
+              {[
+                { num: '5+', label: 'Years Experience' },
+                { num: '50+', label: 'Clients Served' },
+                { num: '10+', label: 'Frameworks' },
+              ].map(({ num, label }, i) => (
+                <div
+                  key={num}
+                  className="flex flex-col items-center text-center flex-1"
+                  style={i < 2 ? { borderRight: '1px solid rgba(255,255,255,0.2)' } : undefined}
+                >
+                  <span className="font-bold text-white leading-none mb-1" style={{ fontSize: '1.5rem' }}>{num}</span>
+                  <span className="text-xs" style={{ color: 'rgba(255,255,255,0.7)' }}>{label}</span>
+                </div>
+              ))}
+            </motion.div>
           </motion.div>
         </div>
       </div>
