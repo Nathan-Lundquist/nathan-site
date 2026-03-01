@@ -20,10 +20,10 @@ function NewsletterCard() {
         <span className="text-sm font-semibold" style={{ color: '#B82416' }}>Newsletter</span>
       </div>
       <h3 className="font-bold text-lg mb-2" style={{ color: '#1A1A1A' }}>
-        Our latest articles in your inbox
+        Security insights in your inbox
       </h3>
       <p className="text-sm mb-6 flex-1" style={{ color: '#646464' }}>
-        CMMC updates, compliance tips, and new resources — no spam.
+        Stay current on frameworks, best practices, and what's changing in information security.
       </p>
       {submitted ? (
         <p className="text-sm font-semibold" style={{ color: '#B82416' }}>Thanks! You&apos;re on the list.</p>
