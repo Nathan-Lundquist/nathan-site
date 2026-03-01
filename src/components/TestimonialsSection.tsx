@@ -3,21 +3,21 @@ import { motion } from 'framer-motion'
 
 const testimonials = [
   {
-    quote: "Nathan identified gaps we had no idea existed and gave us a clear roadmap to fix them. We passed our CMMC assessment on the first try.",
+    quote: "Nathan identified security gaps we had no idea existed and gave us a clear roadmap to fix them. We passed our SOC 2 audit on the first try.",
     name: "Mike D.",
-    title: "CEO, Defense Manufacturer",
+    title: "CEO, SaaS Company",
     initial: "M",
   },
   {
-    quote: "Working with Nathan saved us months of guesswork. His NIST 800-171 gap analysis was thorough, practical, and exactly what we needed.",
+    quote: "Working with Nathan saved us months of guesswork. His risk assessment was thorough, practical, and exactly what our team needed to move forward.",
     name: "Sarah K.",
-    title: "CTO, DoD Subcontractor",
+    title: "CTO, Healthcare Startup",
     initial: "S",
   },
   {
-    quote: "The SSP and POAM templates alone were worth every penny. Nathan's hands-on guidance made compliance feel achievable.",
+    quote: "The security policies and procedures alone were worth every penny. Nathan's guidance made ISO 27001 certification feel completely achievable.",
     name: "James R.",
-    title: "IT Director, Aerospace Firm",
+    title: "IT Director, Professional Services Firm",
     initial: "J",
   },
 ]
@@ -75,7 +75,7 @@ export default function TestimonialsSection() {
             What clients say
           </h2>
           <p className="mt-3 text-base" style={{ color: '#646464' }}>
-            Defense contractors who achieved compliance with Nathan&apos;s guidance.
+            Organizations that achieved their security goals with Nathan&apos;s guidance.
           </p>
         </div>
 
@@ -99,7 +99,7 @@ export default function TestimonialsSection() {
               100%
             </p>
             <p className="text-sm font-medium" style={{ color: 'rgba(255,255,255,0.7)' }}>
-              first-time assessment pass rate
+              clients who meet their security goals on first attempt
             </p>
           </motion.div>
         </div>
