@@ -7,20 +7,20 @@ const cards = [
   {
     type: 'photo' as const,
     gradient: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)',
-    title: 'Gap Analysis & Readiness',
+    title: 'Security Assessment & Gap Analysis',
     href: '/services',
   },
   {
     type: 'photo' as const,
     gradient: 'linear-gradient(135deg, #0d1b2a 0%, #1b2838 50%, #243447 100%)',
-    title: 'NIST 800-171 & SSP',
+    title: 'Compliance Readiness',
     href: '/services',
   },
   {
     type: 'red' as const,
     gradient: '',
     title: 'Fast & results-driven',
-    description: 'Achieve CMMC Level 2 certification without the guesswork. Nathan delivers a clear path from current state to assessment-ready.',
+    description: 'Achieve your security and compliance goals without the guesswork. Nathan delivers a clear path from your current posture to a resilient, audit-ready organization.',
     href: '/contact',
   },
 ]
@@ -41,7 +41,7 @@ export default function ServicesSection() {
               className="font-bold leading-tight"
               style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)', color: '#1A1A1A' }}
             >
-              The compliance expertise<br />you need, fast.
+              The security expertise<br />you need, fast.
             </motion.h2>
           </div>
           <Link href="/services" className="btn-secondary shrink-0">
