@@ -1,108 +1,82 @@
 'use client'
-import Link from 'next/link'
 import { useState } from 'react'
-import { Menu, X, Shield, Plus } from 'lucide-react'
+import Link from 'next/link'
+import { ArrowRight, Menu, X } from 'lucide-react'
 
 const links = [
-  { href: '/about', label: 'About' },
-  { href: '/services', label: 'Services' },
-  { href: '/blog', label: 'Blog' },
-  { href: '/resources', label: 'Resources' },
-  { href: '/contact', label: 'Contact' },
+  { label: 'About', href: '/about' },
+  { label: 'Services', href: '/services' },
+  { label: 'Resources', href: '/resources' },
+  { label: 'Blog', href: '/blog' },
 ]
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
 
   return (
-    <nav
-      className="fixed top-0 w-full z-50"
-      style={{
-        backgroundColor: 'rgba(239,239,239,0.92)',
-        backdropFilter: 'blur(12px)',
-        borderBottom: '1px solid #E0E0E0',
-      }}
-    >
-      <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-        <Link
-          href="/"
-          className="flex items-center gap-2 font-black text-lg tracking-tight"
-          style={{ color: '#0A0A0A' }}
-        >
-          <Shield className="w-5 h-5" style={{ color: '#444444' }} />
-          <span>
-            NATHAN<span style={{ color: '#8C7A6B' }}>.</span>LUNDQUIST
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white" style={{ borderBottom: '1px solid #E5E5E5' }}>
+      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-2 font-bold text-base" style={{ color: '#1A1A1A' }}>
+          <span
+            className="w-8 h-8 flex items-center justify-center text-white text-xs font-black"
+            style={{ backgroundColor: '#B82416' }}
+          >
+            NL
           </span>
+          <span className="hidden sm:block tracking-tight">Nathan Lundquist</span>
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-8">
           {links.map((l) => (
             <Link
               key={l.href}
               href={l.href}
-              className="text-sm font-medium transition-colors"
-              style={{ color: '#555555' }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.color = '#111111')
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.color = '#555555')
-              }
+              className="text-sm font-medium transition-colors hover:text-[#B82416]"
+              style={{ color: '#333333' }}
             >
               {l.label}
             </Link>
           ))}
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full font-semibold text-sm transition-all hover:opacity-80"
-            style={{ backgroundColor: '#0A0A0A', color: '#FFFFFF' }}
-          >
-            <Plus className="w-3.5 h-3.5" /> Get a Consultation
-          </Link>
-        </div>
+        </nav>
 
-        {/* Mobile toggle */}
-        <button
-          className="md:hidden"
-          style={{ color: '#0A0A0A' }}
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
-        >
-          {open ? <X /> : <Menu />}
-        </button>
+        {/* CTA + mobile toggle */}
+        <div className="flex items-center gap-4">
+          <Link href="/contact" className="btn-black hidden sm:inline-flex">
+            Get Started <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
+          <button
+            className="md:hidden p-1"
+            onClick={() => setOpen((v) => !v)}
+            aria-label="Toggle menu"
+          >
+            {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile drawer */}
       {open && (
-        <div
-          className="md:hidden px-4 py-6 flex flex-col gap-4"
-          style={{
-            backgroundColor: '#EFEFEF',
-            borderTop: '1px solid #E0E0E0',
-          }}
-        >
-          {links.map((l) => (
-            <Link
-              key={l.href}
-              href={l.href}
-              className="font-medium text-sm transition-colors"
-              style={{ color: '#333333' }}
-              onClick={() => setOpen(false)}
-            >
-              {l.label}
+        <div className="md:hidden bg-white border-t" style={{ borderColor: '#E5E5E5' }}>
+          <nav className="flex flex-col px-6 py-4 gap-4">
+            {links.map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                className="text-sm font-medium py-1"
+                style={{ color: '#333333' }}
+                onClick={() => setOpen(false)}
+              >
+                {l.label}
+              </Link>
+            ))}
+            <Link href="/contact" className="btn-primary w-fit mt-2" onClick={() => setOpen(false)}>
+              Get Started <ArrowRight className="w-3.5 h-3.5" />
             </Link>
-          ))}
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full font-semibold text-sm w-fit"
-            style={{ backgroundColor: '#0A0A0A', color: '#FFFFFF' }}
-            onClick={() => setOpen(false)}
-          >
-            <Plus className="w-3.5 h-3.5" /> Get a Consultation
-          </Link>
+          </nav>
         </div>
       )}
-    </nav>
+    </header>
   )
 }
